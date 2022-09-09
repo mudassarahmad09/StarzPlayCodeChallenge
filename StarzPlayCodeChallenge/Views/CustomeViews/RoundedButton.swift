@@ -37,5 +37,8 @@ struct RoundedButton_Previews: PreviewProvider {
         RoundedButton(iconName: "plus",textName: "Watch List")
             .previewLayout(PreviewLayout.sizeThatFits)
             .preferredColorScheme(.dark)
+
+        RoundedButton(iconName: "plus",textName: "Watch List")
+            .previewLayout(PreviewLayout.sizeThatFits)
     }
 }

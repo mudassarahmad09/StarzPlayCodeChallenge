@@ -16,4 +16,5 @@ enum CommonColor: String {
     case main = "MainColor"
     case seconday = "SecondaryColor"
     case button = "ButtonsColor"
+    case divider = "Divider"
 }

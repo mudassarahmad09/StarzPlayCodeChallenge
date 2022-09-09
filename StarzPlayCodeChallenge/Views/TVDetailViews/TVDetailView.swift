@@ -28,6 +28,10 @@ extension TVDetailView {
             descripcationView()
             reactionView()
 
+            SeasonGridView(selectedSeason: { season in
+                print(season)
+            })
+
             Spacer()
             
         }
