@@ -28,4 +28,7 @@ extension SeasonGridView.SeasonGridVM {
             }
         }
     }
+    func getUpdatedValue() -> Season?{
+        seasons.first(where: {$0.isSelecte == true})
+    }
 }
