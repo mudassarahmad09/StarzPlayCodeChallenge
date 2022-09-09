@@ -9,6 +9,7 @@ import Foundation
 
 enum CommonImage: String {
     case placeHolder = "PlaceHolder"
+    case episodePH = "100-64"
 }
 
 

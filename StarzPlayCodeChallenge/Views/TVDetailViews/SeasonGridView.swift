@@ -9,8 +9,13 @@ import SwiftUI
 
 struct SeasonGridView: View {
 
-    @ObservedObject private var viewModel = SeasonGridVM()
-    var selectedSeason: (_ season: Season) -> Void
+    @StateObject private var viewModel: SeasonGridVM
+    private var selectedSeason: (_ season: Season) -> Void
+
+    init(viewModel: SeasonGridVM, selectedSeason: @escaping (_ season: Season) -> Void){
+        self._viewModel = StateObject(wrappedValue: viewModel)
+        self.selectedSeason = selectedSeason
+    }
 
     var body: some View {
         GeometryReader { gp in
@@ -24,7 +29,9 @@ struct SeasonGridView: View {
                                     withAnimation{
                                         viewModel.update(selecteItem: season)
                                     }
-                                    selectedSeason(viewModel.seasons.first(where: {$0.isSelecte == true}) ?? season)
+
+
+                                    selectedSeason(viewModel.getUpdatedValue() ?? season)
                                 }, label: {
                                     Text(season.name)
                                         .font(.system(size: 18, weight: .bold, design: .default))
@@ -64,12 +71,13 @@ struct SeasonGridView: View {
 struct SeasonGridView_Previews: PreviewProvider {
     static var previews: some View {
 
+      let seasons = [Season(name: "SEASON 1", isSelecte: true), Season(name: "SEASON 2", isSelecte: false), Season(name: "SEASON 3", isSelecte: false), Season(name: "SEASON 4", isSelecte: false)]
 
-        SeasonGridView(selectedSeason:{_ in
+        SeasonGridView(viewModel: SeasonGridVM(seasons: seasons), selectedSeason:{_ in
 
         } )
         .previewLayout(PreviewLayout.sizeThatFits)
-        SeasonGridView(selectedSeason:{_ in
+        SeasonGridView(viewModel: SeasonGridVM(seasons: seasons), selectedSeason:{_ in
 
         } )
         .preferredColorScheme(.dark)

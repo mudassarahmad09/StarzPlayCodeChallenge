@@ -9,7 +9,6 @@ import SwiftUI
 
 struct TVDetailView: View {
 
-    @State var isReadMoreExpanded = false
 
     var body: some View {
         loadView()
@@ -19,21 +18,29 @@ struct TVDetailView: View {
 //MARK: -  Load View
 extension TVDetailView {
     func loadView() -> some View {
-        VStack(spacing: 10){
-            ZStack(alignment: .bottom){
-                GradientImageView(image: CommonImage.placeHolder.rawValue)
-                bannerImageView()
+        ScrollView{
+            VStack(spacing: 10){
+                ZStack(alignment: .bottom){
+                    GradientImageView(image: CommonImage.placeHolder.rawValue)
+                    bannerImageView()
+                }
+
+
+                descripcationView()
+                reactionView()
+
+
+                SeasonGridView(viewModel: SeasonGridVM(seasons: []), selectedSeason: { season in
+                    print(season)
+                })
+
+                episodeList()
+                
+
+              //  Spacer()
+
             }
 
-            descripcationView()
-            reactionView()
-
-            SeasonGridView(selectedSeason: { season in
-                print(season)
-            })
-
-            Spacer()
-            
         }
         .background(.black)
     }
@@ -81,6 +88,13 @@ extension TVDetailView {
             ExpandableView("An LA vampire hunter has a week to come up with the cash to pay for his kid's tuition and braces. Trying to make a living these days just might kill him.")
 
         }
+    }
+
+    func episodeList() -> some View{
+        ForEach((0...6), id: \.self) { _ in
+            EpisodeCell()
+        }
+
     }
 }
 //MARK: - Reaction View

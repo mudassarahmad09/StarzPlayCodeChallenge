@@ -34,6 +34,8 @@
 		7A16584028CB1D3D004EDE42 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16583E28CB1D3D004EDE42 /* Season.swift */; };
 		7A16584228CB1D59004EDE42 /* SeasonGridVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16584128CB1D59004EDE42 /* SeasonGridVM.swift */; };
 		7A16584328CB1D59004EDE42 /* SeasonGridVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16584128CB1D59004EDE42 /* SeasonGridVM.swift */; };
+		7A16584528CB3A20004EDE42 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16584428CB3A20004EDE42 /* EpisodeCell.swift */; };
+		7A16584628CB3A20004EDE42 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16584428CB3A20004EDE42 /* EpisodeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +78,7 @@
 		7A16583928CB0325004EDE42 /* SeasonGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonGridView.swift; sourceTree = "<group>"; };
 		7A16583E28CB1D3D004EDE42 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		7A16584128CB1D59004EDE42 /* SeasonGridVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonGridVM.swift; sourceTree = "<group>"; };
+		7A16584428CB3A20004EDE42 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +131,8 @@
 			isa = PBXGroup;
 			children = (
 				7A16581D28CA225C004EDE42 /* Views */,
-				7A16583C28CB1D0F004EDE42 /* Model */,
 				7A16583D28CB1D1F004EDE42 /* ViewModel */,
+				7A16583C28CB1D0F004EDE42 /* Model */,
 				7A16582428CA26C0004EDE42 /* Utility */,
 				7A16581C28CA20AD004EDE42 /* AppMain */,
 				7A1657F828CA1E9A004EDE42 /* Preview Content */,
@@ -198,6 +201,7 @@
 			children = (
 				7A16582228CA2365004EDE42 /* TVDetailView.swift */,
 				7A16583928CB0325004EDE42 /* SeasonGridView.swift */,
+				7A16584428CB3A20004EDE42 /* EpisodeCell.swift */,
 			);
 			path = TVDetailViews;
 			sourceTree = "<group>";
@@ -362,6 +366,7 @@
 				7A16582328CA2365004EDE42 /* TVDetailView.swift in Sources */,
 				7A16583428CA6A19004EDE42 /* ExpandableView.swift in Sources */,
 				7A16582B28CA4724004EDE42 /* Extension.swift in Sources */,
+				7A16584528CB3A20004EDE42 /* EpisodeCell.swift in Sources */,
 				7A16582828CA34D5004EDE42 /* GradientImageView.swift in Sources */,
 				7A16583128CA60F6004EDE42 /* TrailerButton.swift in Sources */,
 				7A16583728CA6F8D004EDE42 /* RoundedButton.swift in Sources */,
@@ -383,6 +388,7 @@
 				7A16583228CA60F6004EDE42 /* TrailerButton.swift in Sources */,
 				7A16582F28CA5CAB004EDE42 /* PlayButton.swift in Sources */,
 				7A16582928CA34D5004EDE42 /* GradientImageView.swift in Sources */,
+				7A16584628CB3A20004EDE42 /* EpisodeCell.swift in Sources */,
 				7A16583828CA6F8D004EDE42 /* RoundedButton.swift in Sources */,
 				7A16584328CB1D59004EDE42 /* SeasonGridVM.swift in Sources */,
 				7A16583528CA6A19004EDE42 /* ExpandableView.swift in Sources */,

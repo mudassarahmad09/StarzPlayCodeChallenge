@@ -7,18 +7,18 @@
 
 import Foundation
 
-extension SeasonGridView{
-    final class SeasonGridVM:ObservableObject {
 
-        @Published var seasons = [Season]()
+final class SeasonGridVM:ObservableObject {
 
-        init(){
-            seasons = [Season(name: "SEASON 1", isSelecte: true), Season(name: "SEASON 2", isSelecte: false), Season(name: "SEASON 3", isSelecte: false), Season(name: "SEASON 4", isSelecte: false)]
-        }
+    @Published private(set) var seasons = [Season]()
 
+    init(seasons: [Season]){
+        self.seasons = [Season(name: "SEASON 1", isSelecte: true), Season(name: "SEASON 2", isSelecte: false), Season(name: "SEASON 3", isSelecte: false), Season(name: "SEASON 4", isSelecte: false)]
     }
+
 }
-extension SeasonGridView.SeasonGridVM {
+
+extension SeasonGridVM {
     func update(selecteItem: Season){
         for (index , _) in seasons.enumerated() {
             if seasons[index].id == selecteItem.id {
