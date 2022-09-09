@@ -18,9 +18,9 @@ struct HideNavbarOf<Content: View>: View {
     }
 }
 
-struct NavbarHiddenView_Previews: PreviewProvider {
-
-    static var previews: some View {
-        HideNavbarOf(view: TVDetailView())
-    }
-}
+//struct NavbarHiddenView_Previews: PreviewProvider {
+//
+//    static var previews: some View {
+//        HideNavbarOf(view: TVDetailView())
+//    }
+//}

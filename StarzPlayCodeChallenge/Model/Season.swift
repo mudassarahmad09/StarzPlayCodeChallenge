@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Season: Identifiable, Hashable {
+struct Season: Codable,Identifiable, Hashable {
     var id = UUID()
     let name: String
     var isSelecte: Bool

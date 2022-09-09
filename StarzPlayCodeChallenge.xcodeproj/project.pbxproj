@@ -36,6 +36,22 @@
 		7A16584328CB1D59004EDE42 /* SeasonGridVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16584128CB1D59004EDE42 /* SeasonGridVM.swift */; };
 		7A16584528CB3A20004EDE42 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16584428CB3A20004EDE42 /* EpisodeCell.swift */; };
 		7A16584628CB3A20004EDE42 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16584428CB3A20004EDE42 /* EpisodeCell.swift */; };
+		7A16584B28CB59AA004EDE42 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16584A28CB59AA004EDE42 /* EndPoint.swift */; };
+		7A16584C28CB59AA004EDE42 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16584A28CB59AA004EDE42 /* EndPoint.swift */; };
+		7A16584E28CB67B6004EDE42 /* ClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16584D28CB67B6004EDE42 /* ClientManager.swift */; };
+		7A16584F28CB67B6004EDE42 /* ClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16584D28CB67B6004EDE42 /* ClientManager.swift */; };
+		7A16585128CB6872004EDE42 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16585028CB6872004EDE42 /* RequestType.swift */; };
+		7A16585228CB6872004EDE42 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16585028CB6872004EDE42 /* RequestType.swift */; };
+		7A16585428CB68A2004EDE42 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16585328CB68A2004EDE42 /* RequestError.swift */; };
+		7A16585528CB68A2004EDE42 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16585328CB68A2004EDE42 /* RequestError.swift */; };
+		7A16585828CB6A06004EDE42 /* SeasonEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16585728CB6A06004EDE42 /* SeasonEndPoint.swift */; };
+		7A16585928CB6A06004EDE42 /* SeasonEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16585728CB6A06004EDE42 /* SeasonEndPoint.swift */; };
+		7A16585C28CB6A82004EDE42 /* SeasonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16585B28CB6A82004EDE42 /* SeasonService.swift */; };
+		7A16585D28CB6A82004EDE42 /* SeasonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16585B28CB6A82004EDE42 /* SeasonService.swift */; };
+		7A16585F28CB7938004EDE42 /* TvDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16585E28CB7938004EDE42 /* TvDetailModel.swift */; };
+		7A16586028CB7938004EDE42 /* TvDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16585E28CB7938004EDE42 /* TvDetailModel.swift */; };
+		7A16586228CB7FA6004EDE42 /* GenricModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16586128CB7FA6004EDE42 /* GenricModel.swift */; };
+		7A16586328CB7FA6004EDE42 /* GenricModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16586128CB7FA6004EDE42 /* GenricModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +95,14 @@
 		7A16583E28CB1D3D004EDE42 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		7A16584128CB1D59004EDE42 /* SeasonGridVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonGridVM.swift; sourceTree = "<group>"; };
 		7A16584428CB3A20004EDE42 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
+		7A16584A28CB59AA004EDE42 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		7A16584D28CB67B6004EDE42 /* ClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientManager.swift; sourceTree = "<group>"; };
+		7A16585028CB6872004EDE42 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
+		7A16585328CB68A2004EDE42 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		7A16585728CB6A06004EDE42 /* SeasonEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonEndPoint.swift; sourceTree = "<group>"; };
+		7A16585B28CB6A82004EDE42 /* SeasonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonService.swift; sourceTree = "<group>"; };
+		7A16585E28CB7938004EDE42 /* TvDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvDetailModel.swift; sourceTree = "<group>"; };
+		7A16586128CB7FA6004EDE42 /* GenricModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenricModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +157,7 @@
 				7A16581D28CA225C004EDE42 /* Views */,
 				7A16583D28CB1D1F004EDE42 /* ViewModel */,
 				7A16583C28CB1D0F004EDE42 /* Model */,
+				7A16584828CB5746004EDE42 /* Network */,
 				7A16582428CA26C0004EDE42 /* Utility */,
 				7A16581C28CA20AD004EDE42 /* AppMain */,
 				7A1657F828CA1E9A004EDE42 /* Preview Content */,
@@ -219,6 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				7A16583E28CB1D3D004EDE42 /* Season.swift */,
+				7A16585E28CB7938004EDE42 /* TvDetailModel.swift */,
+				7A16586128CB7FA6004EDE42 /* GenricModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -229,6 +256,43 @@
 				7A16584128CB1D59004EDE42 /* SeasonGridVM.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7A16584828CB5746004EDE42 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7A16584928CB5916004EDE42 /* Base */,
+				7A16585628CB699A004EDE42 /* SeasonEndPoint */,
+				7A16585A28CB6A55004EDE42 /* SeasonServices */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		7A16584928CB5916004EDE42 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7A16584A28CB59AA004EDE42 /* EndPoint.swift */,
+				7A16584D28CB67B6004EDE42 /* ClientManager.swift */,
+				7A16585028CB6872004EDE42 /* RequestType.swift */,
+				7A16585328CB68A2004EDE42 /* RequestError.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		7A16585628CB699A004EDE42 /* SeasonEndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				7A16585728CB6A06004EDE42 /* SeasonEndPoint.swift */,
+			);
+			path = SeasonEndPoint;
+			sourceTree = "<group>";
+		};
+		7A16585A28CB6A55004EDE42 /* SeasonServices */ = {
+			isa = PBXGroup;
+			children = (
+				7A16585B28CB6A82004EDE42 /* SeasonService.swift */,
+			);
+			path = SeasonServices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,11 +431,19 @@
 				7A16583428CA6A19004EDE42 /* ExpandableView.swift in Sources */,
 				7A16582B28CA4724004EDE42 /* Extension.swift in Sources */,
 				7A16584528CB3A20004EDE42 /* EpisodeCell.swift in Sources */,
+				7A16585F28CB7938004EDE42 /* TvDetailModel.swift in Sources */,
 				7A16582828CA34D5004EDE42 /* GradientImageView.swift in Sources */,
 				7A16583128CA60F6004EDE42 /* TrailerButton.swift in Sources */,
 				7A16583728CA6F8D004EDE42 /* RoundedButton.swift in Sources */,
+				7A16585828CB6A06004EDE42 /* SeasonEndPoint.swift in Sources */,
+				7A16584E28CB67B6004EDE42 /* ClientManager.swift in Sources */,
+				7A16585128CB6872004EDE42 /* RequestType.swift in Sources */,
+				7A16586228CB7FA6004EDE42 /* GenricModel.swift in Sources */,
 				7A16583F28CB1D3D004EDE42 /* Season.swift in Sources */,
+				7A16584B28CB59AA004EDE42 /* EndPoint.swift in Sources */,
+				7A16585C28CB6A82004EDE42 /* SeasonService.swift in Sources */,
 				7A16584228CB1D59004EDE42 /* SeasonGridVM.swift in Sources */,
+				7A16585428CB68A2004EDE42 /* RequestError.swift in Sources */,
 				7A1657F328CA1E97004EDE42 /* StarzPlayCodeChallengeApp.swift in Sources */,
 				7A16582E28CA5CAB004EDE42 /* PlayButton.swift in Sources */,
 				7A16582628CA26F2004EDE42 /* Constant.swift in Sources */,
@@ -383,16 +455,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A16585528CB68A2004EDE42 /* RequestError.swift in Sources */,
 				7A16584028CB1D3D004EDE42 /* Season.swift in Sources */,
 				7A16582C28CA4724004EDE42 /* Extension.swift in Sources */,
 				7A16583228CA60F6004EDE42 /* TrailerButton.swift in Sources */,
 				7A16582F28CA5CAB004EDE42 /* PlayButton.swift in Sources */,
+				7A16584C28CB59AA004EDE42 /* EndPoint.swift in Sources */,
 				7A16582928CA34D5004EDE42 /* GradientImageView.swift in Sources */,
+				7A16584F28CB67B6004EDE42 /* ClientManager.swift in Sources */,
+				7A16585D28CB6A82004EDE42 /* SeasonService.swift in Sources */,
+				7A16586328CB7FA6004EDE42 /* GenricModel.swift in Sources */,
 				7A16584628CB3A20004EDE42 /* EpisodeCell.swift in Sources */,
+				7A16585928CB6A06004EDE42 /* SeasonEndPoint.swift in Sources */,
+				7A16585228CB6872004EDE42 /* RequestType.swift in Sources */,
 				7A16583828CA6F8D004EDE42 /* RoundedButton.swift in Sources */,
 				7A16584328CB1D59004EDE42 /* SeasonGridVM.swift in Sources */,
 				7A16583528CA6A19004EDE42 /* ExpandableView.swift in Sources */,
 				7A16580428CA1E9A004EDE42 /* StarzPlayCodeChallengeTests.swift in Sources */,
+				7A16586028CB7938004EDE42 /* TvDetailModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,6 +629,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -560,7 +641,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -578,6 +659,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -589,7 +671,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

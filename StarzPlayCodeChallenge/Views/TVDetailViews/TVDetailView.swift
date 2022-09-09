@@ -9,6 +9,12 @@ import SwiftUI
 
 struct TVDetailView: View {
 
+    let seaasonService: SeasonService
+
+    init(seaasonService: SeasonService){
+        self.seaasonService = seaasonService
+    }
+
     var body: some View {
         loadView()
 
@@ -34,6 +40,10 @@ extension TVDetailView {
                 episodeList()
 
             }
+        }
+        .task {
+           let result = await seaasonService.getTVShowDetail(from: 76479)
+            print(result)
         }
         .background(.black)
     }
@@ -100,9 +110,9 @@ extension TVDetailView {
         }.padding([.trailing, .leading])
     }
 }
-struct TVDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        TVDetailView()
-        TVDetailView().preferredColorScheme(.dark)
-    }
-}
+//struct TVDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        TVDetailView()
+//        TVDetailView().preferredColorScheme(.dark)
+//    }
+//}
