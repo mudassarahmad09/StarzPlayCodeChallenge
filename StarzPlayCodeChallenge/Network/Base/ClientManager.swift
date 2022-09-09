@@ -56,7 +56,8 @@ extension NetworkManagerService {
                 }
 
             case 401:
-                return .failure(.unauthorized)
+                let error = try parseJSON(from: data)
+                return .failure(.unauthorized(reason: error.statusMessage))
 
             default:
                 return .failure(.unexpectedStatusCode)
@@ -66,5 +67,14 @@ extension NetworkManagerService {
         }
 
     }
+    private func parseJSON(from data: Data) throws -> GenricModel{
+        do {
+            return try JSONDecoder().decode(GenricModel.self, from: data)
+            /// force logout here if neened
+        } catch let error {
+            print(error)
 
+        }
+        return GenricModel()
+    }
 }

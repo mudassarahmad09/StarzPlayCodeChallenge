@@ -11,7 +11,7 @@ enum RequestError: Error {
     case decode
     case invalidURL
     case noResponse
-    case unauthorized
+    case unauthorized(reason:String?)
     case sessionExpried
     case unexpectedStatusCode
     case unknown
@@ -20,8 +20,8 @@ enum RequestError: Error {
         switch self {
         case .decode:
             return "Decode error"
-        case .unauthorized:
-            return "Session expired"
+        case .unauthorized (let reason):
+            return reason ?? "Session expired"
         default:
             return "Unknown error"
         }

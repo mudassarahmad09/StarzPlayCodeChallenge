@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Unified.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>buildNumber</key>
+			<string>1</string>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>045C8275A478401BF00065565C98603D3F03BF46</string>
+				<key>dateExpires</key>
+				<string>14/02/2023</string>
+				<key>type</key>
+				<string>Apple Development</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>BS98TAD573.com.mlbranch.Unified</string>
+				<key>com.apple.developer.applesignin</key>
+				<array>
+					<string>Default</string>
+				</array>
+				<key>com.apple.developer.team-identifier</key>
+				<string>BS98TAD573</string>
+				<key>get-task-allow</key>
+				<true/>
+			</dict>
+			<key>name</key>
+			<string>Unified.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>197547c5-d201-4602-9daf-c56575083128</string>
+				<key>dateExpires</key>
+				<string>09/09/2023</string>
+				<key>name</key>
+				<string>iOS Team Provisioning Profile: com.mlbranch.Unified</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>BS98TAD573</string>
+				<key>name</key>
+				<string>LKLK s.r.o.</string>
+			</dict>
+			<key>versionNumber</key>
+			<string>1.0</string>
+		</dict>
+	</array>
+</dict>
+</plist>
