@@ -13,7 +13,7 @@ struct RoundedButton: View {
     let textName: String
 
     var body: some View {
-        VStack{
+        VStack {
             Button(action: {
                 print("Round Action")
             }) {
@@ -34,11 +34,11 @@ struct RoundedButton: View {
 
 struct RoundedButton_Previews: PreviewProvider {
     static var previews: some View {
-        RoundedButton(iconName: "plus",textName: "Watch List")
+        RoundedButton(iconName: "plus", textName: "Watch List")
             .previewLayout(PreviewLayout.sizeThatFits)
             .preferredColorScheme(.dark)
 
-        RoundedButton(iconName: "plus",textName: "Watch List")
+        RoundedButton(iconName: "plus", textName: "Watch List")
             .previewLayout(PreviewLayout.sizeThatFits)
     }
 }

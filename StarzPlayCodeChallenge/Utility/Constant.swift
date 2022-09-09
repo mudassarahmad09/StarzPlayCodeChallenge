@@ -12,7 +12,6 @@ enum CommonImage: String {
     case episodePH = "100-64"
 }
 
-
 enum CommonColor: String {
     case main = "MainColor"
     case seconday = "SecondaryColor"

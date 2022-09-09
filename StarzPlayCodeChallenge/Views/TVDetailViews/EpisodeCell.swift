@@ -9,11 +9,9 @@ import SwiftUI
 
 struct EpisodeCell: View {
 
-
-
     var body: some View {
-        HStack{
-            HStack(spacing: 10){
+        HStack {
+            HStack(spacing: 10) {
                 Image(systemName: "chevron.forward")
                     .foregroundColor(.gray)
                     .font(Font.system(size: 22, weight: .medium))
@@ -23,7 +21,6 @@ struct EpisodeCell: View {
                     .scaledToFill()
                     .frame(width: 120, height: 70)
                     .foregroundColor(.white)
-
 
                 Text("Tie Goes To The Runner")
                     .foregroundColor(.white)
@@ -35,10 +32,10 @@ struct EpisodeCell: View {
             Image(systemName: "square.and.arrow.down.fill")
                 .foregroundColor(.gray)
                 .font(Font.system(size: 30, weight: .medium))
-                .padding(.trailing ,20)
+                .padding(.trailing, 20)
 
         }
-        .padding([.top, .bottom],30)
+        .padding([.top, .bottom], 30)
         .padding([.leading, .trailing])
         .background(Color(CommonColor.seconday.rawValue))
     }

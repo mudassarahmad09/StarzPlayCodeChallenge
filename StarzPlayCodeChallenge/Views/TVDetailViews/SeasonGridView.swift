@@ -12,7 +12,7 @@ struct SeasonGridView: View {
     @StateObject private var viewModel: SeasonGridVM
     private var selectedSeason: (_ season: Season) -> Void
 
-    init(viewModel: SeasonGridVM, selectedSeason: @escaping (_ season: Season) -> Void){
+    init(viewModel: SeasonGridVM, selectedSeason: @escaping (_ season: Season) -> Void) {
         self._viewModel = StateObject(wrappedValue: viewModel)
         self.selectedSeason = selectedSeason
     }
@@ -22,14 +22,13 @@ struct SeasonGridView: View {
             ScrollView(.horizontal, showsIndicators: false, content: {
                 HStack {
                     ForEach(viewModel.seasons, id: \.self) { season in
-                        VStack{
-                            HStack{
+                        VStack {
+                            HStack {
 
                                 Button(action: {
-                                    withAnimation{
+                                    withAnimation {
                                         viewModel.update(selecteItem: season)
                                     }
-
 
                                     selectedSeason(viewModel.getUpdatedValue() ?? season)
                                 }, label: {
@@ -51,15 +50,15 @@ struct SeasonGridView: View {
                                     .overlay(.white)
                             }
 
-                        }.frame(height: 50,alignment:.top)
+                        }.frame(height: 50, alignment: .top)
                     }
                 }
 
             })
 
         }
-        .padding([.leading ,.trailing])
-        .padding(.top , 20)
+        .padding([.leading, .trailing])
+        .padding(.top, 20)
         .frame( height: 50)
         .background(.black)
 
@@ -67,22 +66,20 @@ struct SeasonGridView: View {
 
 }
 
-
 struct SeasonGridView_Previews: PreviewProvider {
     static var previews: some View {
 
       let seasons = [Season(name: "SEASON 1", isSelecte: true), Season(name: "SEASON 2", isSelecte: false), Season(name: "SEASON 3", isSelecte: false), Season(name: "SEASON 4", isSelecte: false)]
 
-        SeasonGridView(viewModel: SeasonGridVM(seasons: seasons), selectedSeason:{_ in
+        SeasonGridView(viewModel: SeasonGridVM(seasons: seasons), selectedSeason: {_ in
 
-        } )
+        })
         .previewLayout(PreviewLayout.sizeThatFits)
-        SeasonGridView(viewModel: SeasonGridVM(seasons: seasons), selectedSeason:{_ in
+        SeasonGridView(viewModel: SeasonGridVM(seasons: seasons), selectedSeason: {_ in
 
-        } )
+        })
         .preferredColorScheme(.dark)
         .previewLayout(PreviewLayout.sizeThatFits)
 
     }
 }
-

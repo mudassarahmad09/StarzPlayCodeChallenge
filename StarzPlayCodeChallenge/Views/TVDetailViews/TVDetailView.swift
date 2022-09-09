@@ -9,56 +9,48 @@ import SwiftUI
 
 struct TVDetailView: View {
 
-
     var body: some View {
         loadView()
 
     }
 }
-//MARK: -  Load View
+// MARK: - Load View
 extension TVDetailView {
     func loadView() -> some View {
-        ScrollView{
-            VStack(spacing: 10){
-                ZStack(alignment: .bottom){
+        ScrollView {
+            VStack(spacing: 10) {
+                ZStack(alignment: .bottom) {
                     GradientImageView(image: CommonImage.placeHolder.rawValue)
                     bannerImageView()
                 }
 
-
                 descripcationView()
                 reactionView()
-
 
                 SeasonGridView(viewModel: SeasonGridVM(seasons: []), selectedSeason: { season in
                     print(season)
                 })
 
                 episodeList()
-                
-
-              //  Spacer()
 
             }
-
         }
         .background(.black)
     }
 }
-//MARK: -  Banner View Funcality
+// MARK: - Banner View Funcality
 extension TVDetailView {
     func bannerImageView() -> some View {
-        VStack(alignment:.leading, spacing: 15){
+        VStack(alignment: .leading, spacing: 15) {
 
             nameAndTypeView()
             playableButtonView()
 
-
         }
-        .padding([.trailing,.leading])
+        .padding([.trailing, .leading])
     }
-    func nameAndTypeView() -> some View{
-        VStack(alignment:.leading, spacing: 8){
+    func nameAndTypeView() -> some View {
+        VStack(alignment: .leading, spacing: 8) {
             Text("Billons")
                 .font(.largeTitle)
                 .foregroundColor(.white)
@@ -69,8 +61,8 @@ extension TVDetailView {
     }
 
     func playableButtonView() -> some View {
-        HStack(spacing: 8){
-            
+        HStack(spacing: 8) {
+
             PlayButton(action: {
 
             })
@@ -78,34 +70,34 @@ extension TVDetailView {
             Spacer()
 
             TrailerButton(action: {
-                
+
             })
 
         }
     }
     func descripcationView() -> some View {
-        VStack{
+        VStack {
             ExpandableView("An LA vampire hunter has a week to come up with the cash to pay for his kid's tuition and braces. Trying to make a living these days just might kill him.")
 
         }
     }
 
-    func episodeList() -> some View{
+    func episodeList() -> some View {
         ForEach((0...6), id: \.self) { _ in
             EpisodeCell()
         }
 
     }
 }
-//MARK: - Reaction View
+// MARK: - Reaction View
 extension TVDetailView {
     func reactionView() -> some View {
-        HStack(alignment: .top, spacing: 12){
+        HStack(alignment: .top, spacing: 12) {
             RoundedButton(iconName: "plus", textName: "Watch List")
             RoundedButton(iconName: "hand.thumbsup", textName: "I like it")
-            RoundedButton(iconName: "hand.thumbsdown",textName: "I don't like it")
+            RoundedButton(iconName: "hand.thumbsdown", textName: "I don't like it")
             Spacer()
-        }.padding([.trailing , .leading])
+        }.padding([.trailing, .leading])
     }
 }
 struct TVDetailView_Previews: PreviewProvider {

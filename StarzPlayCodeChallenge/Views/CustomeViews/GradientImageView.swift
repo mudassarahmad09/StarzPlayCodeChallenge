@@ -17,10 +17,10 @@ struct GradientImageView: View {
         endPoint: .top
     )
 
-    let image:String
+    let image: String
 
     var body: some View {
-        
+
         Image(image)
             .resizable()
             .aspectRatio(contentMode: .fit)
@@ -38,7 +38,6 @@ struct GradientImageView: View {
                 }
             )
     }
-
 
 }
 

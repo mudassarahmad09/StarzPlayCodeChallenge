@@ -14,7 +14,7 @@ struct TrailerButton: View {
         Button(action: {
             action()
         }, label: {
-            HStack(alignment: .center,spacing: 15){
+            HStack(alignment: .center, spacing: 15) {
 
                 Image(systemName: "play.rectangle")
                     .foregroundColor(.white)
@@ -22,7 +22,6 @@ struct TrailerButton: View {
                 Text("Trailer")
                     .foregroundColor(.white)
                     .font(.system(size: 23, weight: .semibold, design: .default))
-
 
             }   .frame(height: 56)
                 .frame(maxWidth: .infinity)
@@ -37,7 +36,7 @@ struct TrailerButton: View {
 struct TrailerButton_Previews: PreviewProvider {
     static var previews: some View {
         TrailerButton(action: {
-            
+
         })
         .previewLayout(PreviewLayout.sizeThatFits)
     }

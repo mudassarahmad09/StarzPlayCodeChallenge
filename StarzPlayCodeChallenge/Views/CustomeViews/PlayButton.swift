@@ -15,7 +15,7 @@ struct PlayButton: View {
         Button(action: {
             self.action()
         }, label: {
-            HStack(alignment: .center,spacing: 15){
+            HStack(alignment: .center, spacing: 15) {
 
                 Image(systemName: "play.fill")
                     .foregroundColor(.white)
