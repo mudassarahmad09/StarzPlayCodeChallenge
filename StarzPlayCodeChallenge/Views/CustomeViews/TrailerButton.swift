@@ -14,13 +14,12 @@ struct TrailerButton: View {
         Button(action: {
             action()
         }, label: {
-            HStack(spacing: 0){
+            HStack(alignment: .center,spacing: 15){
 
                 Image(systemName: "play.rectangle")
                     .foregroundColor(.white)
 
                 Text("Trailer")
-                    .padding()
                     .foregroundColor(.white)
                     .font(.system(size: 23, weight: .semibold, design: .default))
 

@@ -15,13 +15,13 @@ struct PlayButton: View {
         Button(action: {
             self.action()
         }, label: {
-            HStack(spacing: 0){
+            HStack(alignment: .center,spacing: 15){
 
                 Image(systemName: "play.fill")
                     .foregroundColor(.white)
 
                 Text("Play")
-                    .padding()
+
                     .foregroundColor(.white)
                     .font(.system(size: 23, weight: .semibold, design: .default))
 

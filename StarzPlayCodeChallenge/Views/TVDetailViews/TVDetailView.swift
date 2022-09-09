@@ -49,10 +49,10 @@ extension TVDetailView {
     func nameAndTypeView() -> some View{
         VStack(alignment:.leading, spacing: 8){
             Text("Billons")
-                .font(.system(size: 35, weight: .semibold, design: .default))
+                .font(.largeTitle)
                 .foregroundColor(.white)
             Text("2017 | 3 Seasons | R")
-                .font(.system(size: 20, weight: .medium, design: .default))
+                .font(.system(size: 18, weight: .semibold, design: .default))
                 .foregroundColor(.gray)
         }
     }
@@ -82,24 +82,11 @@ extension TVDetailView {
 //MARK: - Reaction View
 extension TVDetailView {
     func reactionView() -> some View {
-        HStack(alignment: .top, spacing: 15){
-            VStack{
-                RoundedButton(iconName: "plus")
-                Text("Watch List")
-                    .foregroundColor(.gray)
-            }
-            VStack{
-                RoundedButton(iconName: "hand.thumbsup")
-                Text("I like it")
-                    .foregroundColor(.gray)
-            }
-            VStack{
-                RoundedButton(iconName: "hand.thumbsdown")
-                Text("I don't like it")
-                    .foregroundColor(.gray)
-            }
+        HStack(alignment: .top, spacing: 12){
+            RoundedButton(iconName: "plus", textName: "Watch List")
+            RoundedButton(iconName: "hand.thumbsup", textName: "I like it")
+            RoundedButton(iconName: "hand.thumbsdown",textName: "I don't like it")
             Spacer()
-
         }.padding([.trailing , .leading])
     }
 }
