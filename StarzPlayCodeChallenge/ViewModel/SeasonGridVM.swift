@@ -12,7 +12,8 @@ final class SeasonGridVM: ObservableObject {
     @Published private(set) var seasons = [Season]()
 
     init(seasons: [Season]) {
-        self.seasons = [Season(name: "SEASON 1", isSelecte: true), Season(name: "SEASON 2", isSelecte: false), Season(name: "SEASON 3", isSelecte: false), Season(name: "SEASON 4", isSelecte: false)]
+        self.seasons = seasons
+        //[Season(name: "SEASON 1", isSelecte: true), Season(name: "SEASON 2", isSelecte: false), Season(name: "SEASON 3", isSelecte: false), Season(name: "SEASON 4", isSelecte: false)]
     }
 
 }

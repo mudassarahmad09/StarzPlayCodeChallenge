@@ -14,8 +14,8 @@ final class TVDetailVM: ObservableObject {
         self.seaasonService = seaasonService
     }
 
+    @Published private(set) var tvDetail: TvDetailModel?
     @Published var showError = false
-    @Published var tvDetail: TvDetailModel?
     var errorMessage = ""
 
 }
@@ -34,11 +34,19 @@ extension TVDetailVM {
         switch result {
         case let .success(tvDetail):
             self.tvDetail = tvDetail
+            self.selecteFirstSeason()
         case let .failure(error):
             
             self.errorMessage = error.customMessage
             self.showError = true
 
+        }
+    }
+}
+extension TVDetailVM {
+    func selecteFirstSeason(){
+        if let fIndex = tvDetail?.seasons.firstIndex(where: {$0.isSelecte == false}){
+            tvDetail?.seasons[fIndex].isSelecte = true
         }
     }
 }

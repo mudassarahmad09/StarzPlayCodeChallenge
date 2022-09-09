@@ -10,9 +10,11 @@ import SwiftUI
 struct TVDetailView: View {
 
     @StateObject private var viewModel: TVDetailVM
+    private var viewModelForSeason: ([Season]) -> SeasonGridVM
 
-    init(viewModel: TVDetailVM){
+    init(viewModel: TVDetailVM,viewModelForSeason: @escaping ([Season]) -> SeasonGridVM){
         _viewModel = StateObject(wrappedValue: viewModel)
+        self.viewModelForSeason = viewModelForSeason
     }
 
     var body: some View {
@@ -36,7 +38,7 @@ extension TVDetailView {
                 descripcationView()
                 reactionView()
 
-                SeasonGridView(viewModel: SeasonGridVM(seasons: []), selectedSeason: { season in
+                SeasonGridView(viewModel: viewModelForSeason(viewModel.tvDetail?.seasons ?? []), selectedSeason: { season in
                     print(season)
                 })
 
