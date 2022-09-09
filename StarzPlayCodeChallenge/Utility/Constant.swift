@@ -22,5 +22,6 @@ enum CommonColor: String {
 enum AppUrl{
     static var SCHEME = "https"
     static var BASEURL = "api.themoviedb.org"
+    static var IMAGEURL = "http://image.tmdb.org/t/p/w500/"
     static var APIKey = "3d0cda4466f269e793e9283f6ce0b75e"
 }

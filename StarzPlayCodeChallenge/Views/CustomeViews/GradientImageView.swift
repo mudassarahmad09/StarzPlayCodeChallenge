@@ -8,7 +8,7 @@
 import SwiftUI
 struct GradientImageView: View {
 
-    let gradient = LinearGradient(
+    private let gradient = LinearGradient(
         gradient: Gradient(stops: [
             .init(color: .black, location: 0),
             .init(color: .clear, location: 0.4)
@@ -20,14 +20,21 @@ struct GradientImageView: View {
     let image: String
 
     var body: some View {
+        AsyncImage(url: URL(string: AppUrl.IMAGEURL + image)) { image in
+            gradientView(image: image)
+        } placeholder: {
+            gradientView(image: Image(CommonImage.placeHolder.rawValue)  )
+        }
+    }
 
-        Image(image)
+    func gradientView(image: Image) -> some View{
+        image
             .resizable()
-            .aspectRatio(contentMode: .fit)
+            .aspectRatio(CGSize(width: 500, height: 750),contentMode: .fit)
             .edgesIgnoringSafeArea(.top)
             .overlay(
                 ZStack(alignment: .bottom) {
-                    Image(image)
+                    image
                         .resizable()
                         .blur(radius: 20) /// blur the image
                         .padding(-20) /// expand the blur a bit to cover the edges
@@ -38,14 +45,13 @@ struct GradientImageView: View {
                 }
             )
     }
-
 }
 
 struct GradientImageView_Previews: PreviewProvider {
     static var previews: some View {
-        GradientImageView(image: "")
+        GradientImageView(image: "stTEycfG9928HYGEISBFaG1ngjM.jpg")
             .previewLayout(PreviewLayout.sizeThatFits)
-        GradientImageView(image: "")
+        GradientImageView(image: "stTEycfG9928HYGEISBFaG1ngjM.jpg")
             .preferredColorScheme(.dark)
             .previewLayout(PreviewLayout.sizeThatFits)
     }

@@ -11,7 +11,9 @@ struct ContentView: View {
     var body: some View {
 
         NavigationView {
-            HideNavbarOf(view: TVDetailView(seaasonService: SeasonServiceAdpter()))
+            let adpter = SeasonServiceAdpter()
+            let viewModel = TVDetailVM(seaasonService: adpter)
+            HideNavbarOf(view: TVDetailView(viewModel: viewModel))
         }
 
     }

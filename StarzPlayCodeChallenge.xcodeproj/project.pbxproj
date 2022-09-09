@@ -52,6 +52,7 @@
 		7A16586028CB7938004EDE42 /* TvDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16585E28CB7938004EDE42 /* TvDetailModel.swift */; };
 		7A16586228CB7FA6004EDE42 /* GenricModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16586128CB7FA6004EDE42 /* GenricModel.swift */; };
 		7A16586328CB7FA6004EDE42 /* GenricModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16586128CB7FA6004EDE42 /* GenricModel.swift */; };
+		7A551FD828CB8F5700B8F9BD /* TVDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A551FD728CB8F5700B8F9BD /* TVDetailVM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,8 @@
 		7A16585B28CB6A82004EDE42 /* SeasonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonService.swift; sourceTree = "<group>"; };
 		7A16585E28CB7938004EDE42 /* TvDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvDetailModel.swift; sourceTree = "<group>"; };
 		7A16586128CB7FA6004EDE42 /* GenricModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenricModel.swift; sourceTree = "<group>"; };
+		7A551FD728CB8F5700B8F9BD /* TVDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVDetailVM.swift; sourceTree = "<group>"; };
+		7A551FDB28CBB4F800B8F9BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +157,7 @@
 		7A1657F128CA1E96004EDE42 /* StarzPlayCodeChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				7A551FDB28CBB4F800B8F9BD /* Info.plist */,
 				7A16581D28CA225C004EDE42 /* Views */,
 				7A16583D28CB1D1F004EDE42 /* ViewModel */,
 				7A16583C28CB1D0F004EDE42 /* Model */,
@@ -254,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				7A16584128CB1D59004EDE42 /* SeasonGridVM.swift */,
+				7A551FD728CB8F5700B8F9BD /* TVDetailVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -444,6 +449,7 @@
 				7A16585C28CB6A82004EDE42 /* SeasonService.swift in Sources */,
 				7A16584228CB1D59004EDE42 /* SeasonGridVM.swift in Sources */,
 				7A16585428CB68A2004EDE42 /* RequestError.swift in Sources */,
+				7A551FD828CB8F5700B8F9BD /* TVDetailVM.swift in Sources */,
 				7A1657F328CA1E97004EDE42 /* StarzPlayCodeChallengeApp.swift in Sources */,
 				7A16582E28CA5CAB004EDE42 /* PlayButton.swift in Sources */,
 				7A16582628CA26F2004EDE42 /* Constant.swift in Sources */,
@@ -626,6 +632,7 @@
 				DEVELOPMENT_TEAM = 5SXPZ2ZD2X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StarzPlayCodeChallenge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -656,6 +663,7 @@
 				DEVELOPMENT_TEAM = 5SXPZ2ZD2X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StarzPlayCodeChallenge/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -9,14 +9,17 @@ import SwiftUI
 
 struct TVDetailView: View {
 
-    let seaasonService: SeasonService
+    @StateObject private var viewModel: TVDetailVM
 
-    init(seaasonService: SeasonService){
-        self.seaasonService = seaasonService
+    init(viewModel: TVDetailVM){
+        _viewModel = StateObject(wrappedValue: viewModel)
     }
 
     var body: some View {
         loadView()
+            .alert(isPresented: $viewModel.showError, content: {
+                Alert(title: Text(viewModel.errorMessage))
+            })
 
     }
 }
@@ -26,7 +29,7 @@ extension TVDetailView {
         ScrollView {
             VStack(spacing: 10) {
                 ZStack(alignment: .bottom) {
-                    GradientImageView(image: CommonImage.placeHolder.rawValue)
+                    GradientImageView(image: viewModel.tvDetail?.posterPath ?? "")
                     bannerImageView()
                 }
 
@@ -42,8 +45,7 @@ extension TVDetailView {
             }
         }
         .task {
-           let result = await seaasonService.getTVShowDetail(from: 76479)
-            print(result)
+            await viewModel.getTVDetail()
         }
         .background(.black)
     }
@@ -61,10 +63,10 @@ extension TVDetailView {
     }
     func nameAndTypeView() -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Billons")
+            Text(viewModel.tvDetail?.originalName ?? "")
                 .font(.largeTitle)
                 .foregroundColor(.white)
-            Text("2017 | 3 Seasons | R")
+            Text("\(viewModel.tvDetail?.firstAirDate ?? "") | \(viewModel.tvDetail?.numberOfSeasons ?? 0) Seasons | R")
                 .font(.system(size: 18, weight: .semibold, design: .default))
                 .foregroundColor(.gray)
         }
@@ -87,7 +89,7 @@ extension TVDetailView {
     }
     func descripcationView() -> some View {
         VStack {
-            ExpandableView("An LA vampire hunter has a week to come up with the cash to pay for his kid's tuition and braces. Trying to make a living these days just might kill him.")
+            ExpandableView(viewModel.tvDetail?.overview ?? "")
 
         }
     }
