@@ -135,7 +135,7 @@ extension TVDetailView {
             Spacer()
 
             TrailerButton(action: {
-
+                goToPlayer.toggle()
             })
 
         }

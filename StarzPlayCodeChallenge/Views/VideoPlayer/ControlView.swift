@@ -95,6 +95,7 @@ struct Controls: View {
             } label: {
                 Image(systemName: "x.circle.fill")
                     .resizable()
+                    .foregroundColor(.white)
                     .frame(width: 25, height: 25)
             }
             Spacer()
