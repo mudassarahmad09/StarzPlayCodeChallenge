@@ -68,20 +68,20 @@ struct SeasonGridView: View {
 
 }
 
-//struct SeasonGridView_Previews: PreviewProvider {
-//    static var previews: some View {
-//
-//      let seasons = [Season(name: "SEASON 1", isSelecte: true), Season(name: "SEASON 2", isSelecte: false), Season(name: "SEASON 3", isSelecte: false), Season(name: "SEASON 4", isSelecte: false)]
-//
-//        SeasonGridView(viewModel: SeasonGridVM(seasons: seasons), selectedSeason: {_ in
-//
-//        })
-//        .previewLayout(PreviewLayout.sizeThatFits)
-//        SeasonGridView(viewModel: SeasonGridVM(seasons: seasons), selectedSeason: {_ in
-//
-//        })
-//        .preferredColorScheme(.dark)
-//        .previewLayout(PreviewLayout.sizeThatFits)
-//
-//    }
-//}
+struct SeasonGridView_Previews: PreviewProvider {
+    static var previews: some View {
+
+        let seasons = [Season(name: "SEASON 1", isSelected: true), Season(name: "SEASON 2", isSelected: false), Season(name: "SEASON 3", isSelected: false), Season(name: "SEASON 4", isSelected: false)]
+
+        SeasonGridView(viewModel: SeasonGridVM(seasons: seasons), selectedSeason: {_ in
+
+        })
+        .previewLayout(PreviewLayout.sizeThatFits)
+        SeasonGridView(viewModel: SeasonGridVM(seasons: seasons), selectedSeason: {_ in
+
+        })
+        .preferredColorScheme(.dark)
+        .previewLayout(PreviewLayout.sizeThatFits)
+
+    }
+}

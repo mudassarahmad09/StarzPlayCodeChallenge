@@ -9,16 +9,16 @@ import Foundation
 
 struct Season: Codable,Identifiable, Hashable {
 
-    let airDate: String?
-    let episodeCount: Int?
-    let seasonId: Int
-    let name: String
-    let overview: String?
-    let posterPath: String?
-    let seasonNumber: Int?
-    let episodes: [Episode]?
+    var airDate: String?
+    var episodeCount: Int?
+    var seasonId: Int
+    var name: String
+    var overview: String?
+    var posterPath: String?
+    var seasonNumber: Int?
+    var episodes: [Episode]?
     var isSelecte: Bool = false
-    let id = UUID()
+    var id = UUID()
 
     enum CodingKeys: String, CodingKey {
         case airDate = "air_date"
@@ -29,5 +29,12 @@ struct Season: Codable,Identifiable, Hashable {
         case posterPath = "poster_path"
         case seasonNumber = "season_number"
         case episodes = "episodes"
+    }
+}
+extension Season {
+    init(name: String, isSelected: Bool, seasonId : Int = 0)  {
+        self.name = name
+        self.isSelecte = isSelected
+        self.seasonId = seasonId
     }
 }

@@ -32,7 +32,13 @@ extension TVDetailView {
             VStack(spacing: 10) {
                 ZStack(alignment: .bottom) {
                     GradientImageView(image: viewModel.tvDetail?.posterPath ?? "")
-                    bannerImageView()
+
+                    VStack{
+                        topButtons()
+                        Spacer()
+                        bannerImageView()
+
+                    }
                 }
 
                 descripcationView()
@@ -50,6 +56,7 @@ extension TVDetailView {
 
             }
         }
+        .edgesIgnoringSafeArea(.top)
         .task {
             await viewModel.getTVDetail()
         }
@@ -58,6 +65,26 @@ extension TVDetailView {
 }
 // MARK: - Banner View Funcality
 extension TVDetailView {
+    func topButtons() -> some View {
+        HStack{
+            Image(systemName: "arrow.backward")
+                .foregroundColor(.white)
+                .font(Font.system(size: 30, weight: .medium))
+            Spacer()
+            HStack(spacing: 20){
+                Image(systemName: "rectangle")
+                    .foregroundColor(.white)
+                    .font(Font.system(size: 28, weight: .regular))
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(.white)
+                    .font(Font.system(size: 28, weight: .regular))
+                
+            }
+            
+        }.padding(.top , 50)
+            .padding([.trailing, .leading])
+        
+    }
     func bannerImageView() -> some View {
         VStack(alignment: .leading, spacing: 15) {
 
@@ -72,7 +99,7 @@ extension TVDetailView {
             Text(viewModel.tvDetail?.originalName ?? "")
                 .font(.largeTitle)
                 .foregroundColor(.white)
-            Text("\(viewModel.tvDetail?.firstAirDate ?? "") | \(viewModel.tvDetail?.numberOfSeasons ?? 0) Seasons | R")
+            Text("\(viewModel.tvDetail?.startYear ?? "") | \(viewModel.tvDetail?.numberOfSeasons ?? 0) Seasons | R")
                 .font(.system(size: 18, weight: .semibold, design: .default))
                 .foregroundColor(.gray)
         }
@@ -118,9 +145,31 @@ extension TVDetailView {
         }.padding([.trailing, .leading])
     }
 }
-//struct TVDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        TVDetailView()
-//        TVDetailView().preferredColorScheme(.dark)
-//    }
-//}
+
+struct TVDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+
+
+        let viewModel = TVDetailVM(seaasonService: MockMovie())
+
+        TVDetailView(viewModel: viewModel, viewModelForSeason: {seasons in
+            SeasonGridVM(seasons: seasons)
+        })
+        TVDetailView(viewModel: viewModel, viewModelForSeason: {seasons in
+            SeasonGridVM(seasons: seasons)
+        }).preferredColorScheme(.dark)
+
+    }
+
+    struct MockMovie:SeasonService{
+        let season = Season(airDate: "", episodeCount: 1, seasonId: 2, name: "", overview: "", posterPath: "", seasonNumber: 3, episodes: [Episode(name: "", stillPath: "")], isSelecte: true)
+        func getTVShowDetail(from id: Int) async -> Result<TvDetailModel, RequestError> {
+            return .success(TvDetailModel(adult: true, firstAirDate: "2019", id: 1, numberOfSeasons: 1, originalName: "The Boys", overview: "Good one", posterPath: "", seasons: [season]))
+        }
+
+        func getSeasonDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError> {
+            return .success(season)
+        }
+
+    }
+}

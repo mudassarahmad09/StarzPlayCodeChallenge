@@ -74,6 +74,10 @@ struct TvDetailModel: Codable {
 //        case voteAverage = "vote_average"
 //        case voteCount = "vote_count"
     }
+
+    var startYear: String?{
+        firstAirDate.toDate()?.toString(dateFormat: "yyyy") ?? ""
+    }
 }
 
 //// MARK: - ShowDetailCreatedBy

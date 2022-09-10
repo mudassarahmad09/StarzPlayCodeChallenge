@@ -19,10 +19,15 @@ struct EpisodeCell: View {
                     .foregroundColor(.gray)
                     .font(Font.system(size: 22, weight: .medium))
 
-                AsyncImage(url: URL(string: AppUrl.IMAGEURL + (episode.stillPath ?? ""))) { image in
-                    episodeImagePerView(image: image)
-                } placeholder: {
-                    episodeImagePerView(image: Image(CommonImage.episodePH.rawValue)  )
+                ZStack{
+                    AsyncImage(url: URL(string: AppUrl.IMAGEURL + (episode.stillPath ?? ""))) { image in
+                        episodeImagePerView(image: image)
+                    } placeholder: {
+                        episodeImagePerView(image: Image(CommonImage.episodePH.rawValue)  )
+                    }
+
+                    Image(systemName: "play.fill")
+                        .foregroundColor(.white)
                 }
 
 
@@ -47,7 +52,7 @@ struct EpisodeCell: View {
     func episodeImagePerView(image:Image) -> some View {
         image
             .resizable()
-            .scaledToFill()
+            .aspectRatio(CGSize(width: 500, height: 281),contentMode: .fit)
             .frame(width: 120, height: 70)
             .foregroundColor(.white)
     }

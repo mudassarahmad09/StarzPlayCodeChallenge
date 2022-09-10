@@ -10,7 +10,7 @@ import Foundation
 final class TVDetailVM: ObservableObject {
 
     private let seaasonService: SeasonService
-    private let movieId = 76479
+    private let movieId = 76479// 41727
     init(seaasonService: SeasonService){
         self.seaasonService = seaasonService
     }
