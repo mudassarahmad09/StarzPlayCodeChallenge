@@ -19,6 +19,7 @@ final class TVDetailVM: ObservableObject {
     @Published private(set) var episodes: [Episode]?
     @Published private(set) var seasonNumber: Int = 0
     @Published var showError = false
+    @Published var loading = false
     var errorMessage = ""
 
 }
@@ -30,8 +31,10 @@ extension TVDetailVM {
     }
 
     func getTVDetail(_ seasonId: Int = 0) async{
+        loading = true
         await handleTvDetailResult(seaasonService.getTVShowDetail(from: movieId))
         await getSeasonDetail()
+        loading = false
     }
 
     @MainActor func handleTvDetailResult(_ result: Result<TvDetailModel, RequestError>) async{
@@ -68,7 +71,9 @@ extension TVDetailVM {
         self.seasonNumber = number
     }
     func getSeasonDetail() async{
+        loading = true
         await  handleSeasonResult(seaasonService.getSeasonDetail(tv: movieId, seasonId: seasonNumber))
+        loading = false
     }
     @MainActor func handleSeasonResult(_ result: Result<Season, RequestError>) async{
         switch result {

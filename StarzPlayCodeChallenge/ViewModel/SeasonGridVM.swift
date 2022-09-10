@@ -13,7 +13,7 @@ final class SeasonGridVM: ObservableObject {
 
     init(seasons: [Season]) {
         self.seasons = seasons
-        //[Season(name: "SEASON 1", isSelecte: true), Season(name: "SEASON 2", isSelecte: false), Season(name: "SEASON 3", isSelecte: false), Season(name: "SEASON 4", isSelecte: false)]
+
     }
 
 }

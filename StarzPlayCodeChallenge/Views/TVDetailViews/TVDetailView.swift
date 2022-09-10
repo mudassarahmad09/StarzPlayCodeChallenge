@@ -28,39 +28,50 @@ struct TVDetailView: View {
 // MARK: - Load View
 extension TVDetailView {
     func loadView() -> some View {
-        ScrollView {
-            VStack(spacing: 10) {
-                ZStack(alignment: .bottom) {
-                    GradientImageView(image: viewModel.tvDetail?.posterPath ?? "")
+        ZStack{
 
-                    VStack{
-                        topButtons()
-                        Spacer()
-                        bannerImageView()
-
-                    }
-                }
-
-                descripcationView()
-                reactionView()
-
-                SeasonGridView(viewModel: viewModelForSeason(viewModel.tvDetail?.seasons ?? []), selectedSeason: { season in
-                    Task(priority:.background){
-                        viewModel.updateSeasonNumber(number:season.seasonNumber ?? 0)
-                        await viewModel.getSeasonDetail()
-                        viewModel.update(selecteItem: season)
-                    }
-                })
-
-                episodeList()
-
+            if viewModel.loading{
+            ProgressView()
+                .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                .zIndex(1)
             }
+
+
+            ScrollView {
+                VStack(spacing: 10) {
+                    ZStack(alignment: .bottom) {
+                        GradientImageView(image: viewModel.tvDetail?.posterPath ?? "")
+
+                        VStack{
+                            topButtons()
+                            Spacer()
+                            bannerImageView()
+
+                        }
+                    }
+
+                    descripcationView()
+                    reactionView()
+
+                    SeasonGridView(viewModel: viewModelForSeason(viewModel.tvDetail?.seasons ?? []), selectedSeason: { season in
+                        Task(priority:.background){
+                            viewModel.updateSeasonNumber(number:season.seasonNumber ?? 0)
+                            await viewModel.getSeasonDetail()
+                            viewModel.update(selecteItem: season)
+                        }
+                    })
+
+                    episodeList()
+
+                }
+            }
+            .edgesIgnoringSafeArea(.top)
+            .task {
+                await viewModel.getTVDetail()
+            }
+            .background(.black)
+
         }
-        .edgesIgnoringSafeArea(.top)
-        .task {
-            await viewModel.getTVDetail()
-        }
-        .background(.black)
     }
 }
 // MARK: - Banner View Funcality
