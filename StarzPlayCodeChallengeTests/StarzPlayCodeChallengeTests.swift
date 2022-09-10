@@ -2,11 +2,10 @@
 //  StarzPlayCodeChallengeTests.swift
 //  StarzPlayCodeChallengeTests
 //
-//  Created by Qazi Ammar Arshad on 08/09/2022.
+//  Created by Qazi Ammar Arshad on 10/09/2022.
 //
 
 import XCTest
-@testable import StarzPlayCodeChallenge
 
 class StarzPlayCodeChallengeTests: XCTestCase {
 
@@ -28,7 +27,7 @@ class StarzPlayCodeChallengeTests: XCTestCase {
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
-        self.measure {
+        measure {
             // Put the code you want to measure the time of here.
         }
     }

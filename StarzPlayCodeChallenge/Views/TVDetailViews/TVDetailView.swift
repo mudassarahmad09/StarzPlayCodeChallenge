@@ -166,30 +166,31 @@ extension TVDetailView {
     }
 }
 
-//struct TVDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//
-//
-//        let viewModel = TVDetailVM(seaasonService: MockMovie())
-//
-//        TVDetailView(viewModel: viewModel, viewModelForSeason: {seasons in
-//            SeasonGridVM(seasons: seasons)
-//        })
-//        TVDetailView(viewModel: viewModel, viewModelForSeason: {seasons in
-//            SeasonGridVM(seasons: seasons)
-//        }).preferredColorScheme(.dark)
-//
-//    }
-//
-//    struct MockMovie:SeasonService{
-//        let season = Season(airDate: "", episodeCount: 1, seasonId: 2, name: "", overview: "", posterPath: "", seasonNumber: 3, episodes: [Episode(name: "", stillPath: "")], isSelecte: true)
-//        func getTVShowDetail(from id: Int) async -> Result<TvDetailModel, RequestError> {
-//            return .success(TvDetailModel(adult: true, firstAirDate: "2019", id: 1, numberOfSeasons: 1, originalName: "The Boys", overview: "Good one", posterPath: "", seasons: [season]))
-//        }
-//
-//        func getSeasonDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError> {
-//            return .success(season)
-//        }
-//
-//    }
-//}
+struct TVDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+
+        let viewModel = TVDetailVM(seaasonService: MockMovie())
+
+        TVDetailView(viewModel: viewModel, viewModelForSeason: {seasons in
+            SeasonGridVM(seasons: seasons)
+        }, player: AVPlayer())
+        TVDetailView(viewModel: viewModel, viewModelForSeason: {seasons in
+            SeasonGridVM(seasons: seasons)
+        }, player: AVPlayer()).preferredColorScheme(.dark)
+
+    }
+
+    struct MockMovie:SeasonService{
+
+        let season = Season(airDate: "", episodeCount: 1, seasonId: 2, name: "", overview: "", posterPath: "", seasonNumber: 3, episodes: [Episode(name: "", stillPath: "")], isSelecte: true)
+
+        func getTVShowDetail(from id: Int) async -> Result<TvDetailModel, RequestError> {
+            return .success(TvDetailModel(adult: true, firstAirDate: "2019", id: 1, numberOfSeasons: 1, originalName: "The Boys", overview: "Good one", posterPath: "", seasons: [season]))
+        }
+
+        func getSeasonDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError> {
+            return .success(season)
+        }
+
+    }
+}
