@@ -6,19 +6,25 @@
 //
 
 import SwiftUI
+import AVKit
 
 struct TVDetailView: View {
 
     @StateObject private var viewModel: TVDetailVM
+    @State private var player: AVPlayer
     private var viewModelForSeason: ([Season]) -> SeasonGridVM
 
-    init(viewModel: TVDetailVM,viewModelForSeason: @escaping ([Season]) -> SeasonGridVM){
+    init(viewModel: TVDetailVM,viewModelForSeason: @escaping ([Season]) -> SeasonGridVM, player:AVPlayer){
         _viewModel = StateObject(wrappedValue: viewModel)
         self.viewModelForSeason = viewModelForSeason
+        self._player = State(wrappedValue: player)
     }
+
+    @State private var goToPlayer = false
 
     var body: some View {
         loadView()
+            .fullScreenCover(isPresented: $goToPlayer, content: {VideoPlayerView(player: $player)})
             .alert(isPresented: $viewModel.showError, content: {
                 Alert(title: Text(viewModel.errorMessage))
             })
@@ -119,9 +125,12 @@ extension TVDetailView {
     func playableButtonView() -> some View {
         HStack(spacing: 8) {
 
-            PlayButton(action: {
 
+            PlayButton(action: {
+                goToPlayer.toggle()
             })
+
+
 
             Spacer()
 
@@ -157,30 +166,30 @@ extension TVDetailView {
     }
 }
 
-struct TVDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-
-
-        let viewModel = TVDetailVM(seaasonService: MockMovie())
-
-        TVDetailView(viewModel: viewModel, viewModelForSeason: {seasons in
-            SeasonGridVM(seasons: seasons)
-        })
-        TVDetailView(viewModel: viewModel, viewModelForSeason: {seasons in
-            SeasonGridVM(seasons: seasons)
-        }).preferredColorScheme(.dark)
-
-    }
-
-    struct MockMovie:SeasonService{
-        let season = Season(airDate: "", episodeCount: 1, seasonId: 2, name: "", overview: "", posterPath: "", seasonNumber: 3, episodes: [Episode(name: "", stillPath: "")], isSelecte: true)
-        func getTVShowDetail(from id: Int) async -> Result<TvDetailModel, RequestError> {
-            return .success(TvDetailModel(adult: true, firstAirDate: "2019", id: 1, numberOfSeasons: 1, originalName: "The Boys", overview: "Good one", posterPath: "", seasons: [season]))
-        }
-
-        func getSeasonDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError> {
-            return .success(season)
-        }
-
-    }
-}
+//struct TVDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//
+//
+//        let viewModel = TVDetailVM(seaasonService: MockMovie())
+//
+//        TVDetailView(viewModel: viewModel, viewModelForSeason: {seasons in
+//            SeasonGridVM(seasons: seasons)
+//        })
+//        TVDetailView(viewModel: viewModel, viewModelForSeason: {seasons in
+//            SeasonGridVM(seasons: seasons)
+//        }).preferredColorScheme(.dark)
+//
+//    }
+//
+//    struct MockMovie:SeasonService{
+//        let season = Season(airDate: "", episodeCount: 1, seasonId: 2, name: "", overview: "", posterPath: "", seasonNumber: 3, episodes: [Episode(name: "", stillPath: "")], isSelecte: true)
+//        func getTVShowDetail(from id: Int) async -> Result<TvDetailModel, RequestError> {
+//            return .success(TvDetailModel(adult: true, firstAirDate: "2019", id: 1, numberOfSeasons: 1, originalName: "The Boys", overview: "Good one", posterPath: "", seasons: [season]))
+//        }
+//
+//        func getSeasonDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError> {
+//            return .success(season)
+//        }
+//
+//    }
+//}

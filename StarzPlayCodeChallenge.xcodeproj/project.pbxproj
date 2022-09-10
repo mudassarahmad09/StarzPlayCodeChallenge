@@ -55,6 +55,10 @@
 		7A551FD828CB8F5700B8F9BD /* TVDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A551FD728CB8F5700B8F9BD /* TVDetailVM.swift */; };
 		7A551FDC28CC5AA700B8F9BD /* TVDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A551FD728CB8F5700B8F9BD /* TVDetailVM.swift */; };
 		7A551FDE28CC617100B8F9BD /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A551FDD28CC617100B8F9BD /* Episode.swift */; };
+		7A551FED28CCD34800B8F9BD /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A551FEC28CCD34800B8F9BD /* PlayerView.swift */; };
+		7A551FEF28CCD39F00B8F9BD /* VideoPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A551FEE28CCD39F00B8F9BD /* VideoPlayerView.swift */; };
+		7A551FF128CCD40700B8F9BD /* ControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A551FF028CCD40700B8F9BD /* ControlView.swift */; };
+		7A551FF328CCD46400B8F9BD /* CustomProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A551FF228CCD46400B8F9BD /* CustomProgressBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +113,10 @@
 		7A551FD728CB8F5700B8F9BD /* TVDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVDetailVM.swift; sourceTree = "<group>"; };
 		7A551FDB28CBB4F800B8F9BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		7A551FDD28CC617100B8F9BD /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
+		7A551FEC28CCD34800B8F9BD /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		7A551FEE28CCD39F00B8F9BD /* VideoPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
+		7A551FF028CCD40700B8F9BD /* ControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlView.swift; sourceTree = "<group>"; };
+		7A551FF228CCD46400B8F9BD /* CustomProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProgressBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				7A16582128CA2316004EDE42 /* TVDetailViews */,
+				7A551FE128CCC27300B8F9BD /* VideoPlayer */,
 				7A16581E28CA22A1004EDE42 /* CustomeViews */,
 			);
 			path = Views;
@@ -220,8 +229,6 @@
 			children = (
 				7A16581F28CA22D0004EDE42 /* NavbarHiddenView.swift */,
 				7A16582728CA34D5004EDE42 /* GradientImageView.swift */,
-				7A16582D28CA5CAB004EDE42 /* PlayButton.swift */,
-				7A16583028CA60F6004EDE42 /* TrailerButton.swift */,
 				7A16583328CA6A19004EDE42 /* ExpandableView.swift */,
 				7A16583628CA6F8D004EDE42 /* RoundedButton.swift */,
 			);
@@ -234,6 +241,8 @@
 				7A16582228CA2365004EDE42 /* TVDetailView.swift */,
 				7A16583928CB0325004EDE42 /* SeasonGridView.swift */,
 				7A16584428CB3A20004EDE42 /* EpisodeCell.swift */,
+				7A16582D28CA5CAB004EDE42 /* PlayButton.swift */,
+				7A16583028CA60F6004EDE42 /* TrailerButton.swift */,
 			);
 			path = TVDetailViews;
 			sourceTree = "<group>";
@@ -302,6 +311,17 @@
 				7A16585B28CB6A82004EDE42 /* SeasonService.swift */,
 			);
 			path = SeasonServices;
+			sourceTree = "<group>";
+		};
+		7A551FE128CCC27300B8F9BD /* VideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				7A551FEC28CCD34800B8F9BD /* PlayerView.swift */,
+				7A551FEE28CCD39F00B8F9BD /* VideoPlayerView.swift */,
+				7A551FF028CCD40700B8F9BD /* ControlView.swift */,
+				7A551FF228CCD46400B8F9BD /* CustomProgressBar.swift */,
+			);
+			path = VideoPlayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -441,10 +461,13 @@
 				7A16582B28CA4724004EDE42 /* Extension.swift in Sources */,
 				7A16584528CB3A20004EDE42 /* EpisodeCell.swift in Sources */,
 				7A16585F28CB7938004EDE42 /* TvDetailModel.swift in Sources */,
+				7A551FED28CCD34800B8F9BD /* PlayerView.swift in Sources */,
 				7A16582828CA34D5004EDE42 /* GradientImageView.swift in Sources */,
 				7A16583128CA60F6004EDE42 /* TrailerButton.swift in Sources */,
 				7A16583728CA6F8D004EDE42 /* RoundedButton.swift in Sources */,
+				7A551FF328CCD46400B8F9BD /* CustomProgressBar.swift in Sources */,
 				7A16585828CB6A06004EDE42 /* SeasonEndPoint.swift in Sources */,
+				7A551FF128CCD40700B8F9BD /* ControlView.swift in Sources */,
 				7A551FDE28CC617100B8F9BD /* Episode.swift in Sources */,
 				7A16584E28CB67B6004EDE42 /* ClientManager.swift in Sources */,
 				7A16585128CB6872004EDE42 /* RequestType.swift in Sources */,
@@ -456,6 +479,7 @@
 				7A16585428CB68A2004EDE42 /* RequestError.swift in Sources */,
 				7A551FD828CB8F5700B8F9BD /* TVDetailVM.swift in Sources */,
 				7A1657F328CA1E97004EDE42 /* StarzPlayCodeChallengeApp.swift in Sources */,
+				7A551FEF28CCD39F00B8F9BD /* VideoPlayerView.swift in Sources */,
 				7A16582E28CA5CAB004EDE42 /* PlayButton.swift in Sources */,
 				7A16582628CA26F2004EDE42 /* Constant.swift in Sources */,
 				7A16582028CA22D0004EDE42 /* NavbarHiddenView.swift in Sources */,

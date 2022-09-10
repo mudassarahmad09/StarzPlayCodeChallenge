@@ -10,6 +10,7 @@ import Foundation
 enum CommonImage: String {
     case placeHolder = "PlaceHolder"
     case episodePH = "100-64"
+    case ellipse = "ellipse"
 }
 
 enum CommonColor: String {
@@ -24,4 +25,5 @@ enum AppUrl{
     static var BASEURL = "api.themoviedb.org"
     static var IMAGEURL = "http://image.tmdb.org/t/p/w500/"
     static var APIKey = "3d0cda4466f269e793e9283f6ce0b75e"
+    static var VURL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
 }
