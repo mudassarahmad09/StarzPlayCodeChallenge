@@ -16,6 +16,7 @@ struct Season: Codable,Identifiable, Hashable {
     let overview: String?
     let posterPath: String?
     let seasonNumber: Int?
+    let episodes: [Episode]?
     var isSelecte: Bool = false
     let id = UUID()
 
@@ -27,5 +28,6 @@ struct Season: Codable,Identifiable, Hashable {
         case overview = "overview"
         case posterPath = "poster_path"
         case seasonNumber = "season_number"
+        case episodes = "episodes"
     }
 }

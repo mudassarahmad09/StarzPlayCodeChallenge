@@ -39,7 +39,11 @@ extension TVDetailView {
                 reactionView()
 
                 SeasonGridView(viewModel: viewModelForSeason(viewModel.tvDetail?.seasons ?? []), selectedSeason: { season in
-                    print(season)
+                    Task(priority:.background){
+                        viewModel.updateSeasonNumber(number:season.seasonNumber ?? 0)
+                        await viewModel.getSeasonDetail()
+                        viewModel.update(selecteItem: season)
+                    }
                 })
 
                 episodeList()
@@ -97,8 +101,8 @@ extension TVDetailView {
     }
 
     func episodeList() -> some View {
-        ForEach((0...6), id: \.self) { _ in
-            EpisodeCell()
+        ForEach(viewModel.episodes ?? [], id: \.self) { episode in
+            EpisodeCell(episode: episode)
         }
 
     }

@@ -9,20 +9,24 @@ import SwiftUI
 
 struct EpisodeCell: View {
 
+    let episode: Episode
+
     var body: some View {
         HStack {
             HStack(spacing: 10) {
+
                 Image(systemName: "chevron.forward")
                     .foregroundColor(.gray)
                     .font(Font.system(size: 22, weight: .medium))
 
-                Image(CommonImage.episodePH.rawValue)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 120, height: 70)
-                    .foregroundColor(.white)
+                AsyncImage(url: URL(string: AppUrl.IMAGEURL + (episode.stillPath ?? ""))) { image in
+                    episodeImagePerView(image: image)
+                } placeholder: {
+                    episodeImagePerView(image: Image(CommonImage.episodePH.rawValue)  )
+                }
 
-                Text("Tie Goes To The Runner")
+
+                Text(episode.name ?? "")
                     .foregroundColor(.white)
 
             }
@@ -39,14 +43,23 @@ struct EpisodeCell: View {
         .padding([.leading, .trailing])
         .background(Color(CommonColor.seconday.rawValue))
     }
+
+    func episodeImagePerView(image:Image) -> some View {
+        image
+            .resizable()
+            .scaledToFill()
+            .frame(width: 120, height: 70)
+            .foregroundColor(.white)
+    }
 }
 
 struct EpisodeCell_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            EpisodeCell()
+            let spyEpisode = Episode(name: "Tie Goes", stillPath: "")
+            EpisodeCell(episode: spyEpisode)
             .previewLayout(PreviewLayout.sizeThatFits)
-            EpisodeCell()
+            EpisodeCell(episode: spyEpisode)
                 .previewLayout(PreviewLayout.sizeThatFits)
                 .preferredColorScheme(.dark)
         }

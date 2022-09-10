@@ -12,6 +12,8 @@ struct SeasonGridView: View {
     @ObservedObject private var viewModel: SeasonGridVM
     private var selectedSeason: (_ season: Season) -> Void
 
+    @State var selectedValue = false
+
     init(viewModel: SeasonGridVM, selectedSeason: @escaping (_ season: Season) -> Void) {
         self._viewModel = ObservedObject(wrappedValue: viewModel)
         self.selectedSeason = selectedSeason

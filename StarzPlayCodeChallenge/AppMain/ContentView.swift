@@ -15,6 +15,7 @@ struct ContentView: View {
             let viewModel = TVDetailVM(seaasonService: adpter)
             HideNavbarOf(view: TVDetailView(viewModel: viewModel,
                                             viewModelForSeason: { seasons in
+                
                                                         SeasonGridVM(seasons: seasons)
             }))
         }
