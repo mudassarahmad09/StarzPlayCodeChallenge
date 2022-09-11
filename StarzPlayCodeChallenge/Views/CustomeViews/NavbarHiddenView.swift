@@ -17,10 +17,3 @@ struct HideNavbarOf<Content: View>: View {
             .navigationBarBackButtonHidden(true)
     }
 }
-
-//struct NavbarHiddenView_Previews: PreviewProvider {
-//
-//    static var previews: some View {
-//        HideNavbarOf(view: TVDetailView())
-//    }
-//}

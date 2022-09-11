@@ -26,7 +26,7 @@ struct SeasonGridView: View {
                     ForEach(viewModel.seasons, id: \.self) { season in
                         VStack {
                             HStack {
-
+                                Spacer()
                                 Button(action: {
                                     withAnimation {
                                         viewModel.update(selecteItem: season)
@@ -34,22 +34,27 @@ struct SeasonGridView: View {
 
                                     selectedSeason(viewModel.getUpdatedValue() ?? season)
                                 }, label: {
-                                    Text(season.name)
-                                        .font(.system(size: 18, weight: .bold, design: .default))
-                                        .foregroundColor(.white)
+                                    HStack{
+                                        Text(season.name)
+                                            .font(.system(size: 18, weight: .bold, design: .default))
+                                            .foregroundColor(.white)
 
-                                    Text(" | ")
-                                        .font(.system(size: 18, weight: .bold, design: .default))
-                                        .foregroundColor(.white)
-
+                                    }
                                 })
 
-                            }.frame(width: gp.size.width/3)
+                                Spacer()
+                                Text(" |")
+                                    .font(.system(size: 18, weight: .bold, design: .default))
+                                    .foregroundColor(.white)
 
+
+                            }.frame(width: gp.size.width/3)
+                            
                             if season.isSelecte {
                                 Divider()
                                     .frame(width: gp.size.width/3, height: 2)
                                     .overlay(.white)
+
                             }
 
                         }.frame(height: 50, alignment: .top)
@@ -59,8 +64,8 @@ struct SeasonGridView: View {
             })
 
         }
-        .padding([.leading, .trailing])
-        .padding(.top, 20)
+        //.padding([.leading, .trailing])
+        .padding(.top, 23)
         .frame( height: 50)
         .background(.black)
 
@@ -80,8 +85,9 @@ struct SeasonGridView_Previews: PreviewProvider {
         SeasonGridView(viewModel: SeasonGridVM(seasons: seasons), selectedSeason: {_ in
 
         })
+        .previewDevice("iPhone 12 mini")
         .preferredColorScheme(.dark)
-        .previewLayout(PreviewLayout.sizeThatFits)
+        //.previewLayout(PreviewLayout.sizeThatFits)
 
     }
 }

@@ -169,28 +169,17 @@ extension TVDetailView {
 struct TVDetailView_Previews: PreviewProvider {
     static var previews: some View {
 
-        let viewModel = TVDetailVM(seaasonService: MockMovie())
+        let adpter = SeasonServiceAdpter()
+        let viewModel = TVDetailVM(seaasonService: adpter)
+        let player =  AVPlayer(url: URL(string: AppUrl.VURL)!)
 
         TVDetailView(viewModel: viewModel, viewModelForSeason: {seasons in
             SeasonGridVM(seasons: seasons)
-        }, player: AVPlayer())
+        }, player: player)
         TVDetailView(viewModel: viewModel, viewModelForSeason: {seasons in
             SeasonGridVM(seasons: seasons)
-        }, player: AVPlayer()).preferredColorScheme(.dark)
-
+        }, player: player).preferredColorScheme(.dark)
+        
     }
 
-    struct MockMovie:SeasonService{
-
-        let season = Season(airDate: "", episodeCount: 1, seasonId: 2, name: "", overview: "", posterPath: "", seasonNumber: 3, episodes: [Episode(name: "", stillPath: "")], isSelecte: true)
-
-        func getTVShowDetail(from id: Int) async -> Result<TvDetailModel, RequestError> {
-            return .success(TvDetailModel(adult: true, firstAirDate: "2019", id: 1, numberOfSeasons: 1, originalName: "The Boys", overview: "Good one", posterPath: "", seasons: [season]))
-        }
-
-        func getSeasonDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError> {
-            return .success(season)
-        }
-
-    }
 }

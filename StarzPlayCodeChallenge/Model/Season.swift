@@ -32,7 +32,7 @@ struct Season: Codable,Identifiable, Hashable {
     }
 }
 extension Season {
-    init(name: String, isSelected: Bool, seasonId : Int = 0)  {
+    init(name: String, isSelected: Bool, seasonId : Int = 0, id: UUID = UUID())  {
         self.name = name
         self.isSelecte = isSelected
         self.seasonId = seasonId

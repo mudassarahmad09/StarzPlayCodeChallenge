@@ -48,11 +48,6 @@ class TvDetailVmTest: XCTestCase {
 
     }
 
-    func testUpdateTvDeatilItem(){
-        let sut = tvDetailVM()
-        sut.update(selecteItem: aSeason(name: "Season 1", isSelected: true, id: UUID()))
-    }
-
     func testGetTvDetail_whenAPIRequestFail() async{
         let sut = tvDetailVMFailabel()
         XCTAssertNil(sut.tvDetail)
