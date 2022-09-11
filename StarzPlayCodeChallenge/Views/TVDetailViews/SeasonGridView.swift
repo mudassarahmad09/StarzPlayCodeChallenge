@@ -37,7 +37,7 @@ struct SeasonGridView: View {
                                     HStack{
                                         Text(season.name)
                                             .font(.system(size: 18, weight: .bold, design: .default))
-                                            .foregroundColor(.white)
+                                            .foregroundColor(season.isSelecte ? .white : .gray)
 
                                     }
                                 })
@@ -50,12 +50,12 @@ struct SeasonGridView: View {
 
                             }.frame(width: gp.size.width/3)
                             
-                            if season.isSelecte {
-                                Divider()
-                                    .frame(width: gp.size.width/3, height: 2)
-                                    .overlay(.white)
 
-                            }
+                            Divider()
+                                .frame(width: gp.size.width/3, height: season.isSelecte ? 2 : 0)
+                                .overlay(.white)
+
+
 
                         }.frame(height: 50, alignment: .top)
                     }
@@ -64,6 +64,7 @@ struct SeasonGridView: View {
             })
 
         }
+        .animation(.easeOut, value: viewModel.getUpdatedValue())
         //.padding([.leading, .trailing])
         .padding(.top, 23)
         .frame( height: 50)

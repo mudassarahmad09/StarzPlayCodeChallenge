@@ -45,6 +45,7 @@
 		7A55200B28CD0ADB00B8F9BD /* TvDetailVmTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A55200A28CD0ADA00B8F9BD /* TvDetailVmTest.swift */; };
 		7A7FDBE828CDE94200F6C6C4 /* SeasonVmTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7FDBE728CDE94200F6C6C4 /* SeasonVmTest.swift */; };
 		7A7FDBEA28CDEF7500F6C6C4 /* ModelsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7FDBE928CDEF7500F6C6C4 /* ModelsHelper.swift */; };
+		7A82816528CE2DD80087C88D /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82816428CE2DD80087C88D /* AsyncImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +100,7 @@
 		7A55200A28CD0ADA00B8F9BD /* TvDetailVmTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvDetailVmTest.swift; sourceTree = "<group>"; };
 		7A7FDBE728CDE94200F6C6C4 /* SeasonVmTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonVmTest.swift; sourceTree = "<group>"; };
 		7A7FDBE928CDEF7500F6C6C4 /* ModelsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsHelper.swift; sourceTree = "<group>"; };
+		7A82816428CE2DD80087C88D /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				7A16581F28CA22D0004EDE42 /* NavbarHiddenView.swift */,
+				7A82816428CE2DD80087C88D /* AsyncImageView.swift */,
 				7A16582728CA34D5004EDE42 /* GradientImageView.swift */,
 				7A16583328CA6A19004EDE42 /* ExpandableView.swift */,
 				7A16583628CA6F8D004EDE42 /* RoundedButton.swift */,
@@ -428,6 +431,7 @@
 				7A16585C28CB6A82004EDE42 /* SeasonService.swift in Sources */,
 				7A16584228CB1D59004EDE42 /* SeasonGridVM.swift in Sources */,
 				7A16585428CB68A2004EDE42 /* RequestError.swift in Sources */,
+				7A82816528CE2DD80087C88D /* AsyncImageView.swift in Sources */,
 				7A551FD828CB8F5700B8F9BD /* TVDetailVM.swift in Sources */,
 				7A1657F328CA1E97004EDE42 /* StarzPlayCodeChallengeApp.swift in Sources */,
 				7A551FEF28CCD39F00B8F9BD /* VideoPlayerView.swift in Sources */,
