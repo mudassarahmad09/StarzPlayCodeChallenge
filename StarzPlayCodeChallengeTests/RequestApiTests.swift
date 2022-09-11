@@ -10,7 +10,7 @@ import XCTest
 
 class RequestAppTests: XCTestCase {
 
-    func testTvDetailServiceMock() async {
+    func testTvDetail_afterSuccess() async {
            let serviceMock = SeasonServiceMock()
            let failingResult = await serviceMock.getTVShowDetail(from: 0)
 
@@ -26,7 +26,21 @@ class RequestAppTests: XCTestCase {
            }
        }
 
-    func testSeasonDetailServiceMock() async {
+    func testTvDetail_afterFail() async {
+           let serviceMock = SeasonServiceFailabelMock()
+           let failingResult = await serviceMock.getTVShowDetail(from: 0)
+
+           switch failingResult {
+           case .success:
+               XCTFail("The request should not success")
+
+           case .failure(let error):
+               XCTAssertEqual(error.customMessage, "request error")
+           }
+       }
+
+
+    func testSeasonDetail_afterSuccess() async {
            let serviceMock = SeasonServiceMock()
            let failingResult = await serviceMock.getSeasonDetail(tv: 0,seasonId: 0)
 
@@ -40,14 +54,17 @@ class RequestAppTests: XCTestCase {
            }
        }
 
+    func testSeasonDetail_afterFail() async {
+           let serviceMock = SeasonServiceFailabelMock()
+           let failingResult = await serviceMock.getSeasonDetail(tv: 0,seasonId: 0)
+
+           switch failingResult {
+           case .success:
+               XCTFail("The request should not success")
+           case .failure(let error):
+               XCTAssertEqual(error.customMessage, "request error")
+           }
+       }
 }
 
-final class SeasonServiceMock: Mockable, SeasonService {
-    func getTVShowDetail(from id: Int) async -> Result<TvDetailModel, RequestError> {
-        return .success(loadJSON(filename: "tv_detail_response", type: TvDetailModel.self))
-    }
 
-    func getSeasonDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError> {
-        return .success(loadJSON(filename: "season_detail_response", type: Season.self))
-    }
-}

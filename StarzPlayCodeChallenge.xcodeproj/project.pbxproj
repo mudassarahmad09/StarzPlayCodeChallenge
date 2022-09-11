@@ -43,6 +43,8 @@
 		7A55200728CCF88200B8F9BD /* season_detail_response.json in Resources */ = {isa = PBXBuildFile; fileRef = 7A55200628CCF88200B8F9BD /* season_detail_response.json */; };
 		7A55200928CCF89000B8F9BD /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A55200828CCF89000B8F9BD /* Mockable.swift */; };
 		7A55200B28CD0ADB00B8F9BD /* TvDetailVmTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A55200A28CD0ADA00B8F9BD /* TvDetailVmTest.swift */; };
+		7A7FDBE828CDE94200F6C6C4 /* SeasonVmTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7FDBE728CDE94200F6C6C4 /* SeasonVmTest.swift */; };
+		7A7FDBEA28CDEF7500F6C6C4 /* ModelsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7FDBE928CDEF7500F6C6C4 /* ModelsHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		7A55200628CCF88200B8F9BD /* season_detail_response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = season_detail_response.json; sourceTree = "<group>"; };
 		7A55200828CCF89000B8F9BD /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
 		7A55200A28CD0ADA00B8F9BD /* TvDetailVmTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvDetailVmTest.swift; sourceTree = "<group>"; };
+		7A7FDBE728CDE94200F6C6C4 /* SeasonVmTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonVmTest.swift; sourceTree = "<group>"; };
+		7A7FDBE928CDEF7500F6C6C4 /* ModelsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -281,6 +285,8 @@
 			children = (
 				7A55200128CCF73300B8F9BD /* RequestApiTests.swift */,
 				7A55200A28CD0ADA00B8F9BD /* TvDetailVmTest.swift */,
+				7A7FDBE728CDE94200F6C6C4 /* SeasonVmTest.swift */,
+				7A7FDBE928CDEF7500F6C6C4 /* ModelsHelper.swift */,
 				7A55200828CCF89000B8F9BD /* Mockable.swift */,
 				7A55200328CCF7D300B8F9BD /* JSON */,
 			);
@@ -435,7 +441,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A7FDBEA28CDEF7500F6C6C4 /* ModelsHelper.swift in Sources */,
 				7A55200228CCF73300B8F9BD /* RequestApiTests.swift in Sources */,
+				7A7FDBE828CDE94200F6C6C4 /* SeasonVmTest.swift in Sources */,
 				7A55200B28CD0ADB00B8F9BD /* TvDetailVmTest.swift in Sources */,
 				7A55200928CCF89000B8F9BD /* Mockable.swift in Sources */,
 			);

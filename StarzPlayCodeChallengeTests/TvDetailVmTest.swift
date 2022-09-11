@@ -23,22 +23,45 @@ class TvDetailVmTest: XCTestCase {
         XCTAssertEqual(sut.showError, true)
     }
 
-    func testGetTvDetail() async{
+    func testShowError_showingMessage_whenAPIRequestFail() async{
+
+        let sut = tvDetailVMFailabel()
+
+        XCTAssertEqual(sut.errorMessage , "")
+        XCTAssertEqual(sut.showError, false)
+
+        await sut.getTVDetail()
+
+        XCTAssertEqual(sut.errorMessage , "request error")
+        XCTAssertEqual(sut.showError, true)
+    }
+
+    func testGetTvDetail_whenAPIRequestSucceeds() async{
         let sut = tvDetailVM()
 
         XCTAssertNil(sut.tvDetail)
 
         await sut.getTVDetail()
-        sut.update(selecteItem: Season(name: "Season 1", isSelected: true))
 
-        //XCTAssertEqual(sut.tvDetail?.seasons, false)
         XCTAssertEqual(sut.loading, false)
         XCTAssertNotNil(sut.tvDetail)
 
     }
 
+    func testUpdateTvDeatilItem(){
+        let sut = tvDetailVM()
+        sut.update(selecteItem: aSeason(name: "Season 1", isSelected: true, id: UUID()))
+    }
 
-    func testgetSeasonDetail() async{
+    func testGetTvDetail_whenAPIRequestFail() async{
+        let sut = tvDetailVMFailabel()
+        XCTAssertNil(sut.tvDetail)
+
+        await sut.getTVDetail()
+        XCTAssertNil(sut.tvDetail)
+    }
+
+    func testgetSeasonDetail_whenAPIRequestSucceeds() async{
         let sut = tvDetailVM()
         XCTAssertNil(sut.episodes)
 
@@ -48,7 +71,17 @@ class TvDetailVmTest: XCTestCase {
 
     }
 
-    func testUpdateSeasonNo(){
+    func testgetSeasonDetail_whenAPIRequestFail() async{
+        let sut = tvDetailVMFailabel()
+        XCTAssertNil(sut.episodes)
+
+        await sut.getSeasonDetail()
+
+        XCTAssertNil(sut.episodes)
+
+    }
+
+    func testUpdateSeasonNumber_whenAPIRequestSucceeds(){
 
         let sut = tvDetailVM()
         XCTAssertEqual(sut.seasonNumber , 0)
@@ -57,7 +90,19 @@ class TvDetailVmTest: XCTestCase {
         XCTAssertEqual(sut.seasonNumber , 1)
     }
 
+    func testUpdateSeasonNumber_whenAPIRequestFail(){
+        let sut = tvDetailVMFailabel()
+        XCTAssertEqual(sut.seasonNumber , 0)
+
+        sut.updateSeasonNumber(number: 1)
+        XCTAssertEqual(sut.seasonNumber , 1)
+    }
+
+
     func tvDetailVM() -> TVDetailVM{
         TVDetailVM(seaasonService: SeasonServiceMock())
+    }
+    func tvDetailVMFailabel() -> TVDetailVM{
+        TVDetailVM(seaasonService: SeasonServiceFailabelMock())
     }
 }
