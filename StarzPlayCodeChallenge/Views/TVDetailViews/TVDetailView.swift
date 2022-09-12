@@ -39,6 +39,7 @@ extension TVDetailView {
             if viewModel.loading {
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle(tint: .white))
+                .scaleEffect(2)
                 .zIndex(1)
             }
 

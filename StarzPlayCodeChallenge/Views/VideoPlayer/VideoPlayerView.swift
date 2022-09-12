@@ -63,7 +63,7 @@ struct VideoPlayerView: View {
 
     func loaderView() -> some View {
         ProgressView()
-            .progressViewStyle(CircularProgressViewStyle(tint: .red))
+            .progressViewStyle(CircularProgressViewStyle(tint: .white))
             .scaleEffect(3)
     }
 
