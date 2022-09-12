@@ -16,7 +16,6 @@ struct CustomProgressBar: UIViewRepresentable {
     @Binding var value: Float
     @Binding var isPlaying: Bool
 
-
     func makeCoordinator() -> Coordinator {
         return CustomProgressBar.Coordinator(parent1: self)
     }
@@ -39,7 +38,6 @@ struct CustomProgressBar: UIViewRepresentable {
         uiView.value = value
     }
 
-
     class Coordinator: NSObject {
 
         var parent: CustomProgressBar
@@ -54,12 +52,12 @@ struct CustomProgressBar: UIViewRepresentable {
 
                 parent.player.pause()
                 let sec = Double(slider.value * Float((parent.player.currentItem?.duration.seconds)!))
-                parent.player.seek(to: CMTime(seconds: sec, preferredTimescale:  1))
+                parent.player.seek(to: CMTime(seconds: sec, preferredTimescale: 1))
 
             } else {
 
                 let sec = Double(slider.value * Float((parent.player.currentItem?.duration.seconds)!))
-                parent.player.seek(to: CMTime(seconds: sec, preferredTimescale:  1))
+                parent.player.seek(to: CMTime(seconds: sec, preferredTimescale: 1))
 
                 if parent.isPlaying {
                     parent.player.play()

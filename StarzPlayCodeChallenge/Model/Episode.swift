@@ -7,8 +7,7 @@
 
 import Foundation
 
-
-struct Episode: Codable ,Identifiable, Hashable{
+struct Episode: Codable, Identifiable, Hashable {
     var airDate: String?
     var episodeNumber: Int?
     var id: Int?
@@ -40,7 +39,7 @@ struct Episode: Codable ,Identifiable, Hashable{
 
 }
 extension Episode {
-    init(name:String , stillPath: String){
+    init(name: String, stillPath: String) {
         self.name = name
         self.stillPath = stillPath
     }

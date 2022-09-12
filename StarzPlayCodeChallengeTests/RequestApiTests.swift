@@ -48,6 +48,8 @@ class RequestAppTests: XCTestCase {
            case .success(let seasonDetail):
                XCTAssertEqual(seasonDetail.seasonNumber, 1)
                XCTAssertEqual(seasonDetail.name, "Season 1")
+               XCTAssertEqual(seasonDetail.posterPath, "/g3HjUeFCwKOfBxlM97lv016mnol.jpg")
+               XCTAssertEqual(seasonDetail.episodes?.count, 8)
 
            case .failure:
                XCTFail("The request should not fail")

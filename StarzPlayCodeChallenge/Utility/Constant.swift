@@ -20,7 +20,7 @@ enum CommonColor: String {
     case divider = "Divider"
 }
 
-enum AppUrl{
+enum AppUrl {
     static var SCHEME = "https"
     static var BASEURL = "api.themoviedb.org"
     static var IMAGEURL = "http://image.tmdb.org/t/p/w500/"

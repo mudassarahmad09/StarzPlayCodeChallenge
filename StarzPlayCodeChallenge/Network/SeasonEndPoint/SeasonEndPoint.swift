@@ -7,23 +7,23 @@
 
 import Foundation
 
-enum SeasonEndpoint{
-    case tvShowDetail(id:Int)
-    case seasonDetail(tvid:Int, seasonId: Int)
+enum SeasonEndpoint {
+    case tvShowDetail(id: Int)
+    case seasonDetail(tvid: Int, seasonId: Int)
 }
-extension SeasonEndpoint:ApiEndpoint {
+extension SeasonEndpoint: ApiEndpoint {
     var queryItems: [URLQueryItem]? {
-        switch self{
+        switch self {
         case .tvShowDetail, .seasonDetail:
             return         [
-                URLQueryItem(name: "api_key", value: AppUrl.APIKey),
+                URLQueryItem(name: "api_key", value: AppUrl.APIKey)
             ]
         }
 
     }
 
     var path: String {
-        switch self{
+        switch self {
         case .tvShowDetail(id: let id):
             return "/3/tv/\(id)"
         case .seasonDetail(let tvId, let seasonId):
@@ -32,18 +32,17 @@ extension SeasonEndpoint:ApiEndpoint {
     }
 
     var method: RequestMethod {
-        switch self{
+        switch self {
         case .tvShowDetail, .seasonDetail:
             return .get
         }
     }
 
-    var body: [String : Any]? {
-        switch self{
+    var body: [String: Any]? {
+        switch self {
         case .tvShowDetail, .seasonDetail:
             return nil
         }
     }
-
 
 }

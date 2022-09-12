@@ -14,7 +14,7 @@ struct TVDetailView: View {
     @State private var player: AVPlayer
     private var viewModelForSeason: ([Season]) -> SeasonGridVM
 
-    init(viewModel: TVDetailVM,viewModelForSeason: @escaping ([Season]) -> SeasonGridVM, player:AVPlayer){
+    init(viewModel: TVDetailVM, viewModelForSeason: @escaping ([Season]) -> SeasonGridVM, player: AVPlayer) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.viewModelForSeason = viewModelForSeason
         self._player = State(wrappedValue: player)
@@ -34,21 +34,20 @@ struct TVDetailView: View {
 // MARK: - Load View
 extension TVDetailView {
     func loadView() -> some View {
-        ZStack{
+        ZStack {
 
-            if viewModel.loading{
+            if viewModel.loading {
             ProgressView()
                 .progressViewStyle(CircularProgressViewStyle(tint: .white))
                 .zIndex(1)
             }
-
 
             ScrollView {
                 VStack(spacing: 10) {
                     ZStack(alignment: .bottom) {
                         GradientImageView(image: viewModel.tvDetail?.posterPath ?? "")
 
-                        VStack{
+                        VStack {
                             topButtons()
                             Spacer()
                             bannerImageView()
@@ -60,8 +59,8 @@ extension TVDetailView {
                     reactionView()
 
                     SeasonGridView(viewModel: viewModelForSeason(viewModel.tvDetail?.seasons ?? []), selectedSeason: { season in
-                        Task(priority:.background){
-                            viewModel.updateSeasonNumber(number:season.seasonNumber ?? 0)
+                        Task(priority: .background) {
+                            viewModel.updateSeasonNumber(number: season.seasonNumber ?? 0)
                             await viewModel.getSeasonDetail()
                             viewModel.update(selecteItem: season)
                         }
@@ -83,24 +82,24 @@ extension TVDetailView {
 // MARK: - Banner View Funcality
 extension TVDetailView {
     func topButtons() -> some View {
-        HStack{
+        HStack {
             Image(systemName: "arrow.backward")
                 .foregroundColor(.white)
                 .font(Font.system(size: 30, weight: .medium))
             Spacer()
-            HStack(spacing: 20){
+            HStack(spacing: 20) {
                 Image(systemName: "rectangle")
                     .foregroundColor(.white)
                     .font(Font.system(size: 28, weight: .regular))
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(.white)
                     .font(Font.system(size: 28, weight: .regular))
-                
+
             }
-            
-        }.padding(.top , 50)
+
+        }.padding(.top, 50)
             .padding([.trailing, .leading])
-        
+
     }
     func bannerImageView() -> some View {
         VStack(alignment: .leading, spacing: 15) {
@@ -125,12 +124,9 @@ extension TVDetailView {
     func playableButtonView() -> some View {
         HStack(spacing: 8) {
 
-
             PlayButton(action: {
                 goToPlayer.toggle()
             })
-
-
 
             Spacer()
 
@@ -179,7 +175,7 @@ struct TVDetailView_Previews: PreviewProvider {
         TVDetailView(viewModel: viewModel, viewModelForSeason: {seasons in
             SeasonGridVM(seasons: seasons)
         }, player: player).preferredColorScheme(.dark)
-        
+
     }
 
 }

@@ -45,6 +45,9 @@ class TvDetailVmTest: XCTestCase {
 
         XCTAssertEqual(sut.loading, false)
         XCTAssertNotNil(sut.tvDetail)
+        XCTAssertEqual(sut.tvDetail?.originalName, "The Boys")
+        XCTAssertEqual(sut.tvDetail?.posterPath, "/stTEycfG9928HYGEISBFaG1ngjM.jpg")
+
 
     }
 
@@ -63,6 +66,9 @@ class TvDetailVmTest: XCTestCase {
         await sut.getSeasonDetail()
 
         XCTAssertNotNil(sut.episodes)
+        XCTAssertEqual(sut.episodes?.count, 8)
+        XCTAssertEqual(sut.episodes?[0].name, "The Name of the Game")
+        XCTAssertEqual(sut.episodes?[0].stillPath, "/83vFYTHtCqWwaDtZluSU8bmnFYG.jpg")
 
     }
 

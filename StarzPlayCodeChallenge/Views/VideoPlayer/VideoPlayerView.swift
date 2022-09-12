@@ -8,40 +8,42 @@
 import SwiftUI
 import AVKit
 
-
 struct VideoPlayerView: View {
 
-    @State private var isPlaying = false
+    @State var isPlaying = false
     @State private var isLoading = true
     @State private var showControlls = true
     @State private var value: Float = 0.0
 
     @Binding var player: AVPlayer
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-    
+
     var body: some View {
-        
+
         VStack {
             ZStack(alignment: .center) {
-                
+
                 PlayerView(player: $player)
-                
+
                 // show the progress View
                 if isLoading {
                     loaderView()
                 }
 
                 if showControlls {
-                    Controls(player: $player, isPlaying: $isPlaying, pannel: $showControlls, value: self.$value) {
-                        onback()
+                    Controls(player: $player,
+                             isPlaying: $isPlaying,
+                             pannel: $showControlls,
+                             value: self.$value) {
+
+                                                onback()
                     }
                 }
-                
+
             }.onTapGesture {
                 showControlls.toggle()
             }
-            
-            
+
         }.background(Color.black.edgesIgnoringSafeArea(.all))
             .onAppear {
                 self.rotate()
@@ -52,22 +54,22 @@ struct VideoPlayerView: View {
                 if newValue > 0 {
                 isLoading = false
                 }
-                
+
             }
     }
-    
+
     func loaderView() -> some View {
         ProgressView()
             .progressViewStyle(CircularProgressViewStyle(tint: .red))
             .scaleEffect(3)
     }
-    
+
     /// Change screen Orentation when player is strted
     func rotate() {
         let value = UIInterfaceOrientation.landscapeRight.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
     }
-    
+
     /// Change screen Orentation when back button is pressed
     func onback() {
         self.player.pause()
@@ -75,9 +77,9 @@ struct VideoPlayerView: View {
         presentationMode.wrappedValue.dismiss()
         let value = UIInterfaceOrientation.portrait.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
-        
+
     }
-    
+
 }
 
 struct VideoPlayerView_Previews: PreviewProvider {
@@ -86,7 +88,3 @@ struct VideoPlayerView_Previews: PreviewProvider {
             .previewInterfaceOrientation(.landscapeRight)
     }
 }
-
-
-
-

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Season: Codable,Identifiable, Hashable {
+struct Season: Codable, Identifiable, Hashable {
 
     var airDate: String?
     var episodeCount: Int?
@@ -32,7 +32,7 @@ struct Season: Codable,Identifiable, Hashable {
     }
 }
 extension Season {
-    init(name: String, isSelected: Bool, seasonId : Int = 0, id: UUID = UUID())  {
+    init(name: String, isSelected: Bool, seasonId: Int = 0, id: UUID = UUID()) {
         self.name = name
         self.isSelecte = isSelected
         self.seasonId = seasonId

@@ -19,7 +19,7 @@ struct EpisodeCell: View {
                     .foregroundColor(.gray)
                     .font(Font.system(size: 22, weight: .medium))
 
-                ZStack{
+                ZStack {
                     AsyncImageView(url: URL(string: AppUrl.IMAGEURL + (episode.stillPath ?? ""))!)
 //                    AsyncImage(url: URL(string: AppUrl.IMAGEURL + (episode.stillPath ?? ""))) { image in
 //                        episodeImagePerView(image: image)
@@ -30,7 +30,6 @@ struct EpisodeCell: View {
                     Image(systemName: "play.fill")
                         .foregroundColor(.white)
                 }
-
 
                 Text(episode.name ?? "")
                     .foregroundColor(.white)

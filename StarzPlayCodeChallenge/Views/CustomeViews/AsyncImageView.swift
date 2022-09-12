@@ -24,7 +24,7 @@ struct AsyncImageView: View {
 
             case .success(let image):
                 imagePerView(image: image)
-                    //.transition(.scale(scale: 0.1, anchor: .center))
+                    // .transition(.scale(scale: 0.1, anchor: .center))
             case .failure:
 
                 imagePerView(image: Image(CommonImage.episodePH.rawValue)  )
@@ -34,10 +34,10 @@ struct AsyncImageView: View {
             }
         }
     }
-    func imagePerView(image:Image) -> some View {
+    func imagePerView(image: Image) -> some View {
         image
             .resizable()
-            .aspectRatio(CGSize(width: 500, height: 281),contentMode: .fit)
+            .aspectRatio(CGSize(width: 500, height: 281), contentMode: .fit)
             .frame(width: 120, height: 70)
             .foregroundColor(.white)
     }

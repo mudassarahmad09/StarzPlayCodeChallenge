@@ -11,7 +11,7 @@ final class TVDetailVM: ObservableObject {
 
     private let seaasonService: SeasonService
     private let movieId = 76479// 41727
-    init(seaasonService: SeasonService){
+    init(seaasonService: SeasonService) {
         self.seaasonService = seaasonService
     }
 
@@ -23,34 +23,34 @@ final class TVDetailVM: ObservableObject {
     var errorMessage = ""
 
 }
-//MARK: - TV Detail Api
+// MARK: - TV Detail Api
 extension TVDetailVM {
     func showError(message: String) {
         errorMessage = message
         showError = true
     }
 
-    func getTVDetail(_ seasonId: Int = 0) async{
+    func getTVDetail(_ seasonId: Int = 0) async {
         loading = true
         await handleTvDetailResult(seaasonService.getTVShowDetail(from: movieId))
         await getSeasonDetail()
         loading = false
     }
 
-    @MainActor func handleTvDetailResult(_ result: Result<TvDetailModel, RequestError>) async{
+    @MainActor func handleTvDetailResult(_ result: Result<TvDetailModel, RequestError>) async {
         switch result {
         case let .success(tvDetail):
             self.tvDetail = tvDetail
             self.selecteFirstSeason()
         case let .failure(error):
-            
+
             self.errorMessage = error.customMessage
             self.showError = true
 
         }
     }
-    func selecteFirstSeason(){
-        if let fIndex = tvDetail?.seasons.firstIndex(where: {$0.isSelecte == false}){
+    func selecteFirstSeason() {
+        if let fIndex = tvDetail?.seasons.firstIndex(where: {$0.isSelecte == false}) {
             tvDetail?.seasons[fIndex].isSelecte = true
             seasonNumber = tvDetail?.seasons[fIndex].seasonNumber ?? 0
         }
@@ -65,17 +65,17 @@ extension TVDetailVM {
         }
     }
 }
-//MARK: - TV Season Api
+// MARK: - TV Season Api
 extension TVDetailVM {
-    func updateSeasonNumber(number:Int){
+    func updateSeasonNumber(number: Int) {
         self.seasonNumber = number
     }
-    func getSeasonDetail() async{
+    func getSeasonDetail() async {
         loading = true
         await  handleSeasonResult(seaasonService.getSeasonDetail(tv: movieId, seasonId: seasonNumber))
         loading = false
     }
-    @MainActor func handleSeasonResult(_ result: Result<Season, RequestError>) async{
+    @MainActor func handleSeasonResult(_ result: Result<Season, RequestError>) async {
         switch result {
         case let .success(seasonDeatail):
             self.episodes = seasonDeatail.episodes

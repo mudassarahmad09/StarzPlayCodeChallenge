@@ -30,7 +30,7 @@ struct TvDetailModel: Codable {
 
     }
 
-    var startYear: String?{
+    var startYear: String? {
         firstAirDate.toDate()?.toString(dateFormat: "yyyy") ?? ""
     }
 }

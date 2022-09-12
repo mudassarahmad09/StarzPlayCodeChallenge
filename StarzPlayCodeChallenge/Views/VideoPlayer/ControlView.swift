@@ -51,7 +51,6 @@ struct Controls: View {
                 }
                 Spacer()
 
-            
                 Button {
                     self.player.seek(to: CMTime(seconds: getSeconds() + 10, preferredTimescale: 1))
                 } label: {
@@ -102,11 +101,9 @@ struct Controls: View {
         }
     }
 
-
     func getSliderValue() -> Float {
         return Float(self.player.currentTime().seconds / (self.player.currentItem?.duration.seconds)!)
     }
-
 
     func getSeconds() -> Double {
         return Double(Double(self.value) * (self.player.currentItem?.duration.seconds)!)
@@ -116,10 +113,9 @@ struct Controls: View {
         HStack(spacing: 1) {
             Text("\( secondsToHoursMinutesSeconds(secondsInDouble: getSeconds()) ) ")
             Text("/")
-            Text("\(secondsToHoursMinutesSeconds(secondsInDouble:(self.player.currentItem?.duration.seconds)!))")
+            Text("\(secondsToHoursMinutesSeconds(secondsInDouble: (self.player.currentItem?.duration.seconds)!))")
         }
         .foregroundColor(.white)
-
 
     }
 
@@ -139,7 +135,6 @@ struct Controls: View {
 
 struct Controls_Previews: PreviewProvider {
 
-
     static var previews: some View {
         Controls(player: .constant(AVPlayer(url: URL(string: AppUrl.VURL)!)),
                  isPlaying: .constant(true),
@@ -152,4 +147,3 @@ struct Controls_Previews: PreviewProvider {
             .previewInterfaceOrientation(.landscapeLeft)
     }
 }
-

@@ -11,7 +11,6 @@ import Foundation
 import SwiftUI
 import AVKit
 
-
 struct PlayerView: UIViewControllerRepresentable {
 
     @Binding var player: AVPlayer
@@ -30,6 +29,5 @@ struct PlayerView: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: AVPlayerViewController, context: Context) {
 
     }
-
 
 }

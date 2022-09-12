@@ -27,10 +27,10 @@ struct GradientImageView: View {
         }
     }
 
-    func gradientView(image: Image) -> some View{
+    func gradientView(image: Image) -> some View {
         image
             .resizable()
-            .aspectRatio(CGSize(width: 500, height: 750),contentMode: .fit)
+            .aspectRatio(CGSize(width: 500, height: 750), contentMode: .fit)
             .edgesIgnoringSafeArea(.top)
             .overlay(
                 ZStack(alignment: .bottom) {

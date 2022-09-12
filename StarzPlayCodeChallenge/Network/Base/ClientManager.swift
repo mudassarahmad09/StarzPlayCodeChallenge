@@ -67,7 +67,7 @@ extension NetworkManagerService {
         }
 
     }
-    private func parseJSON(from data: Data) throws -> GenricModel{
+    private func parseJSON(from data: Data) throws -> GenricModel {
         do {
             return try JSONDecoder().decode(GenricModel.self, from: data)
             /// force logout here if neened
