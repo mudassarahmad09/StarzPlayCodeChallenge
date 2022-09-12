@@ -11,7 +11,7 @@ import MyApiLibrary
 final class TVDetailVM: ObservableObject {
 
     private let seaasonService: SeasonService
-    private let movieId = 76479// 41727
+    private let movieId =  41727 //76479
     init(seaasonService: SeasonService) {
         self.seaasonService = seaasonService
     }
