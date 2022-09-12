@@ -45,7 +45,6 @@
 		7A82816528CE2DD80087C88D /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82816428CE2DD80087C88D /* AsyncImageView.swift */; };
 		7A82816728CEF7A10087C88D /* VideoPlayerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82816628CEF7A10087C88D /* VideoPlayerTest.swift */; };
 		7A82817228CF51250087C88D /* MyApiLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 7A82817128CF51250087C88D /* MyApiLibrary */; };
-		7A82817528CF54940087C88D /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7A82817428CF54940087C88D /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,7 +105,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A82817528CF54940087C88D /* SDWebImageSwiftUI in Frameworks */,
 				7A82817228CF51250087C88D /* MyApiLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,7 +319,6 @@
 			name = StarzPlayCodeChallenge;
 			packageProductDependencies = (
 				7A82817128CF51250087C88D /* MyApiLibrary */,
-				7A82817428CF54940087C88D /* SDWebImageSwiftUI */,
 			);
 			productName = StarzPlayCodeChallenge;
 			productReference = 7A1657EF28CA1E96004EDE42 /* StarzPlayCodeChallenge.app */;
@@ -376,7 +373,6 @@
 			mainGroup = 7A1657E628CA1E96004EDE42;
 			packageReferences = (
 				7A82817028CF51250087C88D /* XCRemoteSwiftPackageReference "MyApiLibrary" */,
-				7A82817328CF54940087C88D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = 7A1657F028CA1E96004EDE42 /* Products */;
 			projectDirPath = "";
@@ -734,14 +730,6 @@
 				kind = branch;
 			};
 		};
-		7A82817328CF54940087C88D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -749,11 +737,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7A82817028CF51250087C88D /* XCRemoteSwiftPackageReference "MyApiLibrary" */;
 			productName = MyApiLibrary;
-		};
-		7A82817428CF54940087C88D /* SDWebImageSwiftUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7A82817328CF54940087C88D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
-			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

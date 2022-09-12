@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import SDWebImage
+
 
 struct EpisodeCell: View {
 
@@ -22,11 +22,6 @@ struct EpisodeCell: View {
 
                 ZStack {
                     AsyncImageView(url: URL(string: AppUrl.IMAGEURL + (episode.stillPath ?? ""))!)
-//                    AsyncImage(url: URL(string: AppUrl.IMAGEURL + (episode.stillPath ?? ""))) { image in
-//                        episodeImagePerView(image: image)
-//                    } placeholder: {
-//                        episodeImagePerView(image: Image(CommonImage.episodePH.rawValue)  )
-//                    }
 
                     Image(systemName: "play.fill")
                         .foregroundColor(.white)
@@ -50,13 +45,6 @@ struct EpisodeCell: View {
         .background(Color(CommonColor.seconday.rawValue))
     }
 
-//    func episodeImagePerView(image:Image) -> some View {
-//        image
-//            .resizable()
-//            .aspectRatio(CGSize(width: 500, height: 281),contentMode: .fit)
-//            .frame(width: 120, height: 70)
-//            .foregroundColor(.white)
-//    }
 }
 
 struct EpisodeCell_Previews: PreviewProvider {
