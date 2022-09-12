@@ -278,6 +278,33 @@
 			path = MainAppFactory;
 			sourceTree = "<group>";
 		};
+		7A3B5D6828CFB02D00C54383 /* RequestTest */ = {
+			isa = PBXGroup;
+			children = (
+				7A55200128CCF73300B8F9BD /* RequestApiTests.swift */,
+			);
+			path = RequestTest;
+			sourceTree = "<group>";
+		};
+		7A3B5D6928CFB03C00C54383 /* ViewModelTest */ = {
+			isa = PBXGroup;
+			children = (
+				7A82816628CEF7A10087C88D /* VideoPlayerTest.swift */,
+				7A7FDBE728CDE94200F6C6C4 /* SeasonVmTest.swift */,
+				7A55200A28CD0ADA00B8F9BD /* TvDetailVmTest.swift */,
+			);
+			path = ViewModelTest;
+			sourceTree = "<group>";
+		};
+		7A3B5D6A28CFB05700C54383 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				7A55200828CCF89000B8F9BD /* Mockable.swift */,
+				7A7FDBE928CDEF7500F6C6C4 /* ModelsHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		7A551FE128CCC27300B8F9BD /* VideoPlayer */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,12 +319,9 @@
 		7A551FF928CCF70100B8F9BD /* StarzPlayCodeChallengeTests */ = {
 			isa = PBXGroup;
 			children = (
-				7A55200128CCF73300B8F9BD /* RequestApiTests.swift */,
-				7A55200A28CD0ADA00B8F9BD /* TvDetailVmTest.swift */,
-				7A7FDBE728CDE94200F6C6C4 /* SeasonVmTest.swift */,
-				7A82816628CEF7A10087C88D /* VideoPlayerTest.swift */,
-				7A7FDBE928CDEF7500F6C6C4 /* ModelsHelper.swift */,
-				7A55200828CCF89000B8F9BD /* Mockable.swift */,
+				7A3B5D6A28CFB05700C54383 /* Helper */,
+				7A3B5D6928CFB03C00C54383 /* ViewModelTest */,
+				7A3B5D6828CFB02D00C54383 /* RequestTest */,
 				7A55200328CCF7D300B8F9BD /* JSON */,
 			);
 			path = StarzPlayCodeChallengeTests;

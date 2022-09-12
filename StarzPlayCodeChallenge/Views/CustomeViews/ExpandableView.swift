@@ -18,8 +18,6 @@ struct ExpandableView: View {
     }
 
     private func determineTruncation(_ geometry: GeometryProxy) {
-        // Calculate the bounding box we'd need to render the
-        // text given the width from the GeometryReader.
         let total = self.text.boundingRect(
             with: CGSize(
                 width: geometry.size.width,
@@ -57,13 +55,14 @@ struct ExpandableView: View {
     }
 
     var toggleButton: some View {
-        Button(action: { self.expanded.toggle() }) {
+        Button(action: {
+            self.expanded.toggle()
+        }, label: {
             Text(self.expanded ? "Read less" : "Read more")
                 .font(.caption)
                 .foregroundColor(Color(CommonColor.button.rawValue))
-        }
+        })
     }
-
 }
 
 struct ExpandableView_Previews: PreviewProvider {

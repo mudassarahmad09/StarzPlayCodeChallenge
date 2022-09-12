@@ -15,7 +15,12 @@ protocol SeasonService {
 
 struct SeasonServiceAdpter: NetworkManagerService, SeasonService {
     func getSeasonDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError> {
-        return await sendApiRequest(endpoint: SeasonEndpoint.seasonDetail(tvid: id, seasonId: seasonId), responseModel: Season.self)
+        return await sendApiRequest(
+            endpoint: SeasonEndpoint.seasonDetail(
+                tvid: id,
+                seasonId: seasonId
+            ),
+            responseModel: Season.self)
     }
 
     func getTVShowDetail(from id: Int) async -> Result<TvDetailModel, RequestError> {

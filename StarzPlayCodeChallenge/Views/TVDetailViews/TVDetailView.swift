@@ -60,12 +60,15 @@ extension TVDetailView {
                     descripcationView()
                     reactionView()
 
-                    SeasonGridView(viewModel: viewModelForSeason(viewModel.tvDetail?.seasons ?? []), selectedSeason: { season in
+                    SeasonGridView(
+                        viewModel: viewModelForSeason(viewModel.tvDetail?.seasons ?? []), selectedSeason: { season in
+
                         Task(priority: .background) {
                             viewModel.updateSeasonNumber(number: season.seasonNumber ?? 0)
                             await viewModel.getSeasonDetail()
                             viewModel.update(selecteItem: season)
                         }
+
                     })
 
                     episodeList()
@@ -172,7 +175,7 @@ struct TVDetailView_Previews: PreviewProvider {
     static var previews: some View {
 
         let adpter = SeasonServiceAdpter()
-        let viewModel = TVDetailVM(seaasonService: adpter, seasonTypeId: .TheBoys)
+        let viewModel = TVDetailVM(seaasonService: adpter, seasonTypeId: .theBoys)
         let playerUrl =  URL(string: AppUrl.VURL)!
 
         TVDetailView(viewModel: viewModel, viewModelForSeason: {seasons in

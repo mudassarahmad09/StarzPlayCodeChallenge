@@ -12,15 +12,9 @@ struct ContentView: View {
 
         NavigationView {
             let app = AppInstantiationFactory()
-            
+
             HideNavbarOf(
-                view: TVDetailView(
-                    viewModel: app.makeSeasonDetailVM(),
-                    viewModelForSeason: { seasons in
-                        app.makeSeasonVm(for: seasons)
-                    },
-                    url: app.videoUrl()
-                )
+                view: app.startApp()
             )
         }
     }

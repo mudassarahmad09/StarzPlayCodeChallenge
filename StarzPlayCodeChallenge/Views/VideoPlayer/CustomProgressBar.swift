@@ -28,7 +28,13 @@ struct CustomProgressBar: UIViewRepresentable {
         slider.thumbTintColor = .red
         slider.setThumbImage(UIImage(named: CommonImage.ellipse.rawValue), for: .normal)
         slider.value = value
-        slider.addTarget(context.coordinator, action: #selector(context.coordinator.changed(slider:)), for: .valueChanged)
+        slider.addTarget(
+            context.coordinator,
+            action: #selector(
+                context.coordinator.changed(slider:)
+            ),
+            for: .valueChanged
+        )
         // adding the loader
         return slider
 

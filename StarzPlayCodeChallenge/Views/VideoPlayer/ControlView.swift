@@ -76,7 +76,13 @@ struct Controls: View {
         }
         .onAppear {
             // this is a periodic time observer on player which call its self after 1 sec
-            self.player.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 1), queue: .main) { (_) in
+            self.player.addPeriodicTimeObserver(
+                forInterval: CMTime(
+                    seconds: 1,
+                    preferredTimescale: 1
+                ),
+                queue: .main
+            ) { (_) in
                 self.value = getSliderValue()
                 if self.value == 1.0 {
                     self.isPlaying = false
@@ -119,10 +125,10 @@ struct Controls: View {
 
     func secondsToHoursMinutesSeconds(secondsInDouble: Double) -> String {
         let seconds = ((secondsInDouble.isNaN) ? 0 : Int(secondsInDouble))
-        let h = String(format: "%02d", Int(seconds / 3600))
-        let m = String(format: "%02d", Int((seconds % 3600) / 60))
-        let s = String(format: "%02d", Int((seconds % 3600) % 60))
-        return "\(h):\(m):\(s)"
+        let hours = String(format: "%02d", Int(seconds / 3600))
+        let mintus = String(format: "%02d", Int((seconds % 3600) / 60))
+        let second = String(format: "%02d", Int((seconds % 3600) % 60))
+        return "\(hours):\(mintus):\(second)"
     }
 }
 struct Controls_Previews: PreviewProvider {

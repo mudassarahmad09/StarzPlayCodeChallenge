@@ -16,13 +16,13 @@ struct SeasonGridView: View {
     init(
         viewModel: SeasonGridVM,
         selectedSeason: @escaping (_ season: Season) -> Void
-    ){
+    ) {
         self._viewModel = ObservedObject(wrappedValue: viewModel)
         self.selectedSeason = selectedSeason
     }
 
     var body: some View {
-        GeometryReader { gp in
+        GeometryReader { geometryReader in
             ScrollView(.horizontal, showsIndicators: false, content: {
                 HStack {
                     ForEach(viewModel.seasons, id: \.self) { season in
@@ -49,10 +49,10 @@ struct SeasonGridView: View {
                                     .font(.system(size: 18, weight: .bold, design: .default))
                                     .foregroundColor(.white)
 
-                            }.frame(width: gp.size.width/3)
+                            }.frame(width: geometryReader.size.width/3)
 
                             Divider()
-                                .frame(width: gp.size.width/3, height: season.isSelecte ? 2.5 : 0)
+                                .frame(width: geometryReader.size.width/3, height: season.isSelecte ? 2.5 : 0)
                                 .overlay(.white)
 
                         }.frame(height: 50, alignment: .top)
@@ -71,7 +71,21 @@ struct SeasonGridView: View {
 struct SeasonGridView_Previews: PreviewProvider {
     static var previews: some View {
 
-         let mockSeasons = [Season(name: "SEASON 1", isSelected: true), Season(name: "SEASON 2", isSelected: false), Season(name: "SEASON 3", isSelected: false), Season(name: "SEASON 4", isSelected: false)]
+        let mockSeasons = [
+            Season(
+                name: "SEASON 1",
+                isSelected: true
+            ), Season(
+                name: "SEASON 2",
+                isSelected: false
+            ), Season(
+                name: "SEASON 3",
+                isSelected: false
+            ), Season(
+                name: "SEASON 4",
+                isSelected: false
+            )
+        ]
 
         SeasonGridView(viewModel: SeasonGridVM(seasons: mockSeasons), selectedSeason: {_ in
 

@@ -36,10 +36,10 @@ struct GradientImageView: View {
                 ZStack(alignment: .bottom) {
                     image
                         .resizable()
-                        .blur(radius: 20) /// blur the image
-                        .padding(-20) /// expand the blur a bit to cover the edges
-                        .clipped() /// prevent blur overflow
-                        .mask(gradient) /// mask the blurred image using the gradient's alpha values
+                        .blur(radius: 20)
+                        .padding(-20)
+                        .clipped()
+                        .mask(gradient)
 
                     gradient
                 }
