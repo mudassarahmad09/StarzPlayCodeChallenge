@@ -2,7 +2,7 @@
 //  SessionGridVM.swift
 //  StarzPlayCodeChallenge
 //
-//  Created by Qazi Ammar Arshad on 09/09/2022.
+//  Created by Qazi  Mudassar Tanveer on 09/09/2022.
 //
 
 import Foundation
@@ -13,11 +13,8 @@ final class SeasonGridVM: ObservableObject {
 
     init(seasons: [Season]) {
         self.seasons = seasons
-
     }
-
 }
-
 extension SeasonGridVM {
     func update(selecteItem: Season) {
         for index in 0..<seasons.count {
@@ -28,6 +25,7 @@ extension SeasonGridVM {
             }
         }
     }
+
     func getUpdatedValue() -> Season? {
         seasons.first(where: {$0.isSelecte == true})
     }

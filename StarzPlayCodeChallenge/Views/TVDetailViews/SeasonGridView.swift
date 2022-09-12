@@ -2,7 +2,7 @@
 //  SeasonGridView.swift
 //  StarzPlayCodeChallenge
 //
-//  Created by Qazi Ammar Arshad on 09/09/2022.
+//  Created by Qazi  Mudassar Tanveer on 09/09/2022.
 //
 
 import SwiftUI
@@ -10,9 +10,8 @@ import SwiftUI
 struct SeasonGridView: View {
 
     @ObservedObject private var viewModel: SeasonGridVM
-    private var selectedSeason: (_ season: Season) -> Void
-
     @State var selectedValue = false
+    private var selectedSeason: (_ season: Season) -> Void
 
     init(viewModel: SeasonGridVM, selectedSeason: @escaping (_ season: Season) -> Void) {
         self._viewModel = ObservedObject(wrappedValue: viewModel)
@@ -65,11 +64,8 @@ struct SeasonGridView: View {
         .padding(.top, 23)
         .frame( height: 50)
         .background(.black)
-
     }
-
 }
-
 struct SeasonGridView_Previews: PreviewProvider {
     static var previews: some View {
 

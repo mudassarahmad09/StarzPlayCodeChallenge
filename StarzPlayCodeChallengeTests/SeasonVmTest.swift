@@ -2,7 +2,7 @@
 //  SeasonVmTest.swift
 //  StarzPlayCodeChallengeTests
 //
-//  Created by Qazi Ammar Arshad on 11/09/2022.
+//  Created by Qazi  Mudassar Tanveer on 11/09/2022.
 //
 
 import XCTest

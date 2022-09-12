@@ -2,25 +2,23 @@
 //  TVDetailView.swift
 //  StarzPlayCodeChallenge
 //
-//  Created by Qazi Ammar Arshad on 08/09/2022.
+//  Created by Qazi  Mudassar Tanveer on 08/09/2022.
 //
 
 import SwiftUI
 
-
 struct TVDetailView: View {
 
     @StateObject private var viewModel: TVDetailVM
+    @State private var goToPlayer = false
     private var viewModelForSeason: ([Season]) -> SeasonGridVM
     private var url: URL
-    
+
     init(viewModel: TVDetailVM, viewModelForSeason: @escaping ([Season]) -> SeasonGridVM, url: URL) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.viewModelForSeason = viewModelForSeason
         self.url = url
     }
-
-    @State private var goToPlayer = false
 
     var body: some View {
         loadView()
@@ -102,6 +100,7 @@ extension TVDetailView {
             .padding([.trailing, .leading])
 
     }
+
     func bannerImageView() -> some View {
         VStack(alignment: .leading, spacing: 15) {
 
@@ -111,6 +110,7 @@ extension TVDetailView {
         }
         .padding([.trailing, .leading])
     }
+
     func nameAndTypeView() -> some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(viewModel.tvDetail?.originalName ?? "")
@@ -137,6 +137,7 @@ extension TVDetailView {
 
         }
     }
+
     func descripcationView() -> some View {
         VStack {
             ExpandableView(viewModel.tvDetail?.overview ?? "")
@@ -162,7 +163,6 @@ extension TVDetailView {
         }.padding([.trailing, .leading])
     }
 }
-
 struct TVDetailView_Previews: PreviewProvider {
     static var previews: some View {
 

@@ -2,7 +2,7 @@
 //  VideoPlayerView.swift
 //  BattleRap
 //
-//  Created by Qazi Ammar Arshad on 14/03/2022.
+//  Created by Qazi  Mudassar Tanveer on 14/03/2022.
 //
 
 import SwiftUI
@@ -15,20 +15,17 @@ struct VideoPlayerView: View {
     @State private var showControlls = true
     @State private var value: Float = 0.0
     @State private var player: AVPlayer
-
-    init(url:URL){
-        _player = State(wrappedValue: AVPlayer(url: url))
-    }
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
-    var body: some View {
+    init(url: URL) {
+        _player = State(wrappedValue: AVPlayer(url: url))
+    }
 
+    var body: some View {
         VStack {
             ZStack(alignment: .center) {
-
                 PlayerView(player: $player)
 
-                // show the progress View
                 if isLoading {
                     loaderView()
                 }
@@ -38,7 +35,6 @@ struct VideoPlayerView: View {
                              isPlaying: $isPlaying,
                              pannel: $showControlls,
                              value: self.$value) {
-
                                                 onback()
                     }
                 }
@@ -67,13 +63,11 @@ struct VideoPlayerView: View {
             .scaleEffect(3)
     }
 
-    /// Change screen Orentation when player is strted
     func rotate() {
         let value = UIInterfaceOrientation.landscapeRight.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
     }
 
-    /// Change screen Orentation when back button is pressed
     func onback() {
         self.player.pause()
         self.isPlaying = false
@@ -82,12 +76,11 @@ struct VideoPlayerView: View {
         UIDevice.current.setValue(value, forKey: "orientation")
 
     }
-
 }
 
 struct VideoPlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        VideoPlayerView(url:  URL(string: AppUrl.VURL)!)
+        VideoPlayerView(url: URL(string: AppUrl.VURL)!)
             .previewInterfaceOrientation(.landscapeRight)
     }
 }

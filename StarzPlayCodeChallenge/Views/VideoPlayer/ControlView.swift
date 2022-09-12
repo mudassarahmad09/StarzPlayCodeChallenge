@@ -2,7 +2,7 @@
 //  ControlView.swift
 //  StarzPlayCodeChallenge
 //
-//  Created by Qazi Ammar Arshad on 10/09/2022.
+//  Created by Qazi  Mudassar Tanveer on 10/09/2022.
 //
 
 import SwiftUI
@@ -17,9 +17,7 @@ struct Controls: View {
     var didTapBack: (() -> Void)
 
     var body: some View {
-
         VStack {
-
             backBtn()
 
             Spacer()
@@ -49,6 +47,7 @@ struct Controls: View {
                     Image(systemName: isPlaying ? "pause.fill" : "play.fill")
                         .foregroundColor(.white)
                 }
+
                 Spacer()
 
                 Button {
@@ -84,8 +83,7 @@ struct Controls: View {
                 }
             }
         }
-
-    } // Body
+    }
 
     func backBtn() -> some View {
         HStack {
@@ -119,20 +117,14 @@ struct Controls: View {
 
     }
 
-    /// Convert the total second into hours minuts and second for showing under progress bar.
     func secondsToHoursMinutesSeconds(secondsInDouble: Double) -> String {
-
         let seconds = ((secondsInDouble.isNaN) ? 0 : Int(secondsInDouble))
-
         let h = String(format: "%02d", Int(seconds / 3600))
         let m = String(format: "%02d", Int((seconds % 3600) / 60))
         let s = String(format: "%02d", Int((seconds % 3600) % 60))
-
         return "\(h):\(m):\(s)"
     }
-
 }
-
 struct Controls_Previews: PreviewProvider {
 
     static var previews: some View {

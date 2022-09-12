@@ -2,7 +2,7 @@
 //  TVDetailVM.swift
 //  StarzPlayCodeChallenge
 //
-//  Created by Qazi Ammar Arshad on 09/09/2022.
+//  Created by Qazi  Mudassar Tanveer on 09/09/2022.
 //
 
 import Foundation
@@ -11,10 +11,7 @@ import MyApiLibrary
 final class TVDetailVM: ObservableObject {
 
     private let seaasonService: SeasonService
-    private let movieId =  41727 //76479
-    init(seaasonService: SeasonService) {
-        self.seaasonService = seaasonService
-    }
+    private let movieId =  76479// 41727
 
     @Published private(set) var tvDetail: TvDetailModel?
     @Published private(set) var episodes: [Episode]?
@@ -23,6 +20,9 @@ final class TVDetailVM: ObservableObject {
     @Published var loading = false
     var errorMessage = ""
 
+    init(seaasonService: SeasonService) {
+        self.seaasonService = seaasonService
+    }
 }
 // MARK: - TV Detail Api
 extension TVDetailVM {
@@ -50,12 +50,14 @@ extension TVDetailVM {
 
         }
     }
+
     func selecteFirstSeason() {
         if let fIndex = tvDetail?.seasons.firstIndex(where: {$0.isSelecte == false}) {
             tvDetail?.seasons[fIndex].isSelecte = true
             seasonNumber = tvDetail?.seasons[fIndex].seasonNumber ?? 0
         }
     }
+
     func update(selecteItem: Season) {
         for index in 0..<(tvDetail?.seasons.count ?? 0) {
             if tvDetail?.seasons[index].id == selecteItem.id {
@@ -71,11 +73,13 @@ extension TVDetailVM {
     func updateSeasonNumber(number: Int) {
         self.seasonNumber = number
     }
+
     func getSeasonDetail() async {
         loading = true
         await  handleSeasonResult(seaasonService.getSeasonDetail(tv: movieId, seasonId: seasonNumber))
         loading = false
     }
+
     @MainActor func handleSeasonResult(_ result: Result<Season, RequestError>) async {
         switch result {
         case let .success(seasonDeatail):

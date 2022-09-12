@@ -2,7 +2,7 @@
 //  StarzPlayCodeChallengeApp.swift
 //  StarzPlayCodeChallenge
 //
-//  Created by Qazi Ammar Arshad on 08/09/2022.
+//  Created by Qazi  Mudassar Tanveer on 08/09/2022.
 //
 
 import SwiftUI

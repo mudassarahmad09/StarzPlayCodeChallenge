@@ -2,7 +2,7 @@
 //  VideoPlayerTest.swift
 //  StarzPlayCodeChallengeTests
 //
-//  Created by Qazi Ammar Arshad on 12/09/2022.
+//  Created by Qazi  Mudassar Tanveer on 12/09/2022.
 //
 
 @testable import StarzPlayCodeChallenge

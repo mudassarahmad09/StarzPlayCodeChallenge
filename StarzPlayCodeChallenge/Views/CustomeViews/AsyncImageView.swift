@@ -2,7 +2,7 @@
 //  AsyncImageView.swift
 //  StarzPlayCodeChallenge
 //
-//  Created by Qazi Ammar Arshad on 11/09/2022.
+//  Created by Qazi  Mudassar Tanveer on 11/09/2022.
 //
 
 import SwiftUI
@@ -19,14 +19,12 @@ struct AsyncImageView: View {
         ) { phase in
             switch phase {
             case .empty:
-
                 imagePerView(image: Image(CommonImage.episodePH.rawValue)  )
 
             case .success(let image):
                 imagePerView(image: image)
-                    // .transition(.scale(scale: 0.1, anchor: .center))
-            case .failure:
 
+            case .failure:
                 imagePerView(image: Image(CommonImage.episodePH.rawValue)  )
 
             @unknown default:
@@ -71,10 +69,8 @@ struct CacheAsyncImage<Content>: View where Content: View {
     var body: some View {
 
         if let cached = ImageCache[url] {
-            let _ = print("cached \(url.absoluteString)")
             content(.success(cached))
         } else {
-            let _ = print("request \(url.absoluteString)")
             AsyncImage(
                 url: url,
                 scale: scale,
@@ -94,7 +90,7 @@ struct CacheAsyncImage<Content>: View where Content: View {
     }
 }
 
-fileprivate class ImageCache {
+private class ImageCache {
     static private var cache: [URL: Image] = [:]
 
     static subscript(url: URL) -> Image? {

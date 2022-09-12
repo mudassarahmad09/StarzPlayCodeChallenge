@@ -2,7 +2,7 @@
 //  PlayerView.swift
 //  StarzPlayCodeChallenge
 //
-//  Created by Qazi Ammar Arshad on 10/09/2022.
+//  Created by Qazi  Mudassar Tanveer on 10/09/2022.
 //
 import Foundation
 import SwiftUI
@@ -26,5 +26,4 @@ struct PlayerView: UIViewControllerRepresentable {
     func updateUIViewController(_ uiViewController: AVPlayerViewController, context: Context) {
 
     }
-
 }
