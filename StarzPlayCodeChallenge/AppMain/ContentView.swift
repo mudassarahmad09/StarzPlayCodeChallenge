@@ -11,17 +11,15 @@ struct ContentView: View {
     var body: some View {
 
         NavigationView {
-            let adpter = SeasonServiceAdpter()
-            let viewModel = TVDetailVM(seaasonService: adpter, seasonTypeId: .TheBoys)
-            let avPlayerUrl = URL(string: AppUrl.VURL)!
-
+            let app = AppInstantiationFactory()
+            
             HideNavbarOf(
                 view: TVDetailView(
-                    viewModel: viewModel,
+                    viewModel: app.makeSeasonDetailVM(),
                     viewModelForSeason: { seasons in
-                        SeasonGridVM(seasons: seasons)
+                        app.makeSeasonVm(for: seasons)
                     },
-                    url: avPlayerUrl
+                    url: app.videoUrl()
                 )
             )
         }

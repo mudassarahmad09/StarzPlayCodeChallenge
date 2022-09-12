@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MyApiLibrary
 @testable import StarzPlayCodeChallenge
 
 func aSeason(name: String = "Any Name", isSelected: Bool = false, id : UUID = UUID()) -> Season{

@@ -26,7 +26,7 @@ struct EpisodeCell: View {
                         .foregroundColor(.white)
                 }
 
-                Text(episode.name ?? "")
+                Text("E\(episode.episodeNumber ?? 0) - \(episode.name ?? "")")
                     .foregroundColor(.white)
                     .fixedSize(horizontal: false, vertical: true)
                     .lineLimit(2)

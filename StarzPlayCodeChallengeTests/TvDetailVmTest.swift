@@ -101,9 +101,9 @@ class TvDetailVmTest: XCTestCase {
 
 
     func tvDetailVM() -> TVDetailVM{
-        TVDetailVM(seaasonService: SeasonServiceMock())
+        TVDetailVM(seaasonService: SeasonServiceMock(), seasonTypeId: .TheBoys)
     }
     func tvDetailVMFailabel() -> TVDetailVM{
-        TVDetailVM(seaasonService: SeasonServiceFailabelMock())
+        TVDetailVM(seaasonService: SeasonServiceFailabelMock(), seasonTypeId: .TheBoys)
     }
 }
