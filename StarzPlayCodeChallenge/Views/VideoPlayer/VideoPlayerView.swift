@@ -14,8 +14,11 @@ struct VideoPlayerView: View {
     @State private var isLoading = true
     @State private var showControlls = true
     @State private var value: Float = 0.0
+    @State private var player: AVPlayer
 
-    @Binding var player: AVPlayer
+    init(url:URL){
+        _player = State(wrappedValue: AVPlayer(url: url))
+    }
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 
     var body: some View {
@@ -84,7 +87,7 @@ struct VideoPlayerView: View {
 
 struct VideoPlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        VideoPlayerView(player: .constant(AVPlayer(url: URL(string: AppUrl.VURL)!)))
+        VideoPlayerView(url:  URL(string: AppUrl.VURL)!)
             .previewInterfaceOrientation(.landscapeRight)
     }
 }

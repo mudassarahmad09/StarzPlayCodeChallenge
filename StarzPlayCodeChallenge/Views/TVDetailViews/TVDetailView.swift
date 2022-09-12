@@ -6,25 +6,25 @@
 //
 
 import SwiftUI
-import AVKit
+
 
 struct TVDetailView: View {
 
     @StateObject private var viewModel: TVDetailVM
-    @State private var player: AVPlayer
     private var viewModelForSeason: ([Season]) -> SeasonGridVM
-
-    init(viewModel: TVDetailVM, viewModelForSeason: @escaping ([Season]) -> SeasonGridVM, player: AVPlayer) {
+    private var url: URL
+    
+    init(viewModel: TVDetailVM, viewModelForSeason: @escaping ([Season]) -> SeasonGridVM, url: URL) {
         _viewModel = StateObject(wrappedValue: viewModel)
         self.viewModelForSeason = viewModelForSeason
-        self._player = State(wrappedValue: player)
+        self.url = url
     }
 
     @State private var goToPlayer = false
 
     var body: some View {
         loadView()
-            .fullScreenCover(isPresented: $goToPlayer, content: {VideoPlayerView(player: $player)})
+            .fullScreenCover(isPresented: $goToPlayer, content: {VideoPlayerView(url: url)})
             .alert(isPresented: $viewModel.showError, content: {
                 Alert(title: Text(viewModel.errorMessage))
             })
@@ -167,14 +167,14 @@ struct TVDetailView_Previews: PreviewProvider {
 
         let adpter = SeasonServiceAdpter()
         let viewModel = TVDetailVM(seaasonService: adpter)
-        let player =  AVPlayer(url: URL(string: AppUrl.VURL)!)
+        let playerUrl =  URL(string: AppUrl.VURL)!
 
         TVDetailView(viewModel: viewModel, viewModelForSeason: {seasons in
             SeasonGridVM(seasons: seasons)
-        }, player: player)
+        }, url: playerUrl)
         TVDetailView(viewModel: viewModel, viewModelForSeason: {seasons in
             SeasonGridVM(seasons: seasons)
-        }, player: player).preferredColorScheme(.dark)
+        }, url: playerUrl).preferredColorScheme(.dark)
 
     }
 

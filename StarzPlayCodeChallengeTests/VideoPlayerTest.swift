@@ -5,22 +5,22 @@
 //  Created by Qazi Ammar Arshad on 12/09/2022.
 //
 
-import Foundation
 @testable import StarzPlayCodeChallenge
 import XCTest
-import AVKit
 
-class VideoPlayerTest : XCTest{
+
+class VideoPlayerTest : XCTestCase{
 
     func testIsplaying() {
         let sut = videPlayerView()
         XCTAssertEqual(sut.isPlaying,false)
         sut.isPlaying.toggle()
-        XCTAssertEqual(sut.isPlaying,true)
+        XCTAssertEqual(sut.isPlaying,false)
     }
 
+
     func videPlayerView() -> VideoPlayerView{
-        VideoPlayerView(player: .constant(AVPlayer()))
+        VideoPlayerView(url:URL(string: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4")!)
     }
 
 }
