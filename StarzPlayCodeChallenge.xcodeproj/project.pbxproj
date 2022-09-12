@@ -24,10 +24,7 @@
 		7A16583F28CB1D3D004EDE42 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16583E28CB1D3D004EDE42 /* Season.swift */; };
 		7A16584228CB1D59004EDE42 /* SeasonGridVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16584128CB1D59004EDE42 /* SeasonGridVM.swift */; };
 		7A16584528CB3A20004EDE42 /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16584428CB3A20004EDE42 /* EpisodeCell.swift */; };
-		7A16584B28CB59AA004EDE42 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16584A28CB59AA004EDE42 /* EndPoint.swift */; };
-		7A16584E28CB67B6004EDE42 /* ClientManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16584D28CB67B6004EDE42 /* ClientManager.swift */; };
-		7A16585128CB6872004EDE42 /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16585028CB6872004EDE42 /* RequestType.swift */; };
-		7A16585428CB68A2004EDE42 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16585328CB68A2004EDE42 /* RequestError.swift */; };
+		7A16584B28CB59AA004EDE42 /* EndPoint+AppURl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16584A28CB59AA004EDE42 /* EndPoint+AppURl.swift */; };
 		7A16585828CB6A06004EDE42 /* SeasonEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16585728CB6A06004EDE42 /* SeasonEndPoint.swift */; };
 		7A16585C28CB6A82004EDE42 /* SeasonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16585B28CB6A82004EDE42 /* SeasonService.swift */; };
 		7A16585F28CB7938004EDE42 /* TvDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16585E28CB7938004EDE42 /* TvDetailModel.swift */; };
@@ -47,6 +44,8 @@
 		7A7FDBEA28CDEF7500F6C6C4 /* ModelsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7FDBE928CDEF7500F6C6C4 /* ModelsHelper.swift */; };
 		7A82816528CE2DD80087C88D /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82816428CE2DD80087C88D /* AsyncImageView.swift */; };
 		7A82816728CEF7A10087C88D /* VideoPlayerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82816628CEF7A10087C88D /* VideoPlayerTest.swift */; };
+		7A82817228CF51250087C88D /* MyApiLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 7A82817128CF51250087C88D /* MyApiLibrary */; };
+		7A82817528CF54940087C88D /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7A82817428CF54940087C88D /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,10 +77,7 @@
 		7A16583E28CB1D3D004EDE42 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
 		7A16584128CB1D59004EDE42 /* SeasonGridVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonGridVM.swift; sourceTree = "<group>"; };
 		7A16584428CB3A20004EDE42 /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
-		7A16584A28CB59AA004EDE42 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
-		7A16584D28CB67B6004EDE42 /* ClientManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientManager.swift; sourceTree = "<group>"; };
-		7A16585028CB6872004EDE42 /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
-		7A16585328CB68A2004EDE42 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		7A16584A28CB59AA004EDE42 /* EndPoint+AppURl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EndPoint+AppURl.swift"; sourceTree = "<group>"; };
 		7A16585728CB6A06004EDE42 /* SeasonEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonEndPoint.swift; sourceTree = "<group>"; };
 		7A16585B28CB6A82004EDE42 /* SeasonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonService.swift; sourceTree = "<group>"; };
 		7A16585E28CB7938004EDE42 /* TvDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TvDetailModel.swift; sourceTree = "<group>"; };
@@ -110,6 +106,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A82817528CF54940087C88D /* SDWebImageSwiftUI in Frameworks */,
+				7A82817228CF51250087C88D /* MyApiLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,10 +248,7 @@
 		7A16584928CB5916004EDE42 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				7A16584A28CB59AA004EDE42 /* EndPoint.swift */,
-				7A16584D28CB67B6004EDE42 /* ClientManager.swift */,
-				7A16585028CB6872004EDE42 /* RequestType.swift */,
-				7A16585328CB68A2004EDE42 /* RequestError.swift */,
+				7A16584A28CB59AA004EDE42 /* EndPoint+AppURl.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -324,6 +319,10 @@
 			dependencies = (
 			);
 			name = StarzPlayCodeChallenge;
+			packageProductDependencies = (
+				7A82817128CF51250087C88D /* MyApiLibrary */,
+				7A82817428CF54940087C88D /* SDWebImageSwiftUI */,
+			);
 			productName = StarzPlayCodeChallenge;
 			productReference = 7A1657EF28CA1E96004EDE42 /* StarzPlayCodeChallenge.app */;
 			productType = "com.apple.product-type.application";
@@ -375,6 +374,10 @@
 				Base,
 			);
 			mainGroup = 7A1657E628CA1E96004EDE42;
+			packageReferences = (
+				7A82817028CF51250087C88D /* XCRemoteSwiftPackageReference "MyApiLibrary" */,
+				7A82817328CF54940087C88D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 7A1657F028CA1E96004EDE42 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -426,14 +429,11 @@
 				7A16585828CB6A06004EDE42 /* SeasonEndPoint.swift in Sources */,
 				7A551FF128CCD40700B8F9BD /* ControlView.swift in Sources */,
 				7A551FDE28CC617100B8F9BD /* Episode.swift in Sources */,
-				7A16584E28CB67B6004EDE42 /* ClientManager.swift in Sources */,
-				7A16585128CB6872004EDE42 /* RequestType.swift in Sources */,
 				7A16586228CB7FA6004EDE42 /* GenricModel.swift in Sources */,
 				7A16583F28CB1D3D004EDE42 /* Season.swift in Sources */,
-				7A16584B28CB59AA004EDE42 /* EndPoint.swift in Sources */,
+				7A16584B28CB59AA004EDE42 /* EndPoint+AppURl.swift in Sources */,
 				7A16585C28CB6A82004EDE42 /* SeasonService.swift in Sources */,
 				7A16584228CB1D59004EDE42 /* SeasonGridVM.swift in Sources */,
-				7A16585428CB68A2004EDE42 /* RequestError.swift in Sources */,
 				7A82816528CE2DD80087C88D /* AsyncImageView.swift in Sources */,
 				7A551FD828CB8F5700B8F9BD /* TVDetailVM.swift in Sources */,
 				7A1657F328CA1E97004EDE42 /* StarzPlayCodeChallengeApp.swift in Sources */,
@@ -724,6 +724,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7A82817028CF51250087C88D /* XCRemoteSwiftPackageReference "MyApiLibrary" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mudassarahmad09/MyApiLibrary";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		7A82817328CF54940087C88D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7A82817128CF51250087C88D /* MyApiLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A82817028CF51250087C88D /* XCRemoteSwiftPackageReference "MyApiLibrary" */;
+			productName = MyApiLibrary;
+		};
+		7A82817428CF54940087C88D /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7A82817328CF54940087C88D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7A1657E728CA1E96004EDE42 /* Project object */;
 }

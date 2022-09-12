@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MyApiLibrary
 
 enum SeasonEndpoint {
     case tvShowDetail(id: Int)

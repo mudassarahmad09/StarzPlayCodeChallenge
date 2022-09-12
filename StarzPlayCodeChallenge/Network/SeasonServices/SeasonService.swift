@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MyApiLibrary
 
 protocol SeasonService {
     func getTVShowDetail(from id: Int) async -> Result<TvDetailModel, RequestError>
