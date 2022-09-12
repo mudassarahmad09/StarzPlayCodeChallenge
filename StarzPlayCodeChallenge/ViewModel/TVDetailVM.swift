@@ -11,7 +11,7 @@ import MyApiLibrary
 final class TVDetailVM: ObservableObject {
 
     private let seaasonService: SeasonService
-    private let movieId =  76479// 41727
+    private let seasonTypeId: SeasonType
 
     @Published private(set) var tvDetail: TvDetailModel?
     @Published private(set) var episodes: [Episode]?
@@ -20,8 +20,9 @@ final class TVDetailVM: ObservableObject {
     @Published var loading = false
     var errorMessage = ""
 
-    init(seaasonService: SeasonService) {
+    init(seaasonService: SeasonService, seasonTypeId: SeasonType) {
         self.seaasonService = seaasonService
+        self.seasonTypeId = seasonTypeId
     }
 }
 // MARK: - TV Detail Api
@@ -33,7 +34,7 @@ extension TVDetailVM {
 
     func getTVDetail(_ seasonId: Int = 0) async {
         loading = true
-        await handleTvDetailResult(seaasonService.getTVShowDetail(from: movieId))
+        await handleTvDetailResult(seaasonService.getTVShowDetail(from: seasonTypeId.rawValue))
         await getSeasonDetail()
         loading = false
     }
@@ -76,7 +77,7 @@ extension TVDetailVM {
 
     func getSeasonDetail() async {
         loading = true
-        await  handleSeasonResult(seaasonService.getSeasonDetail(tv: movieId, seasonId: seasonNumber))
+        await  handleSeasonResult(seaasonService.getSeasonDetail(tv: seasonTypeId.rawValue, seasonId: seasonNumber))
         loading = false
     }
 

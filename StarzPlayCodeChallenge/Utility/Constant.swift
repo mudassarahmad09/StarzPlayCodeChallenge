@@ -27,3 +27,13 @@ enum AppUrl {
     static var APIKey = "3d0cda4466f269e793e9283f6ce0b75e"
     static var VURL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
 }
+
+enum SeasonType: Int{
+    case TheBoys = 76479
+    case Banshee = 41727
+    case See = 80752
+    case HouseOfTheDragon = 94997
+    case LordOfTheRing = 84773
+    case DoomPatrol = 79501
+
+}

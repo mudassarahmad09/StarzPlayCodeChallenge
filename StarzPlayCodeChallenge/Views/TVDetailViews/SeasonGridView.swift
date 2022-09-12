@@ -13,7 +13,10 @@ struct SeasonGridView: View {
     @State var selectedValue = false
     private var selectedSeason: (_ season: Season) -> Void
 
-    init(viewModel: SeasonGridVM, selectedSeason: @escaping (_ season: Season) -> Void) {
+    init(
+        viewModel: SeasonGridVM,
+        selectedSeason: @escaping (_ season: Season) -> Void
+    ){
         self._viewModel = ObservedObject(wrappedValue: viewModel)
         self.selectedSeason = selectedSeason
     }
@@ -49,7 +52,7 @@ struct SeasonGridView: View {
                             }.frame(width: gp.size.width/3)
 
                             Divider()
-                                .frame(width: gp.size.width/3, height: season.isSelecte ? 2 : 0)
+                                .frame(width: gp.size.width/3, height: season.isSelecte ? 2.5 : 0)
                                 .overlay(.white)
 
                         }.frame(height: 50, alignment: .top)
@@ -68,18 +71,16 @@ struct SeasonGridView: View {
 struct SeasonGridView_Previews: PreviewProvider {
     static var previews: some View {
 
-        let seasons = [Season(name: "SEASON 1", isSelected: true), Season(name: "SEASON 2", isSelected: false), Season(name: "SEASON 3", isSelected: false), Season(name: "SEASON 4", isSelected: false)]
+         let mockSeasons = [Season(name: "SEASON 1", isSelected: true), Season(name: "SEASON 2", isSelected: false), Season(name: "SEASON 3", isSelected: false), Season(name: "SEASON 4", isSelected: false)]
 
-        SeasonGridView(viewModel: SeasonGridVM(seasons: seasons), selectedSeason: {_ in
+        SeasonGridView(viewModel: SeasonGridVM(seasons: mockSeasons), selectedSeason: {_ in
 
         })
         .previewLayout(PreviewLayout.sizeThatFits)
-        SeasonGridView(viewModel: SeasonGridVM(seasons: seasons), selectedSeason: {_ in
+        SeasonGridView(viewModel: SeasonGridVM(seasons: mockSeasons), selectedSeason: {_ in
 
         })
         .previewDevice("iPhone 12 mini")
         .preferredColorScheme(.dark)
-        // .previewLayout(PreviewLayout.sizeThatFits)
-
     }
 }

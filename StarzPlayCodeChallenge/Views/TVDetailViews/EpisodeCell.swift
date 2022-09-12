@@ -28,15 +28,17 @@ struct EpisodeCell: View {
 
                 Text(episode.name ?? "")
                     .foregroundColor(.white)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .lineLimit(2)
 
             }
 
             Spacer()
 
-            Image(systemName: "square.and.arrow.down.fill")
+            Image(systemName: "arrow.down.circle")
                 .foregroundColor(.gray)
                 .font(Font.system(size: 30, weight: .medium))
-                .padding(.trailing, 20)
+                .padding(.trailing, 10)
 
         }
         .padding([.top, .bottom], 15)

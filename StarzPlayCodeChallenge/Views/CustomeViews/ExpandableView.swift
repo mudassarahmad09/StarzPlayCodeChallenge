@@ -51,6 +51,7 @@ struct ExpandableView: View {
                 self.toggleButton
             }
         }
+        .padding(.top, 10)
         .padding([.trailing, .leading])
         .background(.black)
     }

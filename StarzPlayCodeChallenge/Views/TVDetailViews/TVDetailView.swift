@@ -163,14 +163,16 @@ extension TVDetailView {
             RoundedButton(iconName: "hand.thumbsup", textName: "I like it")
             RoundedButton(iconName: "hand.thumbsdown", textName: "I don't like it")
             Spacer()
-        }.padding([.trailing, .leading])
+        }
+        .padding(.top, 10)
+        .padding([.trailing, .leading])
     }
 }
 struct TVDetailView_Previews: PreviewProvider {
     static var previews: some View {
 
         let adpter = SeasonServiceAdpter()
-        let viewModel = TVDetailVM(seaasonService: adpter)
+        let viewModel = TVDetailVM(seaasonService: adpter, seasonTypeId: .TheBoys)
         let playerUrl =  URL(string: AppUrl.VURL)!
 
         TVDetailView(viewModel: viewModel, viewModelForSeason: {seasons in
