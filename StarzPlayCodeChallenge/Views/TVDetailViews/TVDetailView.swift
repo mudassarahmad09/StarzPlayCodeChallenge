@@ -14,8 +14,12 @@ struct TVDetailView: View {
     private var viewModelForSeason: ([Season]) -> SeasonGridVM
     private var url: URL
 
-    init(viewModel: TVDetailVM, viewModelForSeason: @escaping ([Season]) -> SeasonGridVM, url: URL) {
-        _viewModel = StateObject(wrappedValue: viewModel)
+    init(
+        viewModel: TVDetailVM,
+        viewModelForSeason: @escaping ([Season]) -> SeasonGridVM,
+        url: URL
+    ) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
         self.viewModelForSeason = viewModelForSeason
         self.url = url
     }
@@ -26,7 +30,6 @@ struct TVDetailView: View {
             .alert(isPresented: $viewModel.showError, content: {
                 Alert(title: Text(viewModel.errorMessage))
             })
-
     }
 }
 // MARK: - Load View
@@ -42,7 +45,7 @@ extension TVDetailView {
             }
 
             ScrollView {
-                VStack(spacing: 10) {
+                VStack(spacing: 5) {
                     ZStack(alignment: .bottom) {
                         GradientImageView(image: viewModel.tvDetail?.posterPath ?? "")
 

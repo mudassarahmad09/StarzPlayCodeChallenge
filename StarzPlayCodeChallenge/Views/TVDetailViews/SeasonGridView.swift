@@ -60,8 +60,7 @@ struct SeasonGridView: View {
 
         }
         .animation(.easeOut, value: viewModel.getUpdatedValue())
-        // .padding([.leading, .trailing])
-        .padding(.top, 23)
+        .padding(.top, 18)
         .frame( height: 50)
         .background(.black)
     }

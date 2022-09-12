@@ -18,8 +18,8 @@ struct RoundedButton: View {
                 print("Round Action")
             }) {
                 Image(systemName: iconName)
-                    .font(Font.system(size: 30, weight: .medium))
-                    .frame(width: 65, height: 65)
+                    .font(Font.system(size: 24, weight: .medium))
+                    .frame(width: 50, height: 50)
                     .foregroundColor(Color.white)
                     .background(Color(CommonColor.seconday.rawValue))
                     .clipShape(Circle())

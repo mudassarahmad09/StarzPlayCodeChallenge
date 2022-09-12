@@ -16,8 +16,8 @@ struct EpisodeCell: View {
             HStack(spacing: 10) {
 
                 Image(systemName: "chevron.forward")
-                    .foregroundColor(.gray)
-                    .font(Font.system(size: 22, weight: .medium))
+                    .foregroundColor(.white)
+                    .font(Font.system(size: 18, weight: .medium))
 
                 ZStack {
                     AsyncImageView(url: URL(string: AppUrl.IMAGEURL + (episode.stillPath ?? ""))!)
@@ -39,7 +39,7 @@ struct EpisodeCell: View {
                 .padding(.trailing, 20)
 
         }
-        .padding([.top, .bottom], 30)
+        .padding([.top, .bottom], 15)
         .padding([.leading, .trailing])
         .background(Color(CommonColor.seconday.rawValue))
     }
