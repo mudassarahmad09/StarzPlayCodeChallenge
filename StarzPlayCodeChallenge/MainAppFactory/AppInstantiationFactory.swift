@@ -9,6 +9,11 @@ import Foundation
 
 final class AppInstantiationFactory {
 
+    private let seasonName: SeasonType
+    init(seasonName: SeasonType){
+        self.seasonName = seasonName
+    }
+
    @MainActor func startApp() -> TVDetailView {
         TVDetailView(
             viewModel: makeSeasonDetailVM(),
@@ -19,7 +24,7 @@ final class AppInstantiationFactory {
     func makeSeasonDetailVM() -> TVDetailVM {
         return TVDetailVM(
             seaasonService: SeasonServiceAdpter(),
-            seasonTypeId: .theBoys
+            seasonTypeId: seasonName
         )
     }
 
