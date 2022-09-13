@@ -173,18 +173,9 @@ extension TVDetailView {
 }
 struct TVDetailView_Previews: PreviewProvider {
     static var previews: some View {
-
-        let adpter = SeasonServiceAdpter()
-        let viewModel = TVDetailVM(seaasonService: adpter, seasonTypeId: .theBoys)
-        let playerUrl =  URL(string: AppUrl.VURL)!
-
-        TVDetailView(viewModel: viewModel, viewModelForSeason: {seasons in
-            SeasonGridVM(seasons: seasons)
-        }, url: playerUrl)
-        TVDetailView(viewModel: viewModel, viewModelForSeason: {seasons in
-            SeasonGridVM(seasons: seasons)
-        }, url: playerUrl).preferredColorScheme(.dark)
+        let app = AppInstantiationFactory(seasonName: .theBoys)
+        app.startApp()
+        app.startApp().preferredColorScheme(.dark)
 
     }
-
 }
