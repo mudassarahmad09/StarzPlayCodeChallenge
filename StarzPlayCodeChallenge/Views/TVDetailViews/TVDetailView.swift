@@ -95,10 +95,10 @@ extension TVDetailView {
             HStack(spacing: 20) {
                 Image(systemName: "rectangle")
                     .foregroundColor(.white)
-                    .font(Font.system(size: 28, weight: .regular))
+                    .font(Font.system(size: 24, weight: .regular))
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(.white)
-                    .font(Font.system(size: 28, weight: .regular))
+                    .font(Font.system(size: 24, weight: .regular))
 
             }
 
