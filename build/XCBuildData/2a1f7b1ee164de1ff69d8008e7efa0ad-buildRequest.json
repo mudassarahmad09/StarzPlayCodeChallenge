@@ -1,0 +1,64 @@
+{
+  "_buildCommand2" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : false,
+    "targets" : null
+  },
+  "buildCommand" : "build",
+  "configuredTargets" : [
+    {
+      "guid" : "0ee874cfc390da4525cab161021868430374ba662f3976ab18799056d5059736"
+    }
+  ],
+  "containerPath" : "/Users/qazimudassar/Documents/Myproject/StarzPlayCodeChallenge/StarzPlayCodeChallenge.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "activeArchitecture" : "arm64",
+    "activeRunDestination" : {
+      "disableOnlyActiveArch" : false,
+      "platform" : "iphonesimulator",
+      "sdk" : "iphonesimulator16.2",
+      "sdkVariant" : "iphonesimulator",
+      "supportedArchitectures" : [
+        "arm64",
+        "x86_64"
+      ],
+      "targetArchitecture" : "arm64"
+    },
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "",
+      "buildProductsPath" : "",
+      "derivedDataPath" : "/Users/qazimudassar/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/qazimudassar/Library/Developer/Xcode/DerivedData/StarzPlayCodeChallenge-edbqmcsggrtxoaefnjsxfeqafnfw/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/qazimudassar/Library/Developer/Xcode/DerivedData/StarzPlayCodeChallenge-edbqmcsggrtxoaefnjsxfeqafnfw/Index.noindex/PrecompiledHeaders",
+      "pchPath" : ""
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ASSETCATALOG_FILTER_FOR_DEVICE_MODEL" : "iPhone15,2",
+          "ASSETCATALOG_FILTER_FOR_DEVICE_OS_VERSION" : "16.2",
+          "ASSETCATALOG_FILTER_FOR_THINNING_DEVICE_CONFIGURATION" : "iPhone15,2",
+          "BUILD_ACTIVE_RESOURCES_ONLY" : "YES",
+          "ENABLE_PREVIEWS" : "NO",
+          "TARGET_DEVICE_IDENTIFIER" : "3692F8E9-4BA4-487D-8350-D458B95FC10F",
+          "TARGET_DEVICE_MODEL" : "iPhone15,2",
+          "TARGET_DEVICE_OS_VERSION" : "16.2",
+          "TARGET_DEVICE_PLATFORM_NAME" : "iphonesimulator"
+        }
+      }
+    }
+  },
+  "schemeCommand" : "launch",
+  "schemeCommand2" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : false,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}

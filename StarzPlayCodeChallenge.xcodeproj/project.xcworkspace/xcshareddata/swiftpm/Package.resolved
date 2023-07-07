@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "myapilibrary",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mudassarahmad09/MyApiLibrary",
+      "state" : {
+        "branch" : "main",
+        "revision" : "597eed439a35294b33a449da5bd0f6fc295a0f98"
+      }
+    }
+  ],
+  "version" : 2
+}

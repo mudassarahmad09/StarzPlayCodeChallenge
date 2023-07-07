@@ -18,11 +18,7 @@ final class SeasonGridVM: ObservableObject {
 extension SeasonGridVM {
     func update(selecteItem: Season) {
         for index in 0..<seasons.count {
-            if seasons[index].id == selecteItem.id {
-                seasons[index].isSelecte = true
-            } else {
-                seasons[index].isSelecte = false
-            }
+            seasons[index].isSelecte = (seasons[index].id == selecteItem.id)
         }
     }
 

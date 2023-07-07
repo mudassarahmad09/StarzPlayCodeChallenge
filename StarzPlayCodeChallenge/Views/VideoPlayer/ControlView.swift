@@ -19,55 +19,55 @@ struct Controls: View {
     var body: some View {
         VStack {
             backBtn()
-
+            
             Spacer()
-
+            
             HStack {
-
+                
                 Button {
                     self.player.seek(to: CMTime(seconds: getSeconds() - 10, preferredTimescale: 1))
                 } label: {
                     Image(systemName: "backward.fill")
                         .foregroundColor(.white)
                 }
-
+                
                 Spacer()
-
+                
                 Button {
-
+                    
                     if isPlaying {
                         self.player.pause()
                     } else {
                         self.player.play()
                     }
                     isPlaying.toggle()
-
+                    
                 } label: {
-
+                    
                     Image(systemName: isPlaying ? "pause.fill" : "play.fill")
                         .foregroundColor(.white)
                 }
-
+                
                 Spacer()
-
+                
                 Button {
                     self.player.seek(to: CMTime(seconds: getSeconds() + 10, preferredTimescale: 1))
                 } label: {
-
+                    
                     Image(systemName: "forward.fill")
                         .foregroundColor(.white)
                 }
-
+                
             }
             .frame(width: 250)
-
+            
             Spacer()
-
+            
             VStack(alignment: .leading) {
                 CustomProgressBar(player: $player, value: $value, isPlaying: $isPlaying)
                 videoTime()
             }
-
+            
         }
         .padding()
         .background(Color.black.opacity(0.4))
@@ -106,11 +106,11 @@ struct Controls: View {
     }
 
     func getSliderValue() -> Float {
-        return Float(self.player.currentTime().seconds / (self.player.currentItem?.duration.seconds)!)
+        Float(self.player.currentTime().seconds / (self.player.currentItem?.duration.seconds)!)
     }
 
     func getSeconds() -> Double {
-        return Double(Double(self.value) * (self.player.currentItem?.duration.seconds)!)
+        Double(Double(self.value) * (self.player.currentItem?.duration.seconds)!)
     }
 
     func videoTime() -> some View {

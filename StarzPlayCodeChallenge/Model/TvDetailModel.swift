@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - ShowDetailWelcome
-struct TvDetailModel: Codable {
+struct TvDetailModel: Decodable {
     let adult: Bool
     let firstAirDate: String
     let id: Int

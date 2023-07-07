@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+StarzPlayCodeChallenge in StarzPlayCodeChallenge, no dependencies
+StarzPlayCodeChallengeTests in StarzPlayCodeChallenge, depends on:
+StarzPlayCodeChallenge in StarzPlayCodeChallenge (explicit)

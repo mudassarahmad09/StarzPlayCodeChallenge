@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Season: Codable, Identifiable, Hashable {
+struct Season: Decodable, Identifiable, Hashable {
 
     var airDate: String?
     var episodeCount: Int?

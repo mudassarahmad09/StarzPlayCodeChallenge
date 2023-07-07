@@ -26,41 +26,14 @@ struct SeasonGridView: View {
             ScrollView(.horizontal, showsIndicators: false, content: {
                 HStack {
                     ForEach(viewModel.seasons, id: \.self) { season in
-                        VStack {
-                            HStack {
-                                Spacer()
-                                Button(action: {
-                                    withAnimation {
-                                        viewModel.update(selecteItem: season)
-                                    }
-
-                                    selectedSeason(viewModel.getUpdatedValue() ?? season)
-                                }, label: {
-                                    HStack {
-                                        Text(season.name)
-                                            .font(.system(size: 18, weight: .bold, design: .default))
-                                            .foregroundColor(season.isSelecte ? .white : .gray)
-
-                                    }
-                                })
-
-                                Spacer()
-                                Text(" |")
-                                    .font(.system(size: 18, weight: .bold, design: .default))
-                                    .foregroundColor(.white)
-
-                            }.frame(width: geometryReader.size.width/3)
-
-                            Divider()
-                                .frame(width: geometryReader.size.width/3, height: season.isSelecte ? 2.5 : 0)
-                                .overlay(.white)
-
-                        }.frame(height: 50, alignment: .top)
+                        SeasonGridCell(geometryReader: geometryReader,
+                                       season: season) {
+                            viewModel.update(selecteItem: season)
+                            selectedSeason(viewModel.getUpdatedValue() ?? season)
+                        }
                     }
                 }
-
             })
-
         }
         .animation(.easeOut, value: viewModel.getUpdatedValue())
         .padding(.top, 18)
@@ -68,33 +41,59 @@ struct SeasonGridView: View {
         .background(.black)
     }
 }
+
+struct SeasonGridCell: View {
+    
+    let geometryReader: GeometryProxy
+    let season: Season
+    let action: () -> Void
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Spacer()
+                Button(action: {
+                    withAnimation {
+                        action()
+                    }
+                    
+                }, label: {
+                    HStack {
+                        Text(season.name)
+                            .font(.system(size: 18, weight: .bold, design: .default))
+                            .foregroundColor(season.isSelecte ? .white : .gray)
+                    }
+                })
+                
+                Spacer()
+                Text(" |")
+                    .font(.system(size: 18, weight: .bold, design: .default))
+                    .foregroundColor(.white)
+                
+            }.frame(width: geometryReader.size.width/3)
+            
+            Divider()
+                .frame(width: geometryReader.size.width/3, height: season.isSelecte ? 2.5 : 0)
+                .overlay(.white)
+            
+        }.frame(height: 50, alignment: .top)
+    }
+}
+
 struct SeasonGridView_Previews: PreviewProvider {
     static var previews: some View {
-
+        
         let mockSeasons = [
-            Season(
-                name: "SEASON 1",
-                isSelected: true
-            ), Season(
-                name: "SEASON 2",
-                isSelected: false
-            ), Season(
-                name: "SEASON 3",
-                isSelected: false
-            ), Season(
-                name: "SEASON 4",
-                isSelected: false
-            )
+            Season(name: "SEASON 1",isSelected: true),
+            Season(name: "SEASON 2",isSelected: false),
+            Season(name: "SEASON 3",isSelected: false),
+            Season(name: "SEASON 4",isSelected: false)
         ]
-
-        SeasonGridView(viewModel: SeasonGridVM(seasons: mockSeasons), selectedSeason: {_ in
-
-        })
-        .previewLayout(PreviewLayout.sizeThatFits)
-        SeasonGridView(viewModel: SeasonGridVM(seasons: mockSeasons), selectedSeason: {_ in
-
-        })
-        .previewDevice("iPhone 12 mini")
-        .preferredColorScheme(.dark)
+        
+        SeasonGridView(viewModel: SeasonGridVM(seasons: mockSeasons), selectedSeason: {_ in})
+            .previewLayout(PreviewLayout.sizeThatFits)
+        SeasonGridView(viewModel: SeasonGridVM(seasons: mockSeasons), selectedSeason: {_ in})
+            .previewDevice("iPhone 12 mini")
+            .preferredColorScheme(.dark)
     }
 }

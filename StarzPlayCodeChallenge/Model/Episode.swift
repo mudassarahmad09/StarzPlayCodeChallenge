@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Episode: Codable, Identifiable, Hashable {
+struct Episode: Decodable, Identifiable, Hashable {
     var airDate: String?
     var episodeNumber: Int?
     var id: Int?

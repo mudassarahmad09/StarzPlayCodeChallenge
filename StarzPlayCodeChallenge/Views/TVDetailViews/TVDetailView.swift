@@ -38,41 +38,23 @@ extension TVDetailView {
         ZStack {
 
             if viewModel.loading {
-            ProgressView()
-                .progressViewStyle(CircularProgressViewStyle(tint: .white))
-                .scaleEffect(2)
-                .zIndex(1)
+                LoadingIndicatorView()
             }
 
             ScrollView {
                 VStack(spacing: 5) {
                     ZStack(alignment: .bottom) {
                         GradientImageView(image: viewModel.tvDetail?.posterPath ?? "")
-
                         VStack {
                             topButtons()
                             Spacer()
                             bannerImageView()
-
                         }
                     }
-
                     descripcationView()
                     reactionView()
-
-                    SeasonGridView(
-                        viewModel: viewModelForSeason(viewModel.tvDetail?.seasons ?? []), selectedSeason: { season in
-
-                        Task(priority: .background) {
-                            viewModel.updateSeasonNumber(number: season.seasonNumber ?? 0)
-                            await viewModel.getSeasonDetail()
-                            viewModel.update(selecteItem: season)
-                        }
-
-                    })
-
+                    seasonGreadView()
                     episodeList()
-
                 }
             }
             .edgesIgnoringSafeArea(.top)
@@ -106,7 +88,19 @@ extension TVDetailView {
             .padding([.trailing, .leading])
 
     }
-
+    
+    func seasonGreadView() -> some View {
+        SeasonGridView(
+            viewModel: viewModelForSeason(viewModel.tvDetail?.seasons ?? []),
+            selectedSeason: { season in
+                Task {
+                    viewModel.updateSeasonNumber(number: season.seasonNumber ?? 0)
+                    await viewModel.getSeasonDetail()
+                    viewModel.update(selecteItem: season)
+                }
+            })
+    }
+        
     func bannerImageView() -> some View {
         VStack(alignment: .leading, spacing: 15) {
 
@@ -130,7 +124,6 @@ extension TVDetailView {
 
     func playableButtonView() -> some View {
         HStack(spacing: 8) {
-
             PlayButton(action: {
                 goToPlayer.toggle()
             })
@@ -140,14 +133,12 @@ extension TVDetailView {
             TrailerButton(action: {
                 goToPlayer.toggle()
             })
-
         }
     }
 
     func descripcationView() -> some View {
         VStack {
             ExpandableView(viewModel.tvDetail?.overview ?? "")
-
         }
     }
 
@@ -155,7 +146,6 @@ extension TVDetailView {
         ForEach(viewModel.episodes ?? [], id: \.self) { episode in
             EpisodeCell(episode: episode)
         }
-
     }
 }
 // MARK: - Reaction View
@@ -171,11 +161,21 @@ extension TVDetailView {
         .padding([.trailing, .leading])
     }
 }
+
 struct TVDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let app = AppInstantiationFactory(seasonName: .theBoys)
         app.startApp()
         app.startApp().preferredColorScheme(.dark)
 
+    }
+}
+
+struct LoadingIndicatorView: View {
+    var body: some View {
+        ProgressView()
+            .progressViewStyle(CircularProgressViewStyle(tint: .white))
+            .scaleEffect(2)
+            .zIndex(1)
     }
 }

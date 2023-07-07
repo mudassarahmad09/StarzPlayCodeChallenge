@@ -1,0 +1,48 @@
+{
+  "_buildCommand2" : {
+    "command" : "prepareForIndexing",
+    "enableIndexBuildArena" : false,
+    "targets" : null
+  },
+  "buildCommand" : "build",
+  "configuredTargets" : [
+    {
+      "guid" : "0ee874cfc390da4525cab161021868430374ba662f3976ab18799056d5059736"
+    },
+    {
+      "guid" : "0ee874cfc390da4525cab16102186843d36120bfb9c91a3a49b4ddb3dd1134d2"
+    }
+  ],
+  "containerPath" : "/Users/qazimudassar/Documents/Myproject/StarzPlayCodeChallenge/StarzPlayCodeChallenge.xcodeproj",
+  "continueBuildingAfterErrors" : true,
+  "enableIndexBuildArena" : false,
+  "hideShellScriptEnvironment" : false,
+  "parameters" : {
+    "action" : "build",
+    "arenaInfo" : {
+      "buildIntermediatesPath" : "",
+      "buildProductsPath" : "",
+      "derivedDataPath" : "/Users/qazimudassar/Library/Developer/Xcode/DerivedData",
+      "indexDataStoreFolderPath" : "/Users/qazimudassar/Library/Developer/Xcode/DerivedData/StarzPlayCodeChallenge-edbqmcsggrtxoaefnjsxfeqafnfw/Index.noindex/DataStore",
+      "indexEnableDataStore" : true,
+      "indexPCHPath" : "/Users/qazimudassar/Library/Developer/Xcode/DerivedData/StarzPlayCodeChallenge-edbqmcsggrtxoaefnjsxfeqafnfw/Index.noindex/PrecompiledHeaders",
+      "pchPath" : ""
+    },
+    "configurationName" : "Debug",
+    "overrides" : {
+      "synthesized" : {
+        "table" : {
+          "ENABLE_PREVIEWS" : "NO"
+        }
+      }
+    }
+  },
+  "qos" : "default",
+  "schemeCommand" : "launch",
+  "schemeCommand2" : "launch",
+  "showNonLoggedProgress" : true,
+  "useDryRun" : true,
+  "useImplicitDependencies" : true,
+  "useLegacyBuildLocations" : false,
+  "useParallelTargets" : true
+}
