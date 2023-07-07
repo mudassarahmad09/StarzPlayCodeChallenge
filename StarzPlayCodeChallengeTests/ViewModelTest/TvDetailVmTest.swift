@@ -47,8 +47,6 @@ class TvDetailVmTest: XCTestCase {
         XCTAssertNotNil(sut.tvDetail)
         XCTAssertEqual(sut.tvDetail?.originalName, "The Boys")
         XCTAssertEqual(sut.tvDetail?.posterPath, "/stTEycfG9928HYGEISBFaG1ngjM.jpg")
-
-
     }
 
     func testGetTvDetail_whenAPIRequestFail() async{
@@ -103,6 +101,7 @@ class TvDetailVmTest: XCTestCase {
     func tvDetailVM() -> TVDetailVM{
         TVDetailVM(seaasonService: SeasonServiceMock(), seasonTypeId: .theBoys)
     }
+    
     func tvDetailVMFailabel() -> TVDetailVM{
         TVDetailVM(seaasonService: SeasonServiceFailabelMock(), seasonTypeId: .theBoys)
     }

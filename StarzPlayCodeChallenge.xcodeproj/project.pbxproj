@@ -46,6 +46,7 @@
 		7A82816528CE2DD80087C88D /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82816428CE2DD80087C88D /* AsyncImageView.swift */; };
 		7A82816728CEF7A10087C88D /* VideoPlayerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82816628CEF7A10087C88D /* VideoPlayerTest.swift */; };
 		7A82817228CF51250087C88D /* MyApiLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 7A82817128CF51250087C88D /* MyApiLibrary */; };
+		8032E4852A58296600FC1089 /* SeasonGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8032E4842A58296600FC1089 /* SeasonGridCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		7A7FDBE928CDEF7500F6C6C4 /* ModelsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsHelper.swift; sourceTree = "<group>"; };
 		7A82816428CE2DD80087C88D /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		7A82816628CEF7A10087C88D /* VideoPlayerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerTest.swift; sourceTree = "<group>"; };
+		8032E4842A58296600FC1089 /* SeasonGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonGridCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			children = (
 				7A16582228CA2365004EDE42 /* TVDetailView.swift */,
 				7A16583928CB0325004EDE42 /* SeasonGridView.swift */,
+				8032E4842A58296600FC1089 /* SeasonGridCell.swift */,
 				7A16584428CB3A20004EDE42 /* EpisodeCell.swift */,
 				7A16582D28CA5CAB004EDE42 /* PlayButton.swift */,
 				7A16583028CA60F6004EDE42 /* TrailerButton.swift */,
@@ -446,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A1657F528CA1E97004EDE42 /* ContentView.swift in Sources */,
+				8032E4852A58296600FC1089 /* SeasonGridCell.swift in Sources */,
 				7A16583A28CB0325004EDE42 /* SeasonGridView.swift in Sources */,
 				7A16582328CA2365004EDE42 /* TVDetailView.swift in Sources */,
 				7A16583428CA6A19004EDE42 /* ExpandableView.swift in Sources */,

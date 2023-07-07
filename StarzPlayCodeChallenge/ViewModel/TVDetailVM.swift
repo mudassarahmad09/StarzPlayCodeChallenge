@@ -45,10 +45,8 @@ extension TVDetailVM {
             self.tvDetail = tvDetail
             self.selecteFirstSeason()
         case let .failure(error):
-
             self.errorMessage = error.customMessage
             self.showError = true
-
         }
     }
 
@@ -61,11 +59,7 @@ extension TVDetailVM {
 
     func update(selecteItem: Season) {
         for index in 0..<(tvDetail?.seasons.count ?? 0) {
-            if tvDetail?.seasons[index].id == selecteItem.id {
-                tvDetail?.seasons[index].isSelecte = true
-            } else {
-                tvDetail?.seasons[index].isSelecte = false
-            }
+            tvDetail?.seasons[index].isSelecte = (tvDetail?.seasons[index].id == selecteItem.id)
         }
     }
 }
