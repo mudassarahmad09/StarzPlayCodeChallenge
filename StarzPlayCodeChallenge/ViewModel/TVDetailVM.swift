@@ -39,7 +39,7 @@ extension TVDetailVM {
         loading = false
     }
 
-    @MainActor func handleTvDetailResult(_ result: Result<TvDetailModel, RequestError>) async {
+    @MainActor private func handleTvDetailResult(_ result: Result<TvDetailModel, RequestError>) async {
         switch result {
         case let .success(tvDetail):
             self.tvDetail = tvDetail
@@ -71,11 +71,11 @@ extension TVDetailVM {
 
     @MainActor func getSeasonDetail() async {
         loading = true
-        await  handleSeasonResult(seaasonService.getSeasonDetail(tv: seasonTypeId.rawValue, seasonId: seasonNumber))
+        await handleSeasonResult(seaasonService.getSeasonDetail(tv: seasonTypeId.rawValue, seasonId: seasonNumber))
         loading = false
     }
 
-    @MainActor func handleSeasonResult(_ result: Result<Season, RequestError>) async {
+    @MainActor private func handleSeasonResult(_ result: Result<Season, RequestError>) async {
         switch result {
         case let .success(seasonDeatail):
             self.episodes = seasonDeatail.episodes

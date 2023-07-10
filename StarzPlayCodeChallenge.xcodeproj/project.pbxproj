@@ -47,6 +47,8 @@
 		7A82816728CEF7A10087C88D /* VideoPlayerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82816628CEF7A10087C88D /* VideoPlayerTest.swift */; };
 		7A82817228CF51250087C88D /* MyApiLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = 7A82817128CF51250087C88D /* MyApiLibrary */; };
 		8032E4852A58296600FC1089 /* SeasonGridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8032E4842A58296600FC1089 /* SeasonGridCell.swift */; };
+		8032E4872A582E4900FC1089 /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8032E4862A582E4900FC1089 /* LoadingIndicatorView.swift */; };
+		8032E4892A58355C00FC1089 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8032E4882A58355C00FC1089 /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,8 @@
 		7A82816428CE2DD80087C88D /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		7A82816628CEF7A10087C88D /* VideoPlayerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerTest.swift; sourceTree = "<group>"; };
 		8032E4842A58296600FC1089 /* SeasonGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonGridCell.swift; sourceTree = "<group>"; };
+		8032E4862A582E4900FC1089 /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
+		8032E4882A58355C00FC1089 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +197,8 @@
 				7A16582728CA34D5004EDE42 /* GradientImageView.swift */,
 				7A16583328CA6A19004EDE42 /* ExpandableView.swift */,
 				7A16583628CA6F8D004EDE42 /* RoundedButton.swift */,
+				8032E4862A582E4900FC1089 /* LoadingIndicatorView.swift */,
+				8032E4882A58355C00FC1089 /* CustomButton.swift */,
 			);
 			path = CustomeViews;
 			sourceTree = "<group>";
@@ -465,10 +471,12 @@
 				7A551FF128CCD40700B8F9BD /* ControlView.swift in Sources */,
 				7A3B5D6728CF971900C54383 /* AppInstantiationFactory.swift in Sources */,
 				7A551FDE28CC617100B8F9BD /* Episode.swift in Sources */,
+				8032E4892A58355C00FC1089 /* CustomButton.swift in Sources */,
 				7A16586228CB7FA6004EDE42 /* GenricModel.swift in Sources */,
 				7A16583F28CB1D3D004EDE42 /* Season.swift in Sources */,
 				7A16584B28CB59AA004EDE42 /* EndPoint+AppURl.swift in Sources */,
 				7A16585C28CB6A82004EDE42 /* SeasonService.swift in Sources */,
+				8032E4872A582E4900FC1089 /* LoadingIndicatorView.swift in Sources */,
 				7A16584228CB1D59004EDE42 /* SeasonGridVM.swift in Sources */,
 				7A82816528CE2DD80087C88D /* AsyncImageView.swift in Sources */,
 				7A551FD828CB8F5700B8F9BD /* TVDetailVM.swift in Sources */,

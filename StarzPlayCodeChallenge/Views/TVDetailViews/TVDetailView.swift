@@ -167,15 +167,5 @@ struct TVDetailView_Previews: PreviewProvider {
         let app = AppInstantiationFactory(seasonName: .theBoys)
         app.startApp()
         app.startApp().preferredColorScheme(.dark)
-
-    }
-}
-
-struct LoadingIndicatorView: View {
-    var body: some View {
-        ProgressView()
-            .progressViewStyle(CircularProgressViewStyle(tint: .white))
-            .scaleEffect(2)
-            .zIndex(1)
     }
 }
