@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "AB805841-3712-4C14-B88C-112655D93050",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:StarzPlayCodeChallenge.xcodeproj",
+      "identifier" : "7A1657EE28CA1E96004EDE42",
+      "name" : "StarzPlayCodeChallenge"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:StarzPlayCodeChallenge.xcodeproj",
+        "identifier" : "7A551FF728CCF70100B8F9BD",
+        "name" : "StarzPlayCodeChallengeTests"
+      }
+    }
+  ],
+  "version" : 1
+}

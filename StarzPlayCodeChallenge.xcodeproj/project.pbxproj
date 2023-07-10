@@ -106,6 +106,7 @@
 		8032E4842A58296600FC1089 /* SeasonGridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonGridCell.swift; sourceTree = "<group>"; };
 		8032E4862A582E4900FC1089 /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
 		8032E4882A58355C00FC1089 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		8032E48A2A5C47AF00FC1089 /* StarzPlayCodeChallenge.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = StarzPlayCodeChallenge.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +131,7 @@
 		7A1657E628CA1E96004EDE42 = {
 			isa = PBXGroup;
 			children = (
+				8032E48A2A5C47AF00FC1089 /* StarzPlayCodeChallenge.xctestplan */,
 				7A1657F128CA1E96004EDE42 /* StarzPlayCodeChallenge */,
 				7A1657F628CA1E9A004EDE42 /* Assets.xcassets */,
 				7A551FF928CCF70100B8F9BD /* StarzPlayCodeChallengeTests */,
