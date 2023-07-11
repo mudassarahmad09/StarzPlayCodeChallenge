@@ -20,7 +20,6 @@ extension SeasonEndpoint: ApiEndpoint {
                 URLQueryItem(name: "api_key", value: AppUrl.APIKey)
             ]
         }
-
     }
 
     var path: String {

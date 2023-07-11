@@ -20,8 +20,12 @@ struct EpisodeCell: View {
                     .font(Font.system(size: 18, weight: .medium))
 
                 ZStack {
-                    AsyncImageView(url: URL(string: AppUrl.IMAGEURL + (episode.stillPath ?? ""))!)
-
+                    AsyncImageView(url:
+                                    URL(string: AppUrl.IMAGEURL + (episode.stillPath ?? ""))!,
+                                   placeHolder:.episodePH,
+                                   width: 120,
+                                   height: 70)
+                    
                     Image(systemName: "play.fill")
                         .foregroundColor(.white)
                 }
