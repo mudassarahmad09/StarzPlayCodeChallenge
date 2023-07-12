@@ -10,11 +10,10 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            HomeView()
-//            let app = AppInstantiationFactory(seasonName: .theBoys)
-//            HideNavbarOf(
-//                view: app.startApp()
-//            )
+            let app = AppInstantiationFactory()
+            HideNavbarOf(
+                view: app.startApp()
+            )
         }
     }
 }

@@ -164,8 +164,8 @@ extension TVDetailView {
 
 struct TVDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        let app = AppInstantiationFactory(seasonName: .theBoys)
-        app.startApp()
-        app.startApp().preferredColorScheme(.dark)
+        let app = AppInstantiationFactory()
+        app.tvDetailView(seasonId: SeasonType.theBoys.rawValue)
+        app.tvDetailView(seasonId: SeasonType.theBoys.rawValue).preferredColorScheme(.dark)
     }
 }

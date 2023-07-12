@@ -8,9 +8,20 @@
 import SwiftUI
 
 struct HomeView: View {
-    @StateObject var viewModel: HomeViewModel = HomeViewModel(tvShowsService: TVShowsServiceAdapter())
+    @StateObject var viewModel: HomeViewModel
+    
+    init(viewModel: HomeViewModel) {
+        self._viewModel = StateObject(wrappedValue: viewModel)
+    }
     
     var body: some View {
+        loadView()
+            .alert(isPresented: $viewModel.showError, content: {
+                Alert(title: Text(viewModel.errorMessage))
+            })
+    }
+    
+    private func loadView() -> some View {
         ZStack {
             
             if viewModel.loading {
@@ -23,29 +34,38 @@ struct HomeView: View {
                         PosterRowView(layout: layout)
                     }
                 }
-            }.task {
-                await viewModel.fetchTvShowsList()
             }
         }
-        
+        .background(.black)
+        .task {
+            await viewModel.fetchTvShowsList()
+        }
     }
+    
+    
 }
 
 struct PosterRowView: View {
-     let layout: Layout
+    let layout: Layout
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack {
-                Text(layout.title)
+                Text(layout.sectionTitle)
+                    .foregroundColor(.white)
                     .font(.title3)
                     .bold()
                 Spacer()
             }.padding(.horizontal)
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack(alignment: .top, spacing: 13) {
-                    ForEach(layout.tvShows, id: \.name) { tvShow in
-                        PosterView(tvShow: tvShow)
+                    ForEach(layout.titles, id: \.id) { title in
+                        NavigationLink {
+                            let detailView = AppInstantiationFactory().tvDetailView(seasonId: title.id)
+                            HideNavbarOf(view: detailView)
+                        } label: {
+                            PosterView(mediaItem: title)
+                        }
                     }
                 }
                 .padding(.horizontal, 13)
@@ -56,7 +76,7 @@ struct PosterRowView: View {
 }
 
 struct PosterView: View {
-    let tvShow: TVShows
+    let mediaItem: Title
     let width: CGFloat = 110
     let height: CGFloat = 160
     let alpha: CGFloat = 0.45
@@ -65,16 +85,18 @@ struct PosterView: View {
         VStack(alignment: .leading) {
             
             AsyncImageView(url:
-                            URL(string: AppUrl.IMAGEURL + (tvShow.posterPath ))!,
+                            URL(string: AppUrl.IMAGEURL + (mediaItem.imagePoster ))!,
                            placeHolder: .placeHolder,
                            width: width,
                            height: height)
             
             VStack(alignment: .leading, spacing: 3) {
-                Text(tvShow.name)
+                Text(mediaItem.title)
+                    .foregroundColor(.white)
                     .font(.headline)
                     .lineLimit(2)
-                Text(tvShow.firstAirDate)
+                Text(mediaItem.subTitle)
+                    .foregroundColor(.white)
                     .font(.subheadline)
                     .lineLimit(1)
                 
@@ -87,8 +109,7 @@ struct PosterView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        let app = AppInstantiationFactory()
+        app.startApp()
     }
 }
-
-
