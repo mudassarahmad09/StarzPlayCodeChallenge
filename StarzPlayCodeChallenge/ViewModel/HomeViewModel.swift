@@ -10,22 +10,22 @@ import MyApiLibrary
 
 final class HomeViewModel: ObservableObject {
     
-    private let mediaListEndPoints : [MediaListEndPoints]
+    private let mediaEndpointConfig : [MediaEndpointConfig]
     
     @Published private(set) var layouts: [Layout]?
     @Published var showError = false
     @Published var loading = false
     var errorMessage = ""
     
-    init( endPosints: [MediaListEndPoints]) {
-        self.mediaListEndPoints = endPosints
+    init( mediaEndpointConfig: [MediaEndpointConfig]) {
+        self.mediaEndpointConfig = mediaEndpointConfig
     }
 }
 // MARK: - fetch List of array
 extension HomeViewModel {
     @MainActor
     func fetchTvShowsList() async {
-        for endpoint in mediaListEndPoints {
+        for endpoint in mediaEndpointConfig {
             loading = true
             await handleTvshowsResult(title: endpoint.title,
                                       result: endpoint.adpter.fetchList(endPoint:
