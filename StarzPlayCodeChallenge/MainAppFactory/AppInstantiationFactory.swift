@@ -2,7 +2,7 @@
 //  AppInstantiationFactory.swift
 //  StarzPlayCodeChallenge
 //
-//  Created by Qazi Ammar Arshad on 12/09/2022.
+//  Created by Qazi Mudassar on 13/07/2023.
 //
 
 import Foundation
@@ -40,26 +40,4 @@ final class AppInstantiationFactory {
     private func makeSeasonVm(for seasons: [Season]) -> SeasonGridVM {
         return SeasonGridVM(seasons: seasons)
     }
-}
-
-class MediaEndPointManger {
-   
-    static func createEndpoints() -> [MediaEndpointConfig] {
-        let endPosints : [MediaEndpointConfig] = [
-            MediaEndpointConfig(title: "Airing Today", endPoint: MediaEndpoint.showList(media: .tv, type: "airing_today",language: "en-US", page: 1), adpter: TVshowServiceAdapter()),
-            MediaEndpointConfig(title: "Now Playing", endPoint: MediaEndpoint.showList(media: .movie, type: "now_playing",language: "en-US", page: 1), adpter: MovieServiceAdapter()),
-            MediaEndpointConfig(title: "On Air", endPoint: MediaEndpoint.showList(media: .tv, type: "on_the_air", language: "en-US",page: 1), adpter: TVshowServiceAdapter()),
-            MediaEndpointConfig(title: "Popular Movies", endPoint: MediaEndpoint.showList(media: .movie, type: "popular",language: "en-US", page: 1), adpter: MovieServiceAdapter()),
-            MediaEndpointConfig(title: "Popular", endPoint: MediaEndpoint.showList(media: .tv, type: "popular", language: "en-US", page: 1), adpter: TVshowServiceAdapter()),
-            MediaEndpointConfig(title: "Top Rated Movies", endPoint: MediaEndpoint.showList(media: .movie, type: "top_rated",language: "en-US", page: 1), adpter: MovieServiceAdapter()),
-            MediaEndpointConfig(title: "Top Rated", endPoint: MediaEndpoint.showList(media: .tv, type: "top_rated",language: "en-US",page: 1), adpter: TVshowServiceAdapter()),
-            MediaEndpointConfig(title: "Upcoming", endPoint: MediaEndpoint.showList(media: .movie, type: "upcoming",language: "en-US",page: 1), adpter: MovieServiceAdapter())]
-        return endPosints
-    }
-}
-
-struct MediaEndpointConfig {
-    let title: String
-    let endPoint: MediaEndpoint
-    let adpter: MediaService
 }

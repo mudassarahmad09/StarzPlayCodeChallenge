@@ -53,6 +53,7 @@
 		8032E4902A5D520F00FC1089 /* MediaEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8032E48F2A5D520F00FC1089 /* MediaEndpoint.swift */; };
 		8032E4932A5D5EB500FC1089 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8032E4922A5D5EB500FC1089 /* HomeView.swift */; };
 		8032E4972A5D98A300FC1089 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8032E4962A5D98A300FC1089 /* HomeViewModel.swift */; };
+		80B99DEE2A5FD3A5002BB4B7 /* MediaEndPointManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B99DED2A5FD3A5002BB4B7 /* MediaEndPointManger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		8032E48F2A5D520F00FC1089 /* MediaEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaEndpoint.swift; sourceTree = "<group>"; };
 		8032E4922A5D5EB500FC1089 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8032E4962A5D98A300FC1089 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		80B99DED2A5FD3A5002BB4B7 /* MediaEndPointManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaEndPointManger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				7A16583D28CB1D1F004EDE42 /* ViewModel */,
 				7A16583C28CB1D0F004EDE42 /* Model */,
 				7A16584828CB5746004EDE42 /* Network */,
+				80B99DEC2A5FD391002BB4B7 /* Manager */,
 				7A16582428CA26C0004EDE42 /* Utility */,
 				7A3B5D6528CF96DE00C54383 /* MainAppFactory */,
 				7A16581C28CA20AD004EDE42 /* AppMain */,
@@ -367,6 +370,14 @@
 			path = SeasonService;
 			sourceTree = "<group>";
 		};
+		80B99DEC2A5FD391002BB4B7 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				80B99DED2A5FD3A5002BB4B7 /* MediaEndPointManger.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -483,6 +494,7 @@
 				7A16583428CA6A19004EDE42 /* ExpandableView.swift in Sources */,
 				8032E4932A5D5EB500FC1089 /* HomeView.swift in Sources */,
 				7A16582B28CA4724004EDE42 /* Extension.swift in Sources */,
+				80B99DEE2A5FD3A5002BB4B7 /* MediaEndPointManger.swift in Sources */,
 				8032E48D2A5D517C00FC1089 /* Media.swift in Sources */,
 				7A16584528CB3A20004EDE42 /* EpisodeCell.swift in Sources */,
 				7A16585F28CB7938004EDE42 /* TvDetailModel.swift in Sources */,
