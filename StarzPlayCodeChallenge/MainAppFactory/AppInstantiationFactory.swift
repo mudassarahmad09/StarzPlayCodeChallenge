@@ -15,7 +15,7 @@ final class AppInstantiationFactory {
     
     func homeView() -> HomeView {
         HomeView(viewModel:
-                    HomeViewModel(endPosints: MediaEndPointManger.createEndpoints()))
+                    HomeViewModel(mediaEndpointConfig: MediaEndPointManger.createEndpoints()))
     }
     
     func tvDetailView(seasonId: Int) -> TVDetailView {
@@ -43,6 +43,8 @@ final class AppInstantiationFactory {
 }
 
 class MediaEndPointManger {
+   
+    
     static func createEndpoints() -> [MediaEndpointConfig] {
         let endPosints : [MediaEndpointConfig] = [
             MediaEndpointConfig(title: "Airing Today", endPoint: MediaEndpoint.showTVList(media: .tv, type: "airing_today",language: "en-US", page: 1), adpter: TVshowServiceAdapter()),

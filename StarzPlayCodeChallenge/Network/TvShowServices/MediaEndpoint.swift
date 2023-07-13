@@ -74,8 +74,8 @@ struct MovieServiceAdapter: NetworkManagerService,MediaService {
         let result = await sendApiRequest(endpoint: endPoint, responseModel: Media<Movie>.self)
         
         switch result {
-        case .success(let tvShowsResponse):
-            let titles = tvShowsResponse.results.map(\.asTitle)
+        case .success(let movie):
+            let titles = movie.results.map(\.asTitle)
             return .success(titles)
         case .failure(let error):
             return .failure(error)
