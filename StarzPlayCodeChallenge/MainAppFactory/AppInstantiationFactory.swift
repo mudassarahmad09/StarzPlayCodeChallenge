@@ -44,17 +44,16 @@ final class AppInstantiationFactory {
 
 class MediaEndPointManger {
    
-    
     static func createEndpoints() -> [MediaEndpointConfig] {
         let endPosints : [MediaEndpointConfig] = [
-            MediaEndpointConfig(title: "Airing Today", endPoint: MediaEndpoint.showTVList(media: .tv, type: "airing_today",language: "en-US", page: 1), adpter: TVshowServiceAdapter()),
-            MediaEndpointConfig(title: "Now Playing", endPoint: MediaEndpoint.showTVList(media: .movie, type: "now_playing",language: "en-US", page: 1), adpter: MovieServiceAdapter()),
-            MediaEndpointConfig(title: "On Air", endPoint: MediaEndpoint.showTVList(media: .tv, type: "on_the_air", language: "en-US",page: 1), adpter: TVshowServiceAdapter()),
-            MediaEndpointConfig(title: "Popular Movies", endPoint: MediaEndpoint.showTVList(media: .movie, type: "popular",language: "en-US", page: 1), adpter: MovieServiceAdapter()),
-            MediaEndpointConfig(title: "Popular", endPoint: MediaEndpoint.showTVList(media: .tv, type: "popular", language: "en-US", page: 1), adpter: TVshowServiceAdapter()),
-            MediaEndpointConfig(title: "Top Rated Movies", endPoint: MediaEndpoint.showTVList(media: .movie, type: "top_rated",language: "en-US", page: 1), adpter: MovieServiceAdapter()),
-            MediaEndpointConfig(title: "Top Rated", endPoint: MediaEndpoint.showTVList(media: .tv, type: "top_rated",language: "en-US",page: 1), adpter: TVshowServiceAdapter()),
-            MediaEndpointConfig(title: "Upcoming", endPoint: MediaEndpoint.showTVList(media: .movie, type: "upcoming",language: "en-US",page: 1), adpter: MovieServiceAdapter())]
+            MediaEndpointConfig(title: "Airing Today", endPoint: MediaEndpoint.showList(media: .tv, type: "airing_today",language: "en-US", page: 1), adpter: TVshowServiceAdapter()),
+            MediaEndpointConfig(title: "Now Playing", endPoint: MediaEndpoint.showList(media: .movie, type: "now_playing",language: "en-US", page: 1), adpter: MovieServiceAdapter()),
+            MediaEndpointConfig(title: "On Air", endPoint: MediaEndpoint.showList(media: .tv, type: "on_the_air", language: "en-US",page: 1), adpter: TVshowServiceAdapter()),
+            MediaEndpointConfig(title: "Popular Movies", endPoint: MediaEndpoint.showList(media: .movie, type: "popular",language: "en-US", page: 1), adpter: MovieServiceAdapter()),
+            MediaEndpointConfig(title: "Popular", endPoint: MediaEndpoint.showList(media: .tv, type: "popular", language: "en-US", page: 1), adpter: TVshowServiceAdapter()),
+            MediaEndpointConfig(title: "Top Rated Movies", endPoint: MediaEndpoint.showList(media: .movie, type: "top_rated",language: "en-US", page: 1), adpter: MovieServiceAdapter()),
+            MediaEndpointConfig(title: "Top Rated", endPoint: MediaEndpoint.showList(media: .tv, type: "top_rated",language: "en-US",page: 1), adpter: TVshowServiceAdapter()),
+            MediaEndpointConfig(title: "Upcoming", endPoint: MediaEndpoint.showList(media: .movie, type: "upcoming",language: "en-US",page: 1), adpter: MovieServiceAdapter())]
         return endPosints
     }
 }
