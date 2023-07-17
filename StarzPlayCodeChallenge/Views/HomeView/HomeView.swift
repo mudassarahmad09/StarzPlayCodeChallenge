@@ -41,8 +41,6 @@ struct HomeView: View {
             await viewModel.fetchTvShowsList()
         }
     }
-    
-    
 }
 
 struct PosterRowView: View {

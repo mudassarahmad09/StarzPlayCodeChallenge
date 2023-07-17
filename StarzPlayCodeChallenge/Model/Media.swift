@@ -6,6 +6,131 @@
 //
 
 import Foundation
+import MyApiLibrary
+
+enum ExpermientTVType: String, CaseIterable {
+    case airingToday = "airing_today"
+    case onAir = "on_the_air"
+    case popular = "popular"
+    case topRated = "top_rated"
+    
+    var title: String {
+        switch self {
+        case .airingToday:
+            return "Airing Today"
+        case .onAir:
+            return "On The Air"
+        case .popular:
+            return "Popular"
+        case .topRated:
+            return "Top Rated"
+        }
+    }
+    
+    var mediaEndPoint: MediaEndpoint {
+        .showList(media: .tv, type: self.rawValue, language: "en-US", page: 1)
+    }
+    
+    var mediaEndpointConfig: ExpermientMediaEndpointConfig {
+        .init(title: self.title, endPoint: mediaEndPoint, adpter: TVshowExpermientAdapter())
+    }
+}
+enum ExpermientMovieType: String, CaseIterable {
+    case nowPlaying = "now_playing"
+    case popular
+    case topRated = "top_rated"
+    case upcoming
+    
+    var title: String {
+        switch self {
+        case .nowPlaying:
+            return "Now Playing Movie"
+        case .popular:
+            return "Popular Movie"
+        case .topRated:
+            return "Top Rated Movie"
+        case .upcoming:
+            return "Upcoming Movie"
+        }
+    }
+    
+    var mediaEndPoint: MediaEndpoint {
+        .showList(media: .movie, type: self.rawValue, language: "en-US", page: 1)
+    }
+    
+    var mediaEndpointConfig: ExpermientMediaEndpointConfig {
+        .init(title: self.title, endPoint: self.mediaEndPoint, adpter: MovieExpermientAdapter())
+    }
+}
+
+class ExMediaEndPointManger {
+    static func createEndpoints() -> [ExpermientMediaEndpointConfig] {
+
+        let allMovieEndpoints = ExpermientMovieType.allCases.map(\.mediaEndpointConfig)
+        let allTVEndpoints = ExpermientTVType.allCases.map(\.mediaEndpointConfig)
+        
+        let allEndpoints = allMovieEndpoints + allTVEndpoints
+        return allEndpoints.shuffled()
+    }
+}
+
+
+struct ExpermientMediaEndpointConfig {
+    let title: String
+    let endPoint: MediaEndpoint
+    let adpter: ExpermientService
+
+}
+protocol MediaAttributes: Identifiable {
+    func getMediaId() -> Int
+//    func getMediaTitle() -> String
+//    func getMediaSubTitle() -> String
+//    func getMediaImagePoster() -> String
+//    func getMediaContentType() -> ContentType
+}
+protocol ExpermientService {
+    func fetchList(endPoint: ApiEndpoint) async -> Result<[any MediaAttributes], RequestError>
+}
+
+struct TVshowExpermientAdapter: NetworkManagerService,ExpermientService {
+    
+    func fetchList(endPoint: ApiEndpoint) async -> Result<[any MediaAttributes], RequestError> {
+        let result = await sendApiRequest(endpoint: endPoint, responseModel: Media<ExpermientTVShows>.self)
+        
+        switch result {
+        case .success(let tvShowsResponse):
+            return .success(tvShowsResponse.results)
+        case .failure(let error):
+            return .failure(error)
+        }
+    }
+}
+struct MovieExpermientAdapter: NetworkManagerService,ExpermientService {
+
+    func fetchList(endPoint: ApiEndpoint) async -> Result<[any MediaAttributes], RequestError> {
+        let result = await sendApiRequest(endpoint: endPoint, responseModel: Media<ExpermientMovie>.self)
+        
+        switch result {
+        case .success(let tvShowsResponse):
+            return .success(tvShowsResponse.results)
+        case .failure(let error):
+            return .failure(error)
+        }
+    }
+}
+
+struct ExpermientTVShows: Decodable,  MediaAttributes{
+    var id: Int
+    func getMediaId() -> Int {
+        self.id
+    }
+}
+struct ExpermientMovie: Decodable,  MediaAttributes{
+    var id: Int
+    func getMediaId() -> Int {
+        self.id
+    }
+}
 
 struct Media<T: Decodable>: Decodable{
     let page: Int
