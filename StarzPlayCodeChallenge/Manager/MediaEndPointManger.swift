@@ -63,7 +63,6 @@ enum MovieType: String, CaseIterable {
 }
 
 
-
 class MediaEndPointManger {
     
     static func createEndpoints() -> [MediaEndpointConfig] {

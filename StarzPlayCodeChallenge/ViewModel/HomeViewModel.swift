@@ -13,8 +13,9 @@ final class HomeViewModel: ObservableObject {
     private let mediaEndpointConfig : [MediaEndpointConfig]
     
     @Published private(set) var layouts: [Layout]?
+    @Published private(set) var loading = false
     @Published var showError = false
-    @Published var loading = false
+    
     var errorMessage = ""
     
     init( mediaEndpointConfig: [MediaEndpointConfig]) {
@@ -25,17 +26,25 @@ final class HomeViewModel: ObservableObject {
 extension HomeViewModel {
     @MainActor
     func fetchTvShowsList() async {
-        for endpoint in mediaEndpointConfig {
-            loading = true
-            await handleTvshowsResult(title: endpoint.title,
-                                      result: endpoint.adpter.fetchList(endPoint:
-                                                                        endpoint.endPoint))
-            loading = false
+        loading = true
+        await withTaskGroup(of: (String, Result<[MediaAttributes], RequestError>).self) { group in
+            for endpoint in mediaEndpointConfig {
+                group.addTask {
+                    let result = await endpoint.adpter.fetchList(endPoint: endpoint.endPoint)
+                    return (endpoint.title, result)
+                }
+            }
+            
+            for await (title, result) in group {
+                await handleTvshowsResult(title: title, result: result)
+            }
         }
+        
+        loading = false
     }
     
     @MainActor
-    private func handleTvshowsResult(title: String , result: Result<[Title], RequestError>) async {
+    private func handleTvshowsResult(title: String , result: Result<[any MediaAttributes], RequestError>) async {
         switch result {
         case let .success(titles):
             if layouts == nil {
@@ -52,5 +61,5 @@ extension HomeViewModel {
 struct Layout: Identifiable {
     let id = UUID()
     let sectionTitle: String
-    let titles: [Title]
+    let titles: [any MediaAttributes]
 }
