@@ -13,6 +13,8 @@ struct TVDetailView: View {
     @State private var goToPlayer = false
     private var viewModelForSeason: ([Season]) -> SeasonGridVM
     private var url: URL
+    
+    @Environment(\.dismiss) private var dismiss
 
     init(
         viewModel: TVDetailVM,
@@ -70,9 +72,14 @@ extension TVDetailView {
 extension TVDetailView {
     func topButtons() -> some View {
         HStack {
-            Image(systemName: "arrow.backward")
-                .foregroundColor(.white)
-                .font(Font.system(size: 30, weight: .medium))
+            Button {
+                dismiss()
+            } label: {
+                Image(systemName: "arrow.backward")
+                    .foregroundColor(.white)
+                    .font(Font.system(size: 30, weight: .medium))
+            }
+            
             Spacer()
             HStack(spacing: 20) {
                 Image(systemName: "rectangle")
@@ -81,9 +88,9 @@ extension TVDetailView {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(.white)
                     .font(Font.system(size: 24, weight: .regular))
-
+                
             }
-
+            
         }.padding(.top, 50)
             .padding([.trailing, .leading])
 

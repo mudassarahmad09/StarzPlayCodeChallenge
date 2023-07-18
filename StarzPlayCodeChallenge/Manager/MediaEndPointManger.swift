@@ -62,7 +62,6 @@ enum MovieType: String, CaseIterable {
     }
 }
 
-
 class MediaEndPointManger {
     
     static func createEndpoints() -> [MediaEndpointConfig] {
@@ -72,7 +71,6 @@ class MediaEndPointManger {
         return allEndpoinsts.shuffled()
     }
 }
-
 
 struct MediaEndpointConfig {
     let title: String
