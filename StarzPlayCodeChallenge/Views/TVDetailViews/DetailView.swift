@@ -7,22 +7,23 @@
 
 import SwiftUI
 
-struct TVDetailView: View {
+struct DetailView: View {
 
-    @StateObject private var viewModel: TVDetailVM
+    @StateObject private var viewModel: DetailVM
     @State private var goToPlayer = false
-    private var viewModelForSeason: ([Season]) -> SeasonGridVM
+
+    private var dynamicContentView: () -> AnyView?
     private var url: URL
     
     @Environment(\.dismiss) private var dismiss
 
     init(
-        viewModel: TVDetailVM,
-        viewModelForSeason: @escaping ([Season]) -> SeasonGridVM,
+        viewModel: DetailVM,
+        dynamicContentView: @escaping () -> AnyView?,
         url: URL
     ) {
         self._viewModel = StateObject(wrappedValue: viewModel)
-        self.viewModelForSeason = viewModelForSeason
+        self.dynamicContentView = dynamicContentView
         self.url = url
     }
 
@@ -35,7 +36,7 @@ struct TVDetailView: View {
     }
 }
 // MARK: - Load View
-extension TVDetailView {
+extension DetailView {
     func loadView() -> some View {
         ZStack {
 
@@ -46,7 +47,7 @@ extension TVDetailView {
             ScrollView {
                 VStack(spacing: 5) {
                     ZStack(alignment: .bottom) {
-                        GradientImageView(image: viewModel.tvDetail?.posterPath ?? "")
+                        GradientImageView(image: viewModel.detail?.getMediaImagePoster() ?? "")
                         VStack {
                             topButtons()
                             Spacer()
@@ -55,13 +56,12 @@ extension TVDetailView {
                     }
                     descripcationView()
                     reactionView()
-                    seasonGreadView()
-                    episodeList()
+                    dynamicContentView()
                 }
             }
             .edgesIgnoringSafeArea(.top)
             .task {
-                await viewModel.getTVDetail()
+                await viewModel.getDetail()
             }
             .background(.black)
 
@@ -69,7 +69,7 @@ extension TVDetailView {
     }
 }
 // MARK: - Banner View Funcality
-extension TVDetailView {
+extension DetailView {
     func topButtons() -> some View {
         HStack {
             Button {
@@ -92,22 +92,9 @@ extension TVDetailView {
             }
             
         }.padding(.top, 50)
-            .padding([.trailing, .leading])
-
+        .padding([.trailing, .leading])
     }
-    
-    func seasonGreadView() -> some View {
-        SeasonGridView(
-            viewModel: viewModelForSeason(viewModel.tvDetail?.seasons ?? []),
-            selectedSeason: { season in
-                Task {
-                    viewModel.updateSeasonNumber(number: season.seasonNumber ?? 0)
-                    await viewModel.getSeasonDetail()
-                    viewModel.update(selecteItem: season)
-                }
-            })
-    }
-        
+            
     func bannerImageView() -> some View {
         VStack(alignment: .leading, spacing: 15) {
 
@@ -120,10 +107,10 @@ extension TVDetailView {
 
     func nameAndTypeView() -> some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text(viewModel.tvDetail?.originalName ?? "")
+            Text(viewModel.detail?.getMediaName() ?? "")
                 .font(.largeTitle)
                 .foregroundColor(.white)
-            Text("\(viewModel.tvDetail?.startYear ?? "") | \(viewModel.tvDetail?.numberOfSeasons ?? 0) Seasons | R")
+            Text("\(viewModel.detail?.getYear() ?? "") | \(viewModel.detail?.getNumberOfSeaosn() ?? 0) Seasons | R")
                 .font(.system(size: 18, weight: .semibold, design: .default))
                 .foregroundColor(.gray)
         }
@@ -145,18 +132,13 @@ extension TVDetailView {
 
     func descripcationView() -> some View {
         VStack {
-            ExpandableView(viewModel.tvDetail?.overview ?? "")
+            ExpandableView(viewModel.detail?.getMediaOverView() ?? "")
         }
     }
 
-    func episodeList() -> some View {
-        ForEach(viewModel.episodes ?? [], id: \.self) { episode in
-            EpisodeCell(episode: episode)
-        }
-    }
 }
 // MARK: - Reaction View
-extension TVDetailView {
+extension DetailView {
     func reactionView() -> some View {
         HStack(alignment: .top, spacing: 12) {
             RoundedButton(iconName: "plus", textName: "Watch List")
@@ -172,7 +154,7 @@ extension TVDetailView {
 struct TVDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let app = AppInstantiationFactory()
-        app.tvDetailView(seasonId: SeasonType.theBoys.rawValue)
-        app.tvDetailView(seasonId: SeasonType.theBoys.rawValue).preferredColorScheme(.dark)
+        app.detailView(for: SeasonType.theBoys.rawValue, and: .tv)
+        app.detailView(for: SeasonType.theBoys.rawValue, and: .tv).preferredColorScheme(.dark)
     }
 }

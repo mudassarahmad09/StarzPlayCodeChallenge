@@ -20,7 +20,7 @@ func aEpisode() -> Episode{
 
 
 
-final class SeasonServiceMock: Mockable, SeasonService {
+final class SeasonServiceMock: Mockable, EpisodeService {
     func getTVShowDetail(from id: Int) async -> Result<TvDetailModel, RequestError> {
         return .success(loadJSON(filename: "tv_detail_response", type: TvDetailModel.self))
     }
@@ -30,7 +30,7 @@ final class SeasonServiceMock: Mockable, SeasonService {
     }
 }
 
-final class SeasonServiceFailabelMock: Mockable, SeasonService {
+final class SeasonServiceFailabelMock: Mockable, EpisodeService {
     func getTVShowDetail(from id: Int) async -> Result<TvDetailModel, RequestError> {
         return .failure(RequestError.unauthorized(reason: "request error"))
     }

@@ -23,7 +23,7 @@ struct PosterRowView: View {
                 LazyHStack(alignment: .top, spacing: 13) {
                     ForEach(layout.titles, id: \.id) { title in
                         NavigationLink {
-                            let detailView = AppInstantiationFactory().tvDetailView(seasonId: title.id)
+                            let detailView = AppInstantiationFactory().detailView(for: title.id, and: title.getMediaContentType())
                             HideNavbarOf(view: detailView)
                         } label: {
                             PosterView(mediaItem: title)

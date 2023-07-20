@@ -28,8 +28,6 @@ struct Media<T: Decodable>: Decodable{
     }
 }
 
-
-
 struct Title: Identifiable {
     let uuid = UUID()
     let id: Int

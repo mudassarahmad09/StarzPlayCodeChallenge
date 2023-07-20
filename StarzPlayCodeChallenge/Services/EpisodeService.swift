@@ -8,12 +8,11 @@
 import Foundation
 import MyApiLibrary
 
-protocol SeasonService {
-    func getTVShowDetail(from id: Int) async -> Result<TvDetailModel, RequestError>
+protocol EpisodeService {
     func getSeasonDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError>
 }
 
-struct SeasonServiceAdpter: NetworkManagerService, SeasonService {
+struct EpisodeServiceAdpter: NetworkManagerService, EpisodeService {
     func getSeasonDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError> {
         return await sendApiRequest(
             endpoint: SeasonEndpoint.seasonDetail(
@@ -23,7 +22,4 @@ struct SeasonServiceAdpter: NetworkManagerService, SeasonService {
             responseModel: Season.self)
     }
 
-    func getTVShowDetail(from id: Int) async -> Result<TvDetailModel, RequestError> {
-        return await sendApiRequest(endpoint: SeasonEndpoint.tvShowDetail(id: id), responseModel: TvDetailModel.self)
-    }
 }
