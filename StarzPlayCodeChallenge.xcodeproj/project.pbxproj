@@ -53,6 +53,7 @@
 		8032E4902A5D520F00FC1089 /* MediaEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8032E48F2A5D520F00FC1089 /* MediaEndpoint.swift */; };
 		8032E4932A5D5EB500FC1089 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8032E4922A5D5EB500FC1089 /* HomeView.swift */; };
 		8032E4972A5D98A300FC1089 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8032E4962A5D98A300FC1089 /* HomeViewModel.swift */; };
+		8069BFE22A72A00F0053507A /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8069BFE12A72A00F0053507A /* Helper.swift */; };
 		80A1B7452A69C45D001FBE4C /* MovieDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1B7442A69C45D001FBE4C /* MovieDetailModel.swift */; };
 		80A1B7482A69C544001FBE4C /* MediaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1B7472A69C544001FBE4C /* MediaService.swift */; };
 		80A1B74A2A69C570001FBE4C /* MediaDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1B7492A69C570001FBE4C /* MediaDetailService.swift */; };
@@ -124,6 +125,7 @@
 		8032E48F2A5D520F00FC1089 /* MediaEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaEndpoint.swift; sourceTree = "<group>"; };
 		8032E4922A5D5EB500FC1089 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8032E4962A5D98A300FC1089 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		8069BFE12A72A00F0053507A /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		80A1B7442A69C45D001FBE4C /* MovieDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailModel.swift; sourceTree = "<group>"; };
 		80A1B7472A69C544001FBE4C /* MediaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaService.swift; sourceTree = "<group>"; };
 		80A1B7492A69C570001FBE4C /* MediaDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailService.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 			children = (
 				7A16582528CA26F2004EDE42 /* Constant.swift */,
 				7A16582A28CA4724004EDE42 /* Extension.swift */,
+				8069BFE12A72A00F0053507A /* Helper.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				8032E4892A58355C00FC1089 /* CustomButton.swift in Sources */,
 				7A16586228CB7FA6004EDE42 /* GenricModel.swift in Sources */,
 				80A1B74A2A69C570001FBE4C /* MediaDetailService.swift in Sources */,
+				8069BFE22A72A00F0053507A /* Helper.swift in Sources */,
 				7A16583F28CB1D3D004EDE42 /* Season.swift in Sources */,
 				7A16584B28CB59AA004EDE42 /* EndPoint+AppURl.swift in Sources */,
 				7A16585C28CB6A82004EDE42 /* EpisodeService.swift in Sources */,

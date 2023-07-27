@@ -62,30 +62,30 @@ struct SeasonGridView: View {
     }
 }
 
-//struct SeasonGridView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Group {
-//            TestSeasonGridView()
-//                .previewLayout(PreviewLayout.sizeThatFits)
-//
-//            TestSeasonGridView()
-//                .previewLayout(PreviewLayout.sizeThatFits)
-//                .previewDevice("iPhone 12 mini")
-//                .preferredColorScheme(.dark)
-//        }
-//    }
-//
-//    private struct TestSeasonGridView: View {
-//        var body: some View {
-//            let mockSeasons = [
-//                Season(name: "SEASON 1", isSelected: true),
-//                Season(name: "SEASON 2", isSelected: false),
-//                Season(name: "SEASON 3", isSelected: false),
-//                Season(name: "SEASON 4", isSelected: false)
-//            ]
-//            let gridVM = SeasonGridVM(seasons: mockSeasons)
-//            SeasonGridView(viewModel: gridVM, selectedSeason: { _ in })
-//        }
-//    }
-//}
+struct SeasonGridView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            TestSeasonGridView()
+                .previewLayout(PreviewLayout.sizeThatFits)
+
+            TestSeasonGridView()
+                .previewLayout(PreviewLayout.sizeThatFits)
+                .previewDevice("iPhone 12 mini")
+                .preferredColorScheme(.dark)
+        }
+    }
+
+    private struct TestSeasonGridView: View {
+        var body: some View {
+            let mockSeasons = [
+                Season(name: "SEASON 1", isSelected: true),
+                Season(name: "SEASON 2", isSelected: false),
+                Season(name: "SEASON 3", isSelected: false),
+                Season(name: "SEASON 4", isSelected: false)
+            ]
+            let gridVM = SeasonGridVM(seaasonService: EpisodeServiceAdpter(), seasons: mockSeasons)
+            SeasonGridView(viewModel: gridVM, mediaId: 2)
+        }
+    }
+}
 

@@ -45,13 +45,5 @@ struct PosterView_Previews: PreviewProvider {
             .previewLayout(.sizeThatFits)
             .preferredColorScheme(.dark)
     }
-    
-    private struct MockMovie: MediaAttributes {
-        var id: Int = 1
-        func getMediaTitle() -> String { "Title" }
-        func getMediaSubTitle() -> String { "SubTitle" }
-        func getMediaImagePoster() -> String { "/stTEycfG9928HYGEISBFaG1ngjM.jpg"}
-        func getMediaContentType() -> ContentType { .movie }
-    }
 }
 
