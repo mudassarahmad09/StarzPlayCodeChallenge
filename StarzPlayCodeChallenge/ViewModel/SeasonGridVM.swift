@@ -60,7 +60,7 @@ extension SeasonGridVM {
 // MARK: - TV Season Api
 extension SeasonGridVM {
 
-    @MainActor func getSeasonDetail(mediaId: Int) async {
+    @MainActor func getEpisodeDetail(mediaId: Int) async {
         loading = true
         await handleSeasonResult(episodeService.getEpisodeDetailDetail(tv: mediaId, seasonId: seasonNumber))
         loading = false

@@ -26,8 +26,8 @@ struct SeasonGridView: View {
             seasonGridView()
             episodeList(episodes: viewModel.episodes ?? [])
         }.task {
-            await viewModel.getSeasonDetail(mediaId: mediaId)
             viewModel.selecteFirstSeason()
+            await viewModel.getEpisodeDetail(mediaId: mediaId)
         }
     }
     
@@ -41,7 +41,7 @@ struct SeasonGridView: View {
                                        season: season) {
                             Task {
                                  viewModel.updateSeasonNumber(number: season.seasonNumber ?? 0)
-                                 await viewModel.getSeasonDetail(mediaId: mediaId)
+                                 await viewModel.getEpisodeDetail(mediaId: mediaId)
                                  viewModel.update(selecteItem: season)
                             }
                         }
