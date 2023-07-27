@@ -17,9 +17,6 @@ func aEpisode() -> Episode{
     Episode(airDate: "Any airDate", episodeNumber: Int.random(in: 1...Int.max), id: Int.random(in: 1...Int.max), name: "Any name", overview: "Any overview", productionCode: "Any productionCode", runtime: Int.random(in: 1...Int.max), seasonNumber: Int.random(in: 1...Int.max), showID: Int.random(in: 1...Int.max), stillPath: "Any stillPath", voteAverage: 3, voteCount: Int.random(in: 1...Int.max))
 }
 
-
-
-
 final class SeasonServiceMock: Mockable, EpisodeService {
     func getSeasonDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError> {
         return .success(loadJSON(filename: "season_detail_response", type: Season.self))

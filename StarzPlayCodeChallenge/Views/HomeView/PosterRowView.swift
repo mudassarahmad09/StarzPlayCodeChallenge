@@ -37,8 +37,26 @@ struct PosterRowView: View {
     }
 }
 
-//struct PosterRowView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PosterRowView()
-//    }
-//}
+struct PosterRowView_Previews: PreviewProvider {
+    static var previews: some View {
+        PosterRowView(layout: Layout(sectionTitle: "Movie", titles: [MockMovie(),MockSeries(),MockMovie(),MockSeries()]))
+            .previewLayout(.sizeThatFits)
+            .preferredColorScheme(.dark)
+    }
+    
+    private struct MockMovie: MediaAttributes {
+        var id: Int = Int.random(in: 1...Int.max)
+        func getMediaTitle() -> String { "Title" }
+        func getMediaSubTitle() -> String { "SubTitle" }
+        func getMediaImagePoster() -> String { "/stTEycfG9928HYGEISBFaG1ngjM.jpg"}
+        func getMediaContentType() -> ContentType { .movie }
+    }
+    
+    private struct MockSeries: MediaAttributes {
+        var id: Int = Int.random(in: 1...Int.max)
+        func getMediaTitle() -> String { "Title" }
+        func getMediaSubTitle() -> String { "SubTitle" }
+        func getMediaImagePoster() -> String { "/oFGMGn1ywvvYobxOcPKVytN3AQK.jpg"}
+        func getMediaContentType() -> ContentType { .movie }
+    }
+}
