@@ -30,7 +30,7 @@ class TvDetailVmTest: XCTestCase {
         XCTAssertEqual(sut.errorMessage , "")
         XCTAssertEqual(sut.showError, false)
 
-        await sut.getTVDetail()
+        await sut.getDetail()
 
         XCTAssertEqual(sut.errorMessage , "request error")
         XCTAssertEqual(sut.showError, true)
@@ -39,70 +39,30 @@ class TvDetailVmTest: XCTestCase {
     func testGetTvDetail_whenAPIRequestSucceeds() async{
         let sut = tvDetailVM()
 
-        XCTAssertNil(sut.tvDetail)
+        XCTAssertNil(sut.detail)
 
-        await sut.getTVDetail()
+        await sut.getDetail()
 
         XCTAssertEqual(sut.loading, false)
-        XCTAssertNotNil(sut.tvDetail)
-        XCTAssertEqual(sut.tvDetail?.originalName, "The Boys")
-        XCTAssertEqual(sut.tvDetail?.posterPath, "/stTEycfG9928HYGEISBFaG1ngjM.jpg")
+        XCTAssertNotNil(sut.detail)
+        XCTAssertEqual(sut.detail?.getMediaName(), "The Boys")
+        XCTAssertEqual(sut.detail?.getMediaImagePoster(), "/stTEycfG9928HYGEISBFaG1ngjM.jpg")
     }
 
     func testGetTvDetail_whenAPIRequestFail() async{
         let sut = tvDetailVMFailabel()
-        XCTAssertNil(sut.tvDetail)
+        XCTAssertNil(sut.detail)
 
-        await sut.getTVDetail()
-        XCTAssertNil(sut.tvDetail)
-    }
-
-    func testgetSeasonDetail_whenAPIRequestSucceeds() async{
-        let sut = tvDetailVM()
-        XCTAssertNil(sut.episodes)
-
-        await sut.getSeasonDetail()
-
-        XCTAssertNotNil(sut.episodes)
-        XCTAssertEqual(sut.episodes?.count, 8)
-        XCTAssertEqual(sut.episodes?[0].name, "The Name of the Game")
-        XCTAssertEqual(sut.episodes?[0].stillPath, "/83vFYTHtCqWwaDtZluSU8bmnFYG.jpg")
-
-    }
-
-    func testgetSeasonDetail_whenAPIRequestFail() async{
-        let sut = tvDetailVMFailabel()
-        XCTAssertNil(sut.episodes)
-
-        await sut.getSeasonDetail()
-
-        XCTAssertNil(sut.episodes)
-
-    }
-
-    func testUpdateSeasonNumber_whenAPIRequestSucceeds(){
-
-        let sut = tvDetailVM()
-        XCTAssertEqual(sut.seasonNumber , 0)
-
-        sut.updateSeasonNumber(number: 1)
-        XCTAssertEqual(sut.seasonNumber , 1)
-    }
-
-    func testUpdateSeasonNumber_whenAPIRequestFail(){
-        let sut = tvDetailVMFailabel()
-        XCTAssertEqual(sut.seasonNumber , 0)
-
-        sut.updateSeasonNumber(number: 1)
-        XCTAssertEqual(sut.seasonNumber , 1)
+        await sut.getDetail()
+        XCTAssertNil(sut.detail)
     }
 
 
     func tvDetailVM() -> DetailVM{
-        DetailVM(seaasonService: SeasonServiceMock(), seasonTypeId: .theBoys)
+        DetailVM(detailService: MediaDetailMock(), id: SeasonType.theBoys.rawValue)
     }
     
     func tvDetailVMFailabel() -> DetailVM{
-        DetailVM(seaasonService: SeasonServiceFailabelMock(), seasonTypeId: .theBoys)
+        DetailVM(detailService: MediaDetailFailabelMock(), id: SeasonType.theBoys.rawValue)
     }
 }

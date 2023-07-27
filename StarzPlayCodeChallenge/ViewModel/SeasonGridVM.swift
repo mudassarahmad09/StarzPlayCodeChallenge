@@ -10,7 +10,7 @@ import MyApiLibrary
 
 final class SeasonGridVM: ObservableObject {
     
-    let seaasonService: EpisodeServiceAdpter
+    let seaasonService: EpisodeService
     
     @Published private(set) var seasons = [Season]()
     @Published private(set) var episodes: [Episode]?
@@ -20,7 +20,7 @@ final class SeasonGridVM: ObservableObject {
     @Published var loading = false
     var errorMessage = ""
 
-    init(seaasonService: EpisodeServiceAdpter, seasons: [Season]) {
+    init(seaasonService: EpisodeService, seasons: [Season]) {
         self.seaasonService = seaasonService
         self.seasons = seasons
     }

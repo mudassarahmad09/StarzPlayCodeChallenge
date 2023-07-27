@@ -21,21 +21,25 @@ func aEpisode() -> Episode{
 
 
 final class SeasonServiceMock: Mockable, EpisodeService {
-    func getTVShowDetail(from id: Int) async -> Result<TvDetailModel, RequestError> {
-        return .success(loadJSON(filename: "tv_detail_response", type: TvDetailModel.self))
-    }
-
     func getSeasonDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError> {
         return .success(loadJSON(filename: "season_detail_response", type: Season.self))
     }
 }
 
 final class SeasonServiceFailabelMock: Mockable, EpisodeService {
-    func getTVShowDetail(from id: Int) async -> Result<TvDetailModel, RequestError> {
+    func getSeasonDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError> {
         return .failure(RequestError.unauthorized(reason: "request error"))
     }
+}
 
-    func getSeasonDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError> {
+final class MediaDetailMock: Mockable, MediaDetailService {
+    func getDetails(from id: Int) async -> Result<MediaDetail, RequestError> {
+        return .success(loadJSON(filename: "tv_detail_response", type: TvDetailModel.self))
+    }
+}
+
+final class MediaDetailFailabelMock: Mockable, MediaDetailService {
+    func getDetails(from id: Int) async -> Result<MediaDetail, RequestError> {
         return .failure(RequestError.unauthorized(reason: "request error"))
     }
 }
