@@ -30,6 +30,7 @@ extension DetailVM {
         showError = true
     }
     
+    @MainActor
     func getDetail(_ Id: Int = 0) async {
         loading = true
         await handleDetailResult(detailService.getDetails(from: id))

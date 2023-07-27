@@ -9,11 +9,11 @@ import Foundation
 import MyApiLibrary
 
 protocol EpisodeService {
-    func getSeasonDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError>
+    func getEpisodeDetailDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError>
 }
 
 struct EpisodeServiceAdpter: NetworkManagerService, EpisodeService {
-    func getSeasonDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError> {
+    func getEpisodeDetailDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError> {
         return await sendApiRequest(
             endpoint: SeasonEndpoint.seasonDetail(
                 tvid: id,

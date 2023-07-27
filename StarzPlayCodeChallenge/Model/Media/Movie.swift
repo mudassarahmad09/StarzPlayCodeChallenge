@@ -13,19 +13,16 @@ struct Movie: Decodable {
     let id: Int
     let originalTitle, overview: String
     let popularity: Double
-    let posterPath, releaseDate, title: String
+    let releaseDate, title: String
     let video: Bool
     let voteAverage: Double
     let voteCount: Int
+    let posterPath: String?
 
     private var formattedReleaseDate: String {
         releaseDate.toDate(withFormat: "yyyy-MM-dd")?.toString(dateFormat: "dd MMM yyyy") ?? ""
     }
-    
-    var asTitle: Title {
-        .init(id: id, title: originalTitle, subTitle: formattedReleaseDate, imagePoster: posterPath, contentType: .movie)
-    }
-    
+        
     enum CodingKeys: String, CodingKey {
         case adult
         case genreIDS = "genre_ids"
@@ -55,7 +52,7 @@ extension Movie: MediaAttributes {
     }
     
     func getMediaImagePoster() -> String {
-        self.posterPath
+        self.posterPath ?? ""
     }
     
     func getMediaContentType() -> ContentType {

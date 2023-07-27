@@ -28,7 +28,7 @@ class RequestAppTests: XCTestCase {
     
     func testTvDetail_afterFail() async {
         let serviceMock = SeasonServiceFailabelMock()
-        let failingResult = await serviceMock.getSeasonDetail(tv: 0, seasonId: 0)
+        let failingResult = await serviceMock.getEpisodeDetailDetail(tv: 0, seasonId: 0)
         
         switch failingResult {
         case .success:
@@ -42,7 +42,7 @@ class RequestAppTests: XCTestCase {
     
     func testSeasonDetail_afterSuccess() async {
         let serviceMock = SeasonServiceMock()
-        let failingResult = await serviceMock.getSeasonDetail(tv: 0,seasonId: 0)
+        let failingResult = await serviceMock.getEpisodeDetailDetail(tv: 0,seasonId: 0)
         
         switch failingResult {
         case .success(let seasonDetail):
@@ -58,7 +58,7 @@ class RequestAppTests: XCTestCase {
     
     func testSeasonDetail_afterFail() async {
         let serviceMock = SeasonServiceFailabelMock()
-        let failingResult = await serviceMock.getSeasonDetail(tv: 0,seasonId: 0)
+        let failingResult = await serviceMock.getEpisodeDetailDetail(tv: 0,seasonId: 0)
         
         switch failingResult {
         case .success:

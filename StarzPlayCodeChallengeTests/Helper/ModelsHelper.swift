@@ -18,13 +18,13 @@ func aEpisode() -> Episode{
 }
 
 final class SeasonServiceMock: Mockable, EpisodeService {
-    func getSeasonDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError> {
+    func getEpisodeDetailDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError> {
         return .success(loadJSON(filename: "season_detail_response", type: Season.self))
     }
 }
 
 final class SeasonServiceFailabelMock: Mockable, EpisodeService {
-    func getSeasonDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError> {
+    func getEpisodeDetailDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError> {
         return .failure(RequestError.unauthorized(reason: "request error"))
     }
 }

@@ -10,7 +10,7 @@ import MyApiLibrary
 
 final class SeasonGridVM: ObservableObject {
     
-    let seaasonService: EpisodeService
+    let episodeService: EpisodeService
     
     @Published private(set) var seasons = [Season]()
     @Published private(set) var episodes: [Episode]?
@@ -21,7 +21,7 @@ final class SeasonGridVM: ObservableObject {
     var errorMessage = ""
 
     init(seaasonService: EpisodeService, seasons: [Season]) {
-        self.seaasonService = seaasonService
+        self.episodeService = seaasonService
         self.seasons = seasons
     }
 }
@@ -62,7 +62,7 @@ extension SeasonGridVM {
 
     @MainActor func getSeasonDetail(mediaId: Int) async {
         loading = true
-        await handleSeasonResult(seaasonService.getSeasonDetail(tv: mediaId, seasonId: seasonNumber))
+        await handleSeasonResult(episodeService.getEpisodeDetailDetail(tv: mediaId, seasonId: seasonNumber))
         loading = false
     }
 

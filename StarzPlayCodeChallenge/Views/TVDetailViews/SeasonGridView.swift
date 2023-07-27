@@ -78,7 +78,7 @@ struct SeasonGridView_Previews: PreviewProvider {
     private struct TestSeasonGridView: View {
         var body: some View {
             let mockSeasons = [
-                Season(name: "SEASON 1", isSelected: true),
+                Season(name: "SEASON 1", isSelected: false),
                 Season(name: "SEASON 2", isSelected: false),
                 Season(name: "SEASON 3", isSelected: false),
                 Season(name: "SEASON 4", isSelected: false)
