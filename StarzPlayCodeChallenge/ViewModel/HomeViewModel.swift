@@ -12,7 +12,7 @@ final class HomeViewModel: ObservableObject {
     
     private let mediaEndpointConfig : [MediaEndpointConfig]
     
-    @Published private(set) var layouts: [Layout]?
+    @Published private(set) var layouts: [Layout] = []
     @Published private(set) var loading = false
     @Published var showError = false
     
@@ -29,6 +29,9 @@ extension HomeViewModel {
         loading = true
         await withTaskGroup(of: (String, Result<[MediaAttributes], RequestError>).self) { group in
             for endpoint in mediaEndpointConfig {
+                if layouts.contains(where: { $0.sectionTitle == endpoint.title }) {
+                    continue
+                }
                 group.addTask {
                     let result = await endpoint.adpter.fetchList(endPoint: endpoint.endPoint)
                     return (endpoint.title, result)
@@ -47,10 +50,7 @@ extension HomeViewModel {
     private func handleTvshowsResult(title: String , result: Result<[any MediaAttributes], RequestError>) async {
         switch result {
         case let .success(titles):
-            if layouts == nil {
-                layouts = []
-            }
-            layouts?.append(Layout(sectionTitle: title, titles: titles))
+            layouts.append(Layout(sectionTitle: title, titles: titles))
         case let .failure(error):
             self.errorMessage = error.customMessage
             self.showError = true

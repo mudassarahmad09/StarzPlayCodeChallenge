@@ -15,5 +15,6 @@ struct HideNavbarOf<Content: View>: View {
             .navigationBarTitle("")
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
+            .preferredColorScheme(.dark)
     }
 }

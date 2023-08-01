@@ -30,7 +30,7 @@ struct HomeView: View {
             
             VStack {
                 ScrollView(.vertical, showsIndicators: false) {
-                    ForEach(viewModel.layouts ?? [], id: \.id) { layout in
+                    ForEach(viewModel.layouts , id: \.id) { layout in
                         PosterRowView(layout: layout)
                     }
                 }

@@ -16,13 +16,13 @@ enum TVType: String, CaseIterable {
     var title: String {
         switch self {
         case .airingToday:
-            return "Airing Today"
+            return "TV Airing Today"
         case .onAir:
-            return "On The Air"
+            return "On TV The Air"
         case .popular:
-            return "Popular"
+            return "Popular TV"
         case .topRated:
-            return "Top Rated"
+            return "Top Rated TV"
         }
     }
     
