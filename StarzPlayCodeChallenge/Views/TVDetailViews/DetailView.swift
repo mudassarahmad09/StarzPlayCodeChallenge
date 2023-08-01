@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct DetailView: View {
-
+    
     @StateObject private var viewModel: DetailVM
     @State private var goToPlayer = false
-
+    
     private var dynamicContentView: () -> AnyView?
     private var url: URL
     
     @Environment(\.dismiss) private var dismiss
-
+    
     init(
         viewModel: DetailVM,
         dynamicContentView: @escaping () -> AnyView?,
@@ -26,7 +26,7 @@ struct DetailView: View {
         self.dynamicContentView = dynamicContentView
         self.url = url
     }
-
+    
     var body: some View {
         loadView()
             .fullScreenCover(isPresented: $goToPlayer, content: {VideoPlayerView(url: url)})
@@ -43,28 +43,24 @@ extension DetailView {
             if viewModel.loading {
                 LoadingIndicatorView()
             }
-
-            ScrollView {
-                VStack(spacing: 5) {
+            
+            ZStack(alignment: .top) {
+                ScrollView {
                     ZStack(alignment: .bottom) {
                         GradientImageView(image: viewModel.detail?.getMediaImagePoster() ?? "")
-                        VStack {
-                            topButtons()
-                            Spacer()
-                            bannerImageView()
-                        }
+                        bannerImageView()
                     }
                     descripcationView()
                     reactionView()
                     dynamicContentView()
                 }
+                topButtons()
             }
             .edgesIgnoringSafeArea(.top)
             .task {
                 await viewModel.getDetail()
             }
             .background(.black)
-
         }
     }
 }
@@ -92,19 +88,19 @@ extension DetailView {
             }
             
         }.padding(.top, 50)
-        .padding([.trailing, .leading])
+            .padding([.trailing, .leading])
     }
-            
+    
     func bannerImageView() -> some View {
         VStack(alignment: .leading, spacing: 15) {
-
+            
             nameAndTypeView()
             playableButtonView()
-
+            
         }
         .padding([.trailing, .leading])
     }
-
+    
     func nameAndTypeView() -> some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(viewModel.detail?.getMediaName() ?? "")
@@ -115,27 +111,27 @@ extension DetailView {
                 .foregroundColor(.gray)
         }
     }
-
+    
     func playableButtonView() -> some View {
         HStack(spacing: 8) {
             PlayButton(action: {
                 goToPlayer.toggle()
             })
-
+            
             Spacer()
-
+            
             TrailerButton(action: {
                 goToPlayer.toggle()
             })
         }
     }
-
+    
     func descripcationView() -> some View {
         VStack {
             ExpandableView(viewModel.detail?.getMediaOverView() ?? "")
         }
     }
-
+    
 }
 // MARK: - Reaction View
 extension DetailView {
