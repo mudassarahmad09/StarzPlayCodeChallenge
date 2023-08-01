@@ -60,8 +60,8 @@ extension DetailView {
             .task {
                 await viewModel.getDetail()
             }
-            .background(.black)
-        }
+            
+        }.background(.black)
     }
 }
 // MARK: - Banner View Funcality
