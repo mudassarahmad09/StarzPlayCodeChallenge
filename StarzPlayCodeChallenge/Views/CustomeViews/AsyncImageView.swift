@@ -29,7 +29,7 @@ struct AsyncImageView: View {
         ) { phase in
             switch phase {
             case .empty:
-                imagePerView(image: Image(CommonImage.episodePH.rawValue)  )
+                imagePerView(image: Image(placeHolder.rawValue)  )
                 
             case .success(let image):
                 imagePerView(image: image)
@@ -46,6 +46,7 @@ struct AsyncImageView: View {
     func imagePerView(image: Image) -> some View {
         image
             .resizable()
+            .aspectRatio(contentMode: .fill)
             .frame(width: width, height: height)
             .foregroundColor(.white)
     }
