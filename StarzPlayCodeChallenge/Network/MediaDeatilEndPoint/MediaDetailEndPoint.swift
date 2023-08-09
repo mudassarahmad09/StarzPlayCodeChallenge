@@ -17,7 +17,7 @@ extension MediaDetailEndPoint: ApiEndpoint {
         case .showDetail:
             return         [
                 URLQueryItem(name: "api_key", value: AppUrl.APIKey),
-                URLQueryItem(name: "append_to_response", value: "recommendations")
+                URLQueryItem(name: "append_to_response", value: "recommendations,credits")
             ]
         }
     }

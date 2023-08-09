@@ -43,7 +43,7 @@ final class AppInstantiationFactory {
     
     private func recommendationView(_ viewModel: DetailVM) -> AnyView? {
         guard let recommendations = viewModel.detail?.getRecommendations()?.results , !recommendations.isEmpty else {return nil}
-        return AnyView(PosterRowView(layout: Layout( sectionTitle: "recommendations", titles: viewModel.detail?.getRecommendations()?.results ?? [])))
+        return AnyView(PosterRowView(layout: Layout( sectionTitle: "Recommendations", titles: recommendations)))
     }
     
     private func seasonView(_ viewModel: DetailVM, _ mediaId: Int) -> AnyView? {

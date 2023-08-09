@@ -26,6 +26,7 @@ struct MovieDetailModel: Decodable {
     let voteAverage: Double
     let voteCount: Int
     var recommendations: Media<Movie>
+    let credits: MediaCredit
     
     var releaseDateWithFormate: String {
         releaseDate.toDate()?.toString(dateFormat: "yyyy") ?? ""
@@ -47,6 +48,7 @@ struct MovieDetailModel: Decodable {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
         case recommendations
+        case credits
     }
 }
 extension MovieDetailModel: MediaDetail {
@@ -76,6 +78,10 @@ extension MovieDetailModel: MediaDetail {
     
     func getMediaOverView() -> String {
         self.overview
+    }
+    
+    func getCast() -> MediaCredit {
+        self.credits
     }
     
 }

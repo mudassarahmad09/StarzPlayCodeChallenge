@@ -28,12 +28,12 @@ enum AppUrl {
     static var VURL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
 }
 
-enum SeasonType: Int {
+enum MediaInfo: Int {
     case theBoys = 76479
     case banshee = 41727
     case see = 80752
     case houseOfTheDragon = 94997
     case lordOfTheRing = 84773
     case doomPatrol = 79501
-
+    case theFlash = 298618
 }

@@ -52,6 +52,7 @@ extension DetailView {
                     }
                     descripcationView()
                     reactionView()
+                    castView()
                     dynamicContentView()
                 }
                 topButtons()
@@ -65,7 +66,7 @@ extension DetailView {
     }
 }
 // MARK: - Banner View Funcality
-extension DetailView {
+private extension DetailView {
     func topButtons() -> some View {
         HStack {
             Button {
@@ -132,9 +133,13 @@ extension DetailView {
         }
     }
     
+    func castView() -> AnyView? {
+        guard let cast = viewModel.detail?.getCast().cast , !cast.isEmpty else {return nil}
+        return AnyView(PosterRowView(layout: Layout( sectionTitle: "Cast", titles: cast)))
+    }
 }
 // MARK: - Reaction View
-extension DetailView {
+private extension DetailView {
     func reactionView() -> some View {
         HStack(alignment: .top, spacing: 12) {
             RoundedButton(iconName: "plus", textName: "Watch List")
@@ -150,7 +155,7 @@ extension DetailView {
 struct TVDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let app = AppInstantiationFactory()
-        app.detailView(for: SeasonType.theBoys.rawValue, and: .tv)
-        app.detailView(for: SeasonType.theBoys.rawValue, and: .tv).preferredColorScheme(.dark)
+        app.detailView(for: MediaInfo.theFlash.rawValue, and: .movie)
+        app.detailView(for: MediaInfo.theBoys.rawValue, and: .tv).preferredColorScheme(.dark)
     }
 }

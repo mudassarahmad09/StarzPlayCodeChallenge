@@ -97,7 +97,7 @@ class SeasonGridVmTest: XCTestCase{
         let sut = seasonGridVMFailabel()
         XCTAssertNil(sut.episodes)
 
-        await sut.getEpisodeDetail(mediaId: SeasonType.theBoys.rawValue)
+        await sut.getEpisodeDetail(mediaId: MediaInfo.theBoys.rawValue)
 
         XCTAssertNil(sut.episodes)
 

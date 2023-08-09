@@ -59,10 +59,10 @@ class TvDetailVmTest: XCTestCase {
 
 
     func tvDetailVM() -> DetailVM{
-        DetailVM(detailService: MediaDetailMock(), id: SeasonType.theBoys.rawValue)
+        DetailVM(detailService: MediaDetailMock(), id: MediaInfo.theBoys.rawValue)
     }
     
     func tvDetailVMFailabel() -> DetailVM{
-        DetailVM(detailService: MediaDetailFailabelMock(), id: SeasonType.theBoys.rawValue)
+        DetailVM(detailService: MediaDetailFailabelMock(), id: MediaInfo.theBoys.rawValue)
     }
 }

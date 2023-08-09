@@ -31,7 +31,6 @@ struct MovieServiceAdapter: NetworkManagerService,MediaService {
         
         switch result {
         case .success(let movie):
-            //let titles = movie.results.map(\.asTitle)
             return .success(movie.results)
         case .failure(let error):
             return .failure(error)
