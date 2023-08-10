@@ -15,9 +15,10 @@ struct MediaCredit: Decodable {
 
 struct CastModel: Decodable {
     let adult: Bool
-    let gender, id: Int
-    let knownForDepartment: Department
-    let name, originalName: String
+    let id: Int
+    let gender : Int?
+    let knownForDepartment: Department?
+    let name, originalName: String?
     let popularity: Double
     let profilePath: String?
     let castID: Int?
@@ -62,7 +63,7 @@ extension CastModel: MediaAttributes {
     }
     
     func getMediaTitle() -> String {
-        self.name
+        self.name ?? ""
     }
     
     func getMediaSubTitle() -> String {

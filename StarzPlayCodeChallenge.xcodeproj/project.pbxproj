@@ -64,6 +64,7 @@
 		80DD4E332A65D5DB0088E60A /* TVShows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DD4E322A65D5DB0088E60A /* TVShows.swift */; };
 		80DD4E352A65D6060088E60A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DD4E342A65D6060088E60A /* Movie.swift */; };
 		80DD4E392A671D830088E60A /* MediaDetailEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DD4E382A671D830088E60A /* MediaDetailEndPoint.swift */; };
+		80FDFBE72A83D63E00199A7F /* PersonDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FDFBE62A83D63E00199A7F /* PersonDetail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,7 @@
 		80DD4E322A65D5DB0088E60A /* TVShows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShows.swift; sourceTree = "<group>"; };
 		80DD4E342A65D6060088E60A /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		80DD4E382A671D830088E60A /* MediaDetailEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailEndPoint.swift; sourceTree = "<group>"; };
+		80FDFBE62A83D63E00199A7F /* PersonDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -397,6 +399,7 @@
 			children = (
 				7A16585E28CB7938004EDE42 /* TvDetailModel.swift */,
 				80A1B7442A69C45D001FBE4C /* MovieDetailModel.swift */,
+				80FDFBE62A83D63E00199A7F /* PersonDetail.swift */,
 				7A16583E28CB1D3D004EDE42 /* Season.swift */,
 				7A551FDD28CC617100B8F9BD /* Episode.swift */,
 			);
@@ -551,6 +554,7 @@
 			files = (
 				7A1657F528CA1E97004EDE42 /* ContentView.swift in Sources */,
 				8032E4852A58296600FC1089 /* SeasonGridCell.swift in Sources */,
+				80FDFBE72A83D63E00199A7F /* PersonDetail.swift in Sources */,
 				7A16583A28CB0325004EDE42 /* SeasonGridView.swift in Sources */,
 				7A16582328CA2365004EDE42 /* DetailView.swift in Sources */,
 				7A16583428CA6A19004EDE42 /* ExpandableView.swift in Sources */,

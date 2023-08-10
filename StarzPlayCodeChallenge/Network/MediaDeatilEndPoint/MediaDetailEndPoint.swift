@@ -14,11 +14,8 @@ enum MediaDetailEndPoint {
 extension MediaDetailEndPoint: ApiEndpoint {
     var queryItems: [URLQueryItem]? {
         switch self {
-        case .showDetail:
-            return         [
-                URLQueryItem(name: "api_key", value: AppUrl.APIKey),
-                URLQueryItem(name: "append_to_response", value: "recommendations,credits")
-            ]
+        case .showDetail(id: _, let media):
+            return  queryParams(for: media)
         }
     }
     
@@ -40,6 +37,21 @@ extension MediaDetailEndPoint: ApiEndpoint {
         switch self {
         case .showDetail:
             return nil
+        }
+    }
+    
+    private func queryParams(for media: ContentType) -> [URLQueryItem] {
+        switch media {
+        case .tv, .movie:
+           return [
+                URLQueryItem(name: "api_key", value: AppUrl.APIKey),
+                URLQueryItem(name: "append_to_response", value: "recommendations,credits")
+            ]
+        case .person:
+            return  [
+                URLQueryItem(name: "api_key", value: AppUrl.APIKey),
+                URLQueryItem(name: "append_to_response", value: "combined_credits,images")
+            ]
         }
     }
 }
