@@ -19,15 +19,27 @@ final class AppInstantiationFactory {
                     HomeViewModel(mediaEndpointConfig: MediaEndPointManger.createEndpoints()))
     }
     
-    func detailView(for mediaId: Int, and contentType: ContentType) -> DetailView {
-        let vm = makeDetailVM(for: mediaId, and: contentType)
-        return DetailView(
-            viewModel: vm,
-            dynamicContentView: {
-                self.makeDetailSubView(for: mediaId, contentType: contentType, viewModel: vm)
-            },
-            url: videoUrl()
-        )
+    func detailView(for mediaId: Int, and contentType: ContentType) -> AnyView {
+        if contentType == .person {
+          return AnyView (personDetailView(for: mediaId))
+        }
+        return AnyView(mediaDetailView(for: mediaId, contentType: contentType))
+    }
+    
+    private func mediaDetailView(for mediaId: Int, contentType: ContentType) -> DetailView {
+       let vm = makeDetailVM(for: mediaId, and: contentType)
+       return DetailView(
+           viewModel: vm,
+           dynamicContentView: {
+               self.makeDetailSubView(for: mediaId, contentType: contentType, viewModel: vm)
+           },
+           url: videoUrl()
+       )
+   }
+    
+    func personDetailView(for mediaId: Int) -> PersonDetailView {
+        let vm = PersonDetailVM(detailService: PersonDetailServiceAdapter(), id: mediaId)
+        return PersonDetailView(viewModel: vm)
     }
     
     private func makeDetailVM(for mediaId: Int, and contentType: ContentType) -> DetailVM {

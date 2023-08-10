@@ -7,19 +7,34 @@
 
 import Foundation
 
+protocol PersonInfo {
+    var id: Int {get}
+    func getName() -> String
+    func getImagePoster() -> String
+    func getOverView() -> String
+    func getBorn() -> String
+    func getBirthDay() -> String
+    func getCast() -> MediaCredit
+    func allProFiles() -> Images
+}
+
 struct PersonDetails: Decodable {
     let adult: Bool
     let alsoKnownAs: [String]
-    let biography, birthday: String
+    let biography, birthday: String?
     let gender: Int
     let id: Int
-    let imdbID, knownForDepartment, name, placeOfBirth: String
+    let imdbID: String?
+    let knownForDepartment, name, placeOfBirth: String
     let popularity: Double
     let profilePath: String
     let combinedCredits: MediaCredit
     let images: Images
     
-
+    var formmatedBirthday: String {
+        birthday?.toDate()?.toString(dateFormat: "yyyy") ?? ""
+    }
+    
     enum CodingKeys: String, CodingKey {
         case adult
         case alsoKnownAs = "also_known_as"
@@ -39,7 +54,8 @@ struct Images: Decodable {
     var profiles: [Profile]
 }
 
-struct Profile: Decodable {
+struct Profile: Decodable, Identifiable {
+    var id = UUID()
     let aspectRatio: Double
     let height: Int
     let filePath: String
@@ -55,38 +71,32 @@ struct Profile: Decodable {
         case width
     }
 }
-extension PersonDetails: MediaDetail {
-    func getMediaName() -> String {
+extension PersonDetails: PersonInfo {
+    func getName() -> String {
         self.name
     }
     
-    func getMediaImagePoster() -> String {
+    func getImagePoster() -> String {
         self.profilePath
     }
     
-    func getMediaOverView() -> String {
-        self.biography
+    func getBirthDay() -> String {
+        formmatedBirthday
     }
     
-    func getYear() -> String {
-        ""
-    }
-    
-    func getSeasons() -> [Season]? {
-        nil
-    }
-    
-    func getNumberOfSeaosn() -> Int? {
-        nil
-    }
-    
-    func getRecommendations() -> Media<Movie>? {
-        nil
+    func getOverView() -> String {
+        self.biography ?? ""
     }
     
     func getCast() -> MediaCredit {
         self.combinedCredits
     }
     
+    func allProFiles() -> Images {
+        self.images
+    }
     
+    func getBorn() -> String {
+        self.placeOfBirth 
+    }
 }

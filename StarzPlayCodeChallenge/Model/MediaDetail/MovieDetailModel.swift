@@ -52,18 +52,19 @@ struct MovieDetailModel: Decodable {
     }
 }
 extension MovieDetailModel: MediaDetail {
+    
     func getYear() -> String {
         self.releaseDateWithFormate
+    }
+    
+    func getSubMedaiDetail() -> String {
+        "Release Date \(releaseDateWithFormate)"
     }
     
     func getSeasons() -> [Season]? {
         nil
     }
-    
-    func getNumberOfSeaosn() -> Int? {
-        nil
-    }
-    
+        
     func getRecommendations() -> Media<Movie>? {
         self.recommendations
     }

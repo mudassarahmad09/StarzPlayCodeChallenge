@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Episode: Decodable, Identifiable, Hashable {
     var airDate: String?

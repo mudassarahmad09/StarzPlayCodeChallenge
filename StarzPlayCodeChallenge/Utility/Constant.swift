@@ -36,4 +36,5 @@ enum MediaInfo: Int {
     case lordOfTheRing = 84773
     case doomPatrol = 79501
     case theFlash = 298618
+    case thePerson = 169337
 }

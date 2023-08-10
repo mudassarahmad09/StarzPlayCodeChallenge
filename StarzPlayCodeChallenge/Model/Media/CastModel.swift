@@ -21,6 +21,7 @@ struct CastModel: Decodable {
     let name, originalName: String?
     let popularity: Double
     let profilePath: String?
+    let posterPath: String?
     let castID: Int?
     let character: String?
     let creditID: String
@@ -35,6 +36,7 @@ struct CastModel: Decodable {
         case originalName = "original_name"
         case popularity
         case profilePath = "profile_path"
+        case posterPath = "poster_path"
         case castID = "cast_id"
         case character
         case creditID = "credit_id"
@@ -71,7 +73,7 @@ extension CastModel: MediaAttributes {
     }
     
     func getMediaImagePoster() -> String {
-        self.profilePath ?? ""
+        self.profilePath ?? posterPath ?? ""
     }
     
     func getMediaContentType() -> ContentType {

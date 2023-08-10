@@ -1,30 +1,30 @@
 //
-//  TVDetailVM.swift
+//  PersonDetailVM.swift
 //  StarzPlayCodeChallenge
 //
-//  Created by Qazi  Mudassar Tanveer on 09/09/2022.
+//  Created by Qazi Mudassar on 10/08/2023.
 //
 
-import Foundation
+import SwiftUI
 import MyApiLibrary
 
-final class DetailVM: ObservableObject {
+final class PersonDetailVM: ObservableObject {
 
-    private let detailService: MediaDetailService
+    private let detailService: PersonDetailService
     private let id: Int
 
-    @Published private(set) var detail: MediaDetail?
+    @Published private(set) var detail: PersonInfo?
     @Published private(set) var loading = false
     @Published var showError = false
     var errorMessage = ""
 
-    init(detailService: MediaDetailService, id: Int) {
+    init(detailService: PersonDetailService, id: Int) {
         self.detailService = detailService
         self.id = id
     }
 }
 // MARK: - Movie Detail Api
-extension DetailVM {
+extension PersonDetailVM {
     func showError(message: String) {
         errorMessage = message
         showError = true
@@ -37,7 +37,8 @@ extension DetailVM {
         loading = false
     }
     
-    @MainActor private func handleDetailResult(_ result: Result<MediaDetail, RequestError>) async {
+    @MainActor
+    private func handleDetailResult(_ result: Result<PersonInfo, RequestError>) async {
         switch result {
         case let .success(fetchedDetail):
             self.detail = fetchedDetail
@@ -46,5 +47,5 @@ extension DetailVM {
             self.showError = true
         }
     }
-    
 }
+

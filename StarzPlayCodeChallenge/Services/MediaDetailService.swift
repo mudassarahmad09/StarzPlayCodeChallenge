@@ -53,15 +53,3 @@ struct MovieDetailServiceAdapter: NetworkManagerService,MediaDetailService {
     }
 }
 
-struct PersonDetailServiceAdapter: NetworkManagerService,MediaDetailService {
-    func getDetails(from id: Int) async -> Result<MediaDetail, RequestError> {
-        let detailEndPoint = MediaDetailEndPoint.showDetail(id: id, media: .person)
-        let result = await sendApiRequest(endpoint: detailEndPoint, responseModel: PersonDetails.self)
-        switch result {
-        case .success(let person):
-            return .success(person)
-        case .failure(let error):
-            return .failure(error)
-        }
-    }
-}

@@ -10,11 +10,12 @@ import Foundation
 protocol MediaDetail {
     var id: Int {get}
     func getMediaName() -> String
+    func getSubMedaiDetail() -> String
     func getMediaImagePoster() -> String
     func getMediaOverView() -> String
     func getYear() -> String
     func getSeasons() -> [Season]?
-    func getNumberOfSeaosn() -> Int?
+//    func getNumberOfSeaosn() -> Int?
     func getRecommendations() -> Media<Movie>?
     func getCast() -> MediaCredit
     
@@ -65,14 +66,14 @@ extension TvDetailModel: MediaDetail {
         self.startYear ?? ""
     }
     
+    func getSubMedaiDetail() -> String {
+        "On Air \(startYear ?? "") | \(numberOfSeasons) Seasons"
+    }
+    
     func getSeasons() -> [Season]? {
         self.seasons
     }
-    
-    func getNumberOfSeaosn() -> Int? {
-        self.numberOfSeasons
-    }
-    
+        
     func getRecommendations() -> Media<Movie>? {
         nil
     }

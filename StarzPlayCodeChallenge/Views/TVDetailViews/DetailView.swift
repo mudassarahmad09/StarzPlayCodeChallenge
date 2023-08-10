@@ -107,7 +107,7 @@ private extension DetailView {
             Text(viewModel.detail?.getMediaName() ?? "")
                 .font(.largeTitle)
                 .foregroundColor(.white)
-            Text("\(viewModel.detail?.getYear() ?? "") | \(viewModel.detail?.getNumberOfSeaosn() ?? 0) Seasons | R")
+            Text(viewModel.detail?.getSubMedaiDetail() ?? "")
                 .font(.system(size: 18, weight: .semibold, design: .default))
                 .foregroundColor(.gray)
         }
