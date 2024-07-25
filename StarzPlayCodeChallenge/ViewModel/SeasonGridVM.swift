@@ -7,17 +7,19 @@
 
 import Foundation
 import MyApiLibrary
+import Observation
 
+@Observable
 final class SeasonGridVM: ObservableObject {
     
     let episodeService: EpisodeService
     
-    @Published private(set) var seasons = [Season]()
-    @Published private(set) var episodes: [Episode]?
-    @Published private(set) var seasonNumber: Int = 0
+    private(set) var seasons = [Season]()
+    private(set) var episodes: [Episode]?
+    private(set) var seasonNumber: Int = 0
     
-    @Published var showError = false
-    @Published var loading = false
+    var showError = false
+    var loading = false
     var errorMessage = ""
 
     init(seaasonService: EpisodeService, seasons: [Season]) {
@@ -31,19 +33,16 @@ extension SeasonGridVM {
         showError = true
     }
     
-    @MainActor
     func update(selecteItem: Season) {
         for index in 0..<seasons.count {
             seasons[index].isSelecte = (seasons[index].id == selecteItem.id)
         }
     }
     
-    @MainActor
     func getUpdatedValue() -> Season? {
         seasons.first(where: {$0.isSelecte == true})
     }
     
-    @MainActor
     func selecteFirstSeason() {
         if let fIndex = seasons.firstIndex(where: {!$0.isSelecte }) {
             seasons[fIndex].isSelecte = true
@@ -51,7 +50,6 @@ extension SeasonGridVM {
         }
     }
     
-    @MainActor
     func updateSeasonNumber(number: Int) {
         self.seasonNumber = number
     }
@@ -60,13 +58,13 @@ extension SeasonGridVM {
 // MARK: - TV Season Api
 extension SeasonGridVM {
 
-    @MainActor func getEpisodeDetail(mediaId: Int) async {
+    func getEpisodeDetail(mediaId: Int) async {
         loading = true
         await handleSeasonResult(episodeService.getEpisodeDetailDetail(tv: mediaId, seasonId: seasonNumber))
         loading = false
     }
 
-    @MainActor private func handleSeasonResult(_ result: Result<Season, RequestError>) async {
+    private func handleSeasonResult(_ result: Result<Season, RequestError>) async {
         switch result {
         case let .success(seasonDeatail):
             self.episodes = seasonDeatail.episodes

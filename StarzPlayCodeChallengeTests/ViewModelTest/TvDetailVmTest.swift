@@ -10,7 +10,7 @@ import XCTest
 
 class TvDetailVmTest: XCTestCase {
 
-    func testShowError(){
+    func testShowError() {
 
         let sut = tvDetailVM()
 
@@ -23,7 +23,7 @@ class TvDetailVmTest: XCTestCase {
         XCTAssertEqual(sut.showError, true)
     }
 
-    func testShowError_showingMessage_whenAPIRequestFail() async{
+    func testShowError_showingMessage_whenAPIRequestFail() async {
 
         let sut = tvDetailVMFailabel()
 
@@ -36,7 +36,7 @@ class TvDetailVmTest: XCTestCase {
         XCTAssertEqual(sut.showError, true)
     }
 
-    func testGetTvDetail_whenAPIRequestSucceeds() async{
+    func testGetTvDetail_whenAPIRequestSucceeds() async {
         let sut = tvDetailVM()
 
         XCTAssertNil(sut.detail)
@@ -49,7 +49,7 @@ class TvDetailVmTest: XCTestCase {
         XCTAssertEqual(sut.detail?.getMediaImagePoster(), "/stTEycfG9928HYGEISBFaG1ngjM.jpg")
     }
 
-    func testGetTvDetail_whenAPIRequestFail() async{
+    func testGetTvDetail_whenAPIRequestFail() async {
         let sut = tvDetailVMFailabel()
         XCTAssertNil(sut.detail)
 
@@ -58,11 +58,11 @@ class TvDetailVmTest: XCTestCase {
     }
 
 
-    func tvDetailVM() -> DetailVM{
+    func tvDetailVM() -> DetailVM {
         DetailVM(detailService: MediaDetailMock(), id: MediaInfo.theBoys.rawValue)
     }
     
-    func tvDetailVMFailabel() -> DetailVM{
+    func tvDetailVMFailabel() -> DetailVM {
         DetailVM(detailService: MediaDetailFailabelMock(), id: MediaInfo.theBoys.rawValue)
     }
 }

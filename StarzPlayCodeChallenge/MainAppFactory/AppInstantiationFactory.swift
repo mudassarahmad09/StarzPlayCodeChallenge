@@ -9,15 +9,17 @@ import Foundation
 import SwiftUI
 
 final class AppInstantiationFactory {
-    
-    @MainActor func startApp() -> HomeView {
+     
+     @MainActor
+     func startApp() -> HomeView {
         homeView()
     }
     
-    func homeView() -> HomeView {
-        HomeView(viewModel:
-                    HomeViewModel(mediaEndpointConfig: MediaEndPointManger.createEndpoints()))
-    }
+     func homeView() -> HomeView {
+          HomeView(
+               viewModel: HomeViewModel(mediaEndpointConfig: MediaEndPointManger.createEndpoints())
+          )
+     }
     
     func detailView(for mediaId: Int, and contentType: ContentType) -> AnyView {
         if contentType == .person {

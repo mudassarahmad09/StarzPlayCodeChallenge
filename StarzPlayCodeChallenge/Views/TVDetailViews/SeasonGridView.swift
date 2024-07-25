@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SeasonGridView: View {
     
-    @StateObject private var viewModel: SeasonGridVM
+    @State private var viewModel: SeasonGridVM
     private let mediaId: Int
     @State var selectedValue = false
     
@@ -17,7 +17,7 @@ struct SeasonGridView: View {
         viewModel: SeasonGridVM,
         mediaId: Int
     ) {
-        self._viewModel = StateObject(wrappedValue: viewModel)
+        self._viewModel = State(wrappedValue: viewModel)
         self.mediaId = mediaId
     }
     
