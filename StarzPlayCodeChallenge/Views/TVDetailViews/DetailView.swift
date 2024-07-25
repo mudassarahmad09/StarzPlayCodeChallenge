@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DetailView: View {
     
-    @StateObject private var viewModel: DetailVM
+    @State private var viewModel: DetailVM
     @State private var goToPlayer = false
     
     private var dynamicContentView: () -> AnyView?
@@ -22,7 +22,7 @@ struct DetailView: View {
         dynamicContentView: @escaping () -> AnyView?,
         url: URL
     ) {
-        self._viewModel = StateObject(wrappedValue: viewModel)
+        self._viewModel = State(wrappedValue: viewModel)
         self.dynamicContentView = dynamicContentView
         self.url = url
     }

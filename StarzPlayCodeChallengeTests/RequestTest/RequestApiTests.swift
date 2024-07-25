@@ -18,7 +18,6 @@ class RequestAppTests: XCTestCase {
         switch failingResult {
         case .success(let tvDetail):
             XCTAssertEqual(tvDetail.getMediaName(), "The Boys")
-            XCTAssertEqual(tvDetail.getNumberOfSeaosn(), 4)
             XCTAssertEqual(tvDetail.getMediaImagePoster(), "/stTEycfG9928HYGEISBFaG1ngjM.jpg")
             
         case .failure:

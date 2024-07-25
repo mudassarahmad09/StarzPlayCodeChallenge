@@ -8,15 +8,16 @@
 import Foundation
 import MyApiLibrary
 
-final class DetailVM: ObservableObject {
+@Observable
+final class DetailVM {
 
     private let detailService: MediaDetailService
     private let id: Int
 
-    @Published private(set) var detail: MediaDetail?
-    @Published private(set) var loading = false
-    @Published var showError = false
-    var errorMessage = ""
+    private(set) var detail: MediaDetail?
+    private(set) var loading = false
+    var showError = false
+    @ObservationIgnored var errorMessage = ""
 
     init(detailService: MediaDetailService, id: Int) {
         self.detailService = detailService
@@ -30,14 +31,13 @@ extension DetailVM {
         showError = true
     }
     
-    @MainActor
     func getDetail(_ Id: Int = 0) async {
         loading = true
         await handleDetailResult(detailService.getDetails(from: id))
         loading = false
     }
     
-    @MainActor private func handleDetailResult(_ result: Result<MediaDetail, RequestError>) async {
+     private func handleDetailResult(_ result: Result<MediaDetail, RequestError>) async {
         switch result {
         case let .success(fetchedDetail):
             self.detail = fetchedDetail

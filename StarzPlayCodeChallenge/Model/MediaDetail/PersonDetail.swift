@@ -27,7 +27,7 @@ struct PersonDetails: Decodable {
     let imdbID: String?
     let knownForDepartment, name, placeOfBirth: String
     let popularity: Double
-    let profilePath: String
+    let profilePath: String?
     let combinedCredits: MediaCredit
     let images: Images
     

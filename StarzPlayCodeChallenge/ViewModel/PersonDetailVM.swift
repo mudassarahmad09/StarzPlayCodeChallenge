@@ -8,15 +8,16 @@
 import SwiftUI
 import MyApiLibrary
 
-final class PersonDetailVM: ObservableObject {
+@Observable
+final class PersonDetailVM {
 
     private let detailService: PersonDetailService
     private let id: Int
 
-    @Published private(set) var detail: PersonInfo?
-    @Published private(set) var loading = false
-    @Published var showError = false
-    var errorMessage = ""
+    private(set) var detail: PersonInfo?
+    private(set) var loading = false
+    var showError = false
+    @ObservationIgnored var errorMessage = ""
 
     init(detailService: PersonDetailService, id: Int) {
         self.detailService = detailService
@@ -30,14 +31,12 @@ extension PersonDetailVM {
         showError = true
     }
     
-    @MainActor
     func getDetail(_ Id: Int = 0) async {
         loading = true
         await handleDetailResult(detailService.getDetails(from: id))
         loading = false
     }
     
-    @MainActor
     private func handleDetailResult(_ result: Result<PersonInfo, RequestError>) async {
         switch result {
         case let .success(fetchedDetail):

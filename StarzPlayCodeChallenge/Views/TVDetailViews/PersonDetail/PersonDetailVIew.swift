@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct PersonDetailView: View {
-    @StateObject private var viewModel: PersonDetailVM
+    @State private var viewModel: PersonDetailVM
     @Environment(\.dismiss) private var dismiss
     
     init(viewModel: PersonDetailVM) {
-        self._viewModel = StateObject(wrappedValue: viewModel)
+        self._viewModel = State(wrappedValue: viewModel)
     }
         
     var body: some View{

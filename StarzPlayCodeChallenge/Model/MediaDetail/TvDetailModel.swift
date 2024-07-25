@@ -15,7 +15,6 @@ protocol MediaDetail {
     func getMediaOverView() -> String
     func getYear() -> String
     func getSeasons() -> [Season]?
-//    func getNumberOfSeaosn() -> Int?
     func getRecommendations() -> Media<Movie>?
     func getCast() -> MediaCredit
     

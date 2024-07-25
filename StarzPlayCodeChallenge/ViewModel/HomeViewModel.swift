@@ -8,15 +8,16 @@
 import SwiftUI
 import MyApiLibrary
 
-final class HomeViewModel: ObservableObject {
+@Observable
+final class HomeViewModel {
     
     private let mediaEndpointConfig : [MediaEndpointConfig]
     
-    @Published private(set) var layouts: [Layout] = []
-    @Published private(set) var loading = false
-    @Published var showError = false
+    private(set) var layouts: [Layout] = []
+    private(set) var loading = false
+    var showError = false
     
-    var errorMessage = ""
+    @ObservationIgnored var errorMessage = ""
     
     init( mediaEndpointConfig: [MediaEndpointConfig]) {
         self.mediaEndpointConfig = mediaEndpointConfig
@@ -24,7 +25,7 @@ final class HomeViewModel: ObservableObject {
 }
 // MARK: - fetch List of array
 extension HomeViewModel {
-    @MainActor
+    
     func fetchTvShowsList() async {
         loading = true
         await withTaskGroup(of: (String, Result<[MediaAttributes], RequestError>).self) { group in
@@ -46,7 +47,6 @@ extension HomeViewModel {
         loading = false
     }
     
-    @MainActor
     private func handleTvshowsResult(title: String , result: Result<[any MediaAttributes], RequestError>) async {
         switch result {
         case let .success(titles):
