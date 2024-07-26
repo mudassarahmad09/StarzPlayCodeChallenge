@@ -14,7 +14,7 @@ struct MediaCredit: Decodable {
 }
 
 struct CastModel: Decodable {
-    let adult: Bool
+    let adult: Bool?
     let id: Int
     let gender : Int?
     let knownForDepartment: Department?
@@ -61,7 +61,7 @@ enum Department: String, Codable {
 extension CastModel: MediaAttributes {
     
     func getMediaId() -> Int {
-        self.id
+         self.id
     }
     
     func getMediaTitle() -> String {

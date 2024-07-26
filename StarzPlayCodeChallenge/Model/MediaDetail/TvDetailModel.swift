@@ -16,7 +16,7 @@ protocol MediaDetail {
     func getYear() -> String
     func getSeasons() -> [Season]?
     func getRecommendations() -> Media<Movie>?
-    func getCast() -> MediaCredit
+    func getCast() -> MediaCredit?
     
 }
 
@@ -42,7 +42,7 @@ struct TvDetailModel: Decodable {
     let overview: String
     let posterPath: String
     var seasons: [Season]
-    let credits: MediaCredit
+    let credits: MediaCredit?
 
     enum CodingKeys: String, CodingKey {
         case adult = "adult"
@@ -89,7 +89,7 @@ extension TvDetailModel: MediaDetail {
         self.overview
     }
     
-    func getCast() -> MediaCredit {
+    func getCast() -> MediaCredit? {
         self.credits
     }
 }

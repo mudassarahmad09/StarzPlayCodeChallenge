@@ -133,10 +133,10 @@ private extension DetailView {
         }
     }
     
-    func castView() -> AnyView? {
-        guard let cast = viewModel.detail?.getCast().cast , !cast.isEmpty else { return nil }
-        return AnyView(PosterRowView(layout: Layout( sectionTitle: "Cast", titles: cast)))
-    }
+     func castView() -> AnyView? {
+          guard let cast = viewModel.detail?.getCast()?.cast , !cast.isEmpty else { return nil }
+          return AnyView(PosterRowView(layout: Layout( sectionTitle: "Cast", titles: cast)))
+     }
 }
 // MARK: - Reaction View
 private extension DetailView {
