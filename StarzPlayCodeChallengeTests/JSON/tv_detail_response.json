@@ -179,5 +179,35 @@
   "tagline": "Never meet your heroes.",
   "type": "Scripted",
   "vote_average": 8.5,
-  "vote_count": 7300
+  "vote_count": 7300,
+  "credits": {
+    "cast": [
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 1136406,
+        "known_for_department": "Acting",
+        "name": "Karl Urban",
+        "original_name": "Karl Urban",
+        "popularity": 39.382,
+        "profile_path": "/bsAnEFgVm5kn8DbBZKfnlLNll89.jpg",
+        "character": "Billy Butcher",
+        "credit_id": "5b3dce9ac3a368454401b7ba",
+        "order": 0
+      },
+      {
+        "adult": false,
+        "gender": 2,
+        "id": 1472584,
+        "known_for_department": "Acting",
+        "name": "Jack Quaid",
+        "original_name": "Jack Quaid",
+        "popularity": 16.078,
+        "profile_path": "/4AcvqhsaE91YqMGYRAEADIBvmdN.jpg",
+        "character": "Hughie Campbell",
+        "credit_id": "5b3dceaa0e0a26212200174d",
+        "order": 1
+      }
+    ]
+  }
 }
