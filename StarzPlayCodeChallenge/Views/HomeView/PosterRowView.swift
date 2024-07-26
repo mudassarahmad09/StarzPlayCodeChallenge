@@ -8,39 +8,47 @@
 import SwiftUI
 
 struct PosterRowView: View {
-    let layout: Layout
-    
-    var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            HStack {
-                Text(layout.sectionTitle)
+     let layout: Layout
+     
+     var body: some View {
+          VStack(alignment: .leading, spacing: 0) {
+               titleView()
+               layoutScrollView()
+          }
+     }
+     
+     private func titleView() -> some View {
+          HStack {
+               Text(layout.sectionTitle)
                     .foregroundColor(.white)
                     .font(.title3)
                     .bold()
-                Spacer()
-            }.padding(.horizontal)
-            ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack(alignment: .top, spacing: 13) {
+               Spacer()
+          }.padding(.horizontal)
+     }
+     
+     private func layoutScrollView() -> ScrollView<some View> {
+          ScrollView(.horizontal, showsIndicators: false) {
+               LazyHStack(alignment: .top, spacing: 13) {
                     ForEach(layout.titles, id: \.id) { title in
-                        NavigationLink {
-                            let detailView = AppInstantiationFactory().detailView(for: title.id, and: title.getMediaContentType())
-                            HideNavbarOf(view: detailView)
-                        } label: {
-                            PosterView(mediaItem: title)
-                        }
+                         NavigationLink {
+                              let detailView = AppInstantiationFactory().detailView(for: title.id, and: title.getMediaContentType())
+                              HideNavbarOf(view: detailView)
+                         } label: {
+                              PosterView(mediaItem: title)
+                         }
                     }
-                }
-                .padding(.horizontal, 13)
-                .padding(.top, 10)
-            }
-        }
-    }
+               }
+               .padding(.horizontal, 13)
+               .padding(.top, 10)
+          }
+     }
 }
 
 struct PosterRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        PosterRowView(layout: Layout(sectionTitle: "Movie", titles: [MockMovie(),MockSeries(),MockMovie(),MockSeries()]))
-            .previewLayout(.sizeThatFits)
-            .preferredColorScheme(.dark)
-    }
+     static var previews: some View {
+          PosterRowView(layout: Layout(sectionTitle: "Movie", titles: [MockMovie(),MockSeries(),MockMovie(),MockSeries()]))
+               .previewLayout(.sizeThatFits)
+               .preferredColorScheme(.dark)
+     }
 }

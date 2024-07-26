@@ -19,6 +19,12 @@ final class DetailVM {
     var showError = false
     @ObservationIgnored var errorMessage = ""
 
+     deinit {
+         #if DEBUG
+         print("✅ DEALLOCATE: \(self)")
+         #endif
+     }
+     
     init(detailService: MediaDetailService, id: Int) {
         self.detailService = detailService
         self.id = id

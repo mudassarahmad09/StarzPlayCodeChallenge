@@ -20,7 +20,6 @@ struct PlayButton: View {
                     .foregroundColor(.white)
 
                 Text("Play")
-
                     .foregroundColor(.white)
                     .font(.system(size: 23, weight: .semibold, design: .default))
 
