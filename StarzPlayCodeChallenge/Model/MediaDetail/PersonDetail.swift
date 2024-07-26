@@ -77,7 +77,7 @@ extension PersonDetails: PersonInfo {
     }
     
     func getImagePoster() -> String {
-        self.profilePath
+        self.profilePath ?? ""
     }
     
     func getBirthDay() -> String {

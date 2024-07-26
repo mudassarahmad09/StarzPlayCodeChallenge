@@ -134,7 +134,7 @@ private extension DetailView {
     }
     
     func castView() -> AnyView? {
-        guard let cast = viewModel.detail?.getCast().cast , !cast.isEmpty else {return nil}
+        guard let cast = viewModel.detail?.getCast().cast , !cast.isEmpty else { return nil }
         return AnyView(PosterRowView(layout: Layout( sectionTitle: "Cast", titles: cast)))
     }
 }

@@ -61,5 +61,5 @@ extension HomeViewModel {
 struct Layout: Identifiable {
     let id = UUID()
     let sectionTitle: String
-    let titles: [any MediaAttributes]
+    let titles: [MediaAttributes]
 }

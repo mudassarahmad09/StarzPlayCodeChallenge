@@ -46,5 +46,4 @@ extension DetailVM {
             self.showError = true
         }
     }
-    
 }

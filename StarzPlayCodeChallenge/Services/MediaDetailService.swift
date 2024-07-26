@@ -27,7 +27,7 @@ protocol MediaDetailService {
 //    }
 //}
  
-struct TVDetailServiceAdapter: NetworkManagerService,MediaDetailService {
+struct TVDetailServiceAdapter: NetworkManagerService, MediaDetailService {
     func getDetails(from id: Int) async -> Result<MediaDetail, RequestError> {
         let detailEndPoint = MediaDetailEndPoint.showDetail(id: id, media: .tv)
         let result = await sendApiRequest(endpoint:detailEndPoint, responseModel: TvDetailModel.self)

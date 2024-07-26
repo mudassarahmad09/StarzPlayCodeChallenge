@@ -25,8 +25,8 @@ extension Mockable {
         do {
             let data = try Data(contentsOf: path)
             let decodedObject = try JSONDecoder().decode(type, from: data)
-
             return decodedObject
+             
         } catch {
             fatalError("Failed to decode loaded JSON")
         }
