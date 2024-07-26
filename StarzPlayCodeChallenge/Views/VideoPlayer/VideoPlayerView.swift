@@ -49,7 +49,7 @@ struct VideoPlayerView: View {
                 self.player.play()
                 self.isPlaying = true
             }
-            .onChange(of: value) { newValue in
+            .onChange(of: value) { _, newValue in
                 if newValue > 0 {
                 isLoading = false
                 }
