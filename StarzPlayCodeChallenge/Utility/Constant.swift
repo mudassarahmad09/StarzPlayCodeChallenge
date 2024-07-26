@@ -15,7 +15,7 @@ enum CommonImage: String {
 
 enum CommonColor: String {
     case main = "MainColor"
-    case seconday = "SecondaryColor"
+    case seconday = "SecondColor"
     case button = "ButtonsColor"
     case divider = "Divider"
 }
