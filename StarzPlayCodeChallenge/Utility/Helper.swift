@@ -22,3 +22,11 @@ struct MockSeries: MediaAttributes {
     func getMediaImagePoster() -> String { "/oFGMGn1ywvvYobxOcPKVytN3AQK.jpg"}
     func getMediaContentType() -> ContentType { .tv }
 }
+
+struct MockPerson: MediaAttributes {
+     var id: Int = Int.random(in: 1...Int.max)
+     func getMediaTitle() -> String { "Title" }
+     func getMediaSubTitle() -> String { "SubTitle" }
+     func getMediaImagePoster() -> String { "/oFGMGn1ywvvYobxOcPKVytN3AQK.jpg"}
+     func getMediaContentType() -> ContentType { .person }
+}

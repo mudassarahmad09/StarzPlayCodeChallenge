@@ -68,5 +68,129 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E0679A39-16A0-4C95-B22D-1BF9B93B0A01"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StarzPlayCodeChallenge/MainAppFactory/AppInstantiationFactory.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "detailView(for:and:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B22A8B27-C535-4F14-8980-37A14B46D6F9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StarzPlayCodeChallenge/MainAppFactory/AppInstantiationFactory.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "detailView(for:and:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F017F69B-6775-4DAC-B8E8-F04F68BCA81B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StarzPlayCodeChallenge/Model/Media/CastModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "getMediaContentType()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6010CF23-FE3C-489B-947E-0C179D00705B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StarzPlayCodeChallenge/Services/PersonDetailService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "getDetails(from:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6010CF23-FE3C-489B-947E-0C179D00705B - 65c8fdba526271da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for StarzPlayCodeChallenge.PersonDetailServiceAdapter.getDetails(from: Swift.Int) async -&gt; Swift.Result&lt;StarzPlayCodeChallenge.PersonInfo, MyApiLibrary.RequestError&gt;"
+                  moduleName = "StarzPlayCodeChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qazimudassar/Documents/Myproject/StarzPlayCodeChallenge/StarzPlayCodeChallenge/Services/PersonDetailService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18">
+               </Location>
+               <Location
+                  uuid = "6010CF23-FE3C-489B-947E-0C179D00705B - 662cbcaa93ffd96f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for StarzPlayCodeChallenge.PersonDetailServiceAdapter.getDetails(from: Swift.Int) async -&gt; Swift.Result&lt;StarzPlayCodeChallenge.PersonInfo, MyApiLibrary.RequestError&gt;"
+                  moduleName = "StarzPlayCodeChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qazimudassar/Documents/Myproject/StarzPlayCodeChallenge/StarzPlayCodeChallenge/Services/PersonDetailService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18">
+               </Location>
+               <Location
+                  uuid = "6010CF23-FE3C-489B-947E-0C179D00705B - 2389a0d2eac0b1dc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for StarzPlayCodeChallenge.PersonDetailServiceAdapter.getDetails(from: Swift.Int) async -&gt; Swift.Result&lt;StarzPlayCodeChallenge.PersonInfo, MyApiLibrary.RequestError&gt;"
+                  moduleName = "StarzPlayCodeChallenge"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qazimudassar/Documents/Myproject/StarzPlayCodeChallenge/StarzPlayCodeChallenge/Services/PersonDetailService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EFBCA6BB-29C1-4D77-8DDA-1C348C72F432"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "StarzPlayCodeChallenge/MainAppFactory/AppInstantiationFactory.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "personDetailView(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

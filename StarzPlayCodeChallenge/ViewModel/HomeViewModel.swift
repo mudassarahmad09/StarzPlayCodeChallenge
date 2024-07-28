@@ -47,7 +47,7 @@ extension HomeViewModel {
         loading = false
     }
     
-    private func handleTvshowsResult(title: String , result: Result<[any MediaAttributes], RequestError>) async {
+    private func handleTvshowsResult(title: String , result: Result<[MediaAttributes], RequestError>) async {
         switch result {
         case let .success(titles):
             layouts.append(Layout(sectionTitle: title, titles: titles))

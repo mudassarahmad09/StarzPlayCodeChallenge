@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PosterView: View {
-    let mediaItem: any MediaAttributes
+    let mediaItem: MediaAttributes
     let width: CGFloat = 110
     let height: CGFloat = 160
     let alpha: CGFloat = 0.45

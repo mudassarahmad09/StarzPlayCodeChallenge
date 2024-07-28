@@ -83,7 +83,6 @@ private extension PersonDetailView {
         .padding([.trailing, .leading])
     }
     
-    
     func born() -> AnyView? {
         guard let born = viewModel.detail?.getBorn() else {return nil}
         return AnyView(Text("Born in \(born)")
@@ -103,6 +102,7 @@ private extension PersonDetailView {
               !profiles.isEmpty else {return nil}
         return AnyView(PersonImageRow(images: profiles))
     }
+     
     private func castView() -> AnyView? {
         guard let cast = viewModel.detail?.getCast().cast,
               !cast.isEmpty else {return nil}

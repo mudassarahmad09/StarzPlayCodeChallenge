@@ -62,7 +62,7 @@ enum MovieType: String, CaseIterable {
     }
 }
 
-class MediaEndPointManger {
+struct MediaEndPointManger {
     
     static func createEndpoints() -> [MediaEndpointConfig] {
         let allMovieEndpoints =  MovieType.allCases.map(\.mediaEndpointConfig)

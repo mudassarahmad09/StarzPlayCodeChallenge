@@ -11,6 +11,7 @@ import MyApiLibrary
 protocol PersonDetailService {
     func getDetails(from id: Int) async -> Result<PersonInfo, RequestError>
 }
+
 struct PersonDetailServiceAdapter: NetworkManagerService,PersonDetailService {
     func getDetails(from id: Int) async -> Result<PersonInfo, RequestError> {
         let detailEndPoint = MediaDetailEndPoint.showDetail(id: id, media: .person)

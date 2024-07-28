@@ -9,11 +9,11 @@ import Foundation
 import MyApiLibrary
 
 protocol MediaService {
-    func fetchList(endPoint: ApiEndpoint) async -> Result<[any MediaAttributes], RequestError>
+    func fetchList(endPoint: ApiEndpoint) async -> Result<[MediaAttributes], RequestError>
 }
 
 struct TVshowServiceAdapter: NetworkManagerService,MediaService {
-    func fetchList(endPoint: ApiEndpoint) async -> Result<[any MediaAttributes], RequestError> {
+    func fetchList(endPoint: ApiEndpoint) async -> Result<[MediaAttributes], RequestError> {
         let result = await sendApiRequest(endpoint: endPoint, responseModel: Media<TVShows>.self)
         switch result {
         case .success(let tvShowsResponse):
@@ -26,7 +26,7 @@ struct TVshowServiceAdapter: NetworkManagerService,MediaService {
 }
 
 struct MovieServiceAdapter: NetworkManagerService,MediaService {
-    func fetchList(endPoint: ApiEndpoint) async -> Result<[any MediaAttributes], RequestError> {
+    func fetchList(endPoint: ApiEndpoint) async -> Result<[MediaAttributes], RequestError> {
         let result = await sendApiRequest(endpoint: endPoint, responseModel: Media<Movie>.self)
         
         switch result {

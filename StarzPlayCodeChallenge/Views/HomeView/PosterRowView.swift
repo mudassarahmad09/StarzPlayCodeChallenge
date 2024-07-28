@@ -32,7 +32,10 @@ struct PosterRowView: View {
                LazyHStack(alignment: .top, spacing: 13) {
                     ForEach(layout.titles, id: \.id) { title in
                          NavigationLink {
-                              let detailView = AppInstantiationFactory().detailView(for: title.id, and: title.getMediaContentType())
+                              let detailView = AppInstantiationFactory().detailView(
+                                   for: title.id,
+                                   and: title.getMediaContentType()
+                              )
                               HideNavbarOf(view: detailView)
                          } label: {
                               PosterView(mediaItem: title)
@@ -47,7 +50,7 @@ struct PosterRowView: View {
 
 struct PosterRowView_Previews: PreviewProvider {
      static var previews: some View {
-          PosterRowView(layout: Layout(sectionTitle: "Movie", titles: [MockMovie(),MockSeries(),MockMovie(),MockSeries()]))
+          PosterRowView(layout: Layout(sectionTitle: "Movie", titles: [MockMovie(), MockSeries() ,MockMovie(), MockSeries(), MockPerson()]))
                .previewLayout(.sizeThatFits)
                .preferredColorScheme(.dark)
      }
