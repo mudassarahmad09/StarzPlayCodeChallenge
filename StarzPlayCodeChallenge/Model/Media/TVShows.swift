@@ -16,7 +16,7 @@ struct TVShows: Decodable {
     let originCountry: [String]
     let originalLanguage, originalName, overview: String
     let popularity: Double
-    let posterPath: String
+    let posterPath: String?
     let voteAverage: Double
     let voteCount: Int
     
@@ -25,7 +25,7 @@ struct TVShows: Decodable {
     }
     
     var asTitle: Title {
-        .init(id: id, title: name, subTitle: formattedFirstAirDate, imagePoster: posterPath, contentType: .tv)
+        .init(id: id, title: name, subTitle: formattedFirstAirDate, imagePoster: posterPath ?? "", contentType: .tv)
     }
     
     enum CodingKeys: String, CodingKey {
@@ -46,15 +46,15 @@ struct TVShows: Decodable {
 extension TVShows: MediaAttributes {
         
     func getMediaTitle() -> String {
-        self.name
+        name
     }
     
     func getMediaSubTitle() -> String {
-        self.formattedFirstAirDate
+        formattedFirstAirDate
     }
     
     func getMediaImagePoster() -> String {
-        self.posterPath
+        posterPath ?? ""
     }
     
     func getMediaContentType() -> ContentType {

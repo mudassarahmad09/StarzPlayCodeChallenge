@@ -17,7 +17,7 @@ struct MovieDetailModel: Decodable {
     let id: Int
     let imdbID, originalLanguage, originalTitle, overview: String
     let popularity: Double
-    let posterPath: String
+    let posterPath: String?
     let releaseDate: String
     let revenue, runtime: Int
     let spokenLanguages: [SpokenLanguage]
@@ -66,23 +66,23 @@ extension MovieDetailModel: MediaDetail {
     }
         
     func getRecommendations() -> Media<Movie>? {
-        self.recommendations
+        recommendations
     }
             
     func getMediaName() -> String {
-        self.originalTitle
+        originalTitle
     }
     
     func getMediaImagePoster() -> String {
-        self.posterPath
+        posterPath ?? ""
     }
     
     func getMediaOverView() -> String {
-        self.overview
+        overview
     }
     
     func getCast() -> MediaCredit? {
-        self.credits
+        credits
     }
     
 }

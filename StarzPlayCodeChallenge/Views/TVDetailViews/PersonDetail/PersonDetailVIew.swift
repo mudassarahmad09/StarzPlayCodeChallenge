@@ -117,5 +117,3 @@ struct PersonDetailVIew_Preview: PreviewProvider {
         app.detailView(for:MediaInfo.thePerson.rawValue , and: .person)
     }
 }
-
-

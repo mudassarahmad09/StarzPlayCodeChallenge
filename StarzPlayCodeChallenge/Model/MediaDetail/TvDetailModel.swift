@@ -40,7 +40,7 @@ struct TvDetailModel: Decodable {
     let numberOfSeasons: Int
     let originalName: String
     let overview: String
-    let posterPath: String
+    let posterPath: String?
     var seasons: [Season]
     let credits: MediaCredit?
 
@@ -82,7 +82,7 @@ extension TvDetailModel: MediaDetail {
     }
             
     func getMediaImagePoster() -> String {
-        self.posterPath
+        self.posterPath ?? "" // fallback image here
     }
     
     func getMediaOverView() -> String {
