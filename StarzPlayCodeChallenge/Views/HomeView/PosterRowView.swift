@@ -48,10 +48,9 @@ struct PosterRowView: View {
      }
 }
 
-struct PosterRowView_Previews: PreviewProvider {
-     static var previews: some View {
-          PosterRowView(layout: Layout(sectionTitle: "Movie", titles: [MockMovie(), MockSeries() ,MockMovie(), MockSeries(), MockPerson()]))
-               .previewLayout(.sizeThatFits)
-               .preferredColorScheme(.dark)
-     }
+#Preview {
+     PosterRowView(layout: Layout(sectionTitle: "Movie", titles: [MockMovie(), MockSeries() ,MockMovie(), MockSeries(), MockPerson()]))
+          .previewLayout(.sizeThatFits)
+          .preferredColorScheme(.dark)
+     
 }

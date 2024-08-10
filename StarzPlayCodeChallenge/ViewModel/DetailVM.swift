@@ -17,7 +17,7 @@ final class DetailVM {
     private(set) var detail: MediaDetail?
     private(set) var loading = false
     var showError = false
-    @ObservationIgnored var errorMessage = ""
+    var errorMessage = ""
 
      deinit {
          #if DEBUG

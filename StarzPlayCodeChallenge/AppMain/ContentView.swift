@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        NavigationView {
+         NavigationStack {
             let app = AppInstantiationFactory()
             HideNavbarOf(
                 view: app.startApp()
