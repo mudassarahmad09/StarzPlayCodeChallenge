@@ -194,7 +194,6 @@
 				7A551FDB28CBB4F800B8F9BD /* Info.plist */,
 				7A16581D28CA225C004EDE42 /* Views */,
 				7A16583D28CB1D1F004EDE42 /* ViewModel */,
-				8060E2D52C67CA1B00AB6938 /* Router */,
 				7A16583C28CB1D0F004EDE42 /* Model */,
 				7A16584828CB5746004EDE42 /* Network */,
 				80A1B7462A69C520001FBE4C /* Services */,
@@ -412,13 +411,6 @@
 				803E16102A85387C00BEACD3 /* PersonImageRow.swift */,
 			);
 			path = PersonDetail;
-			sourceTree = "<group>";
-		};
-		8060E2D52C67CA1B00AB6938 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		80A1B7432A69C437001FBE4C /* MediaDetail */ = {

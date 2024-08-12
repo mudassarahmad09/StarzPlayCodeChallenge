@@ -15,8 +15,6 @@ struct DetailView: View {
     private var dynamicContentView: () -> AnyView?
     private var url: URL
     
-    @Environment(\.dismiss) private var dismiss
-    
     init(
         viewModel: DetailVM,
         dynamicContentView: @escaping () -> AnyView?,
@@ -69,14 +67,6 @@ extension DetailView {
 private extension DetailView {
     func topButtons() -> some View {
         HStack {
-            Button {
-                dismiss()
-            } label: {
-                Image(systemName: "arrow.backward")
-                    .foregroundColor(.white)
-                    .font(Font.system(size: 30, weight: .medium))
-            }
-            
             Spacer()
             HStack(spacing: 20) {
                 Image(systemName: "rectangle")

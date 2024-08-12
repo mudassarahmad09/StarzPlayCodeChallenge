@@ -9,7 +9,6 @@ import SwiftUI
 
 struct PersonDetailView: View {
     @State private var viewModel: PersonDetailVM
-    @Environment(\.dismiss) private var dismiss
     
     init(viewModel: PersonDetailVM) {
         self._viewModel = State(wrappedValue: viewModel)
@@ -52,13 +51,6 @@ private extension PersonDetailView {
     
     func topButtons() -> some View {
         HStack {
-            Button {
-                dismiss()
-            } label: {
-                Image(systemName: "arrow.backward")
-                    .foregroundColor(.white)
-                    .font(Font.system(size: 30, weight: .medium))
-            }
             
             Spacer()
             
