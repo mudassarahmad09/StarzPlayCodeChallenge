@@ -44,10 +44,7 @@ import SwiftUI
     }
     
     private func makeDetailVM(for mediaId: Int, and contentType: ContentType) -> DetailVM {
-        let adpter: MediaDetailService = contentType == .movie ?
-        MovieDetailServiceAdapter() :
-        TVDetailServiceAdapter()
-        return DetailVM(detailService: adpter, id: mediaId)
+         DetailVM(detailService: contentType.adpter, id: mediaId)
     }
     
     private func makeDetailSubView(for mediaId: Int,contentType: ContentType, viewModel: DetailVM) -> AnyView? {

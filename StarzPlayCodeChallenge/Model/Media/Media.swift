@@ -39,4 +39,15 @@ struct Title: Identifiable {
 
 enum ContentType: String {
     case tv, movie, person
+     
+     var adpter: MediaDetailService {
+          switch self {
+          case .tv:
+               DetailServiceAdapter<TvDetailModel>(type: .tv)
+          case .movie:
+               DetailServiceAdapter<MovieDetailModel>(type: .movie)
+          case .person:
+               DetailServiceAdapter<MovieDetailModel>(type: .person)
+          }
+     }
 }

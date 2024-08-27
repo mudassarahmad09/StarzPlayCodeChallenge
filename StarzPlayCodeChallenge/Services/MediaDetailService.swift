@@ -12,25 +12,13 @@ protocol MediaDetailService {
     func getDetails(from id: Int) async -> Result<MediaDetail, RequestError>
 }
 
-//struct DetailServiceAdapter: NetworkManagerService, MediaDetailService{
-//    let type: ContentType
-//    func getDetails(from id: Int) async -> Result<MediaDetail, RequestError> {
-//        let detailEndPoint = MediaDetailEndPoint.showDetail(id: id, media: type)
-//
-//        let result = await sendApiRequest(endpoint:detailEndPoint, responseModel: MediaDetailAttribut.self)
-//        switch result {
-//        case .success(let tvShowsResponse):
-//            return .success(tvShowsResponse)
-//        case .failure(let error):
-//            return .failure(error)
-//        }
-//    }
-//}
- 
-struct TVDetailServiceAdapter: NetworkManagerService, MediaDetailService {
+struct DetailServiceAdapter<T: Decodable & MediaDetail>: NetworkManagerService, MediaDetailService{
+    let type: ContentType
+     
     func getDetails(from id: Int) async -> Result<MediaDetail, RequestError> {
-        let detailEndPoint = MediaDetailEndPoint.showDetail(id: id, media: .tv)
-        let result = await sendApiRequest(endpoint:detailEndPoint, responseModel: TvDetailModel.self)
+        let detailEndPoint = MediaDetailEndPoint.showDetail(id: id, media: type)
+
+        let result = await sendApiRequest(endpoint:detailEndPoint, responseModel: T.self)
         switch result {
         case .success(let tvShowsResponse):
             return .success(tvShowsResponse)
@@ -39,17 +27,3 @@ struct TVDetailServiceAdapter: NetworkManagerService, MediaDetailService {
         }
     }
 }
-
-struct MovieDetailServiceAdapter: NetworkManagerService,MediaDetailService {
-    func getDetails(from id: Int) async -> Result<MediaDetail, RequestError> {
-        let detailEndPoint = MediaDetailEndPoint.showDetail(id: id, media: .movie)
-        let result = await sendApiRequest(endpoint: detailEndPoint, responseModel: MovieDetailModel.self)
-        switch result {
-        case .success(let movie):
-            return .success(movie)
-        case .failure(let error):
-            return .failure(error)
-        }
-    }
-}
-
