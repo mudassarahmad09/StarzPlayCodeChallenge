@@ -39,22 +39,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "F017F69B-6775-4DAC-B8E8-F04F68BCA81B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "StarzPlayCodeChallenge/Model/Media/CastModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "getMediaContentType()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "6010CF23-FE3C-489B-947E-0C179D00705B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -66,50 +50,6 @@
             endingLineNumber = "17"
             landmarkName = "getDetails(from:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "6010CF23-FE3C-489B-947E-0C179D00705B - 65c8fdba526271da"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for StarzPlayCodeChallenge.PersonDetailServiceAdapter.getDetails(from: Swift.Int) async -&gt; Swift.Result&lt;StarzPlayCodeChallenge.PersonInfo, MyApiLibrary.RequestError&gt;"
-                  moduleName = "StarzPlayCodeChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/qazimudassar/Documents/Myproject/StarzPlayCodeChallenge/StarzPlayCodeChallenge/Services/PersonDetailService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18">
-               </Location>
-               <Location
-                  uuid = "6010CF23-FE3C-489B-947E-0C179D00705B - 662cbcaa93ffd96f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for StarzPlayCodeChallenge.PersonDetailServiceAdapter.getDetails(from: Swift.Int) async -&gt; Swift.Result&lt;StarzPlayCodeChallenge.PersonInfo, MyApiLibrary.RequestError&gt;"
-                  moduleName = "StarzPlayCodeChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/qazimudassar/Documents/Myproject/StarzPlayCodeChallenge/StarzPlayCodeChallenge/Services/PersonDetailService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18">
-               </Location>
-               <Location
-                  uuid = "6010CF23-FE3C-489B-947E-0C179D00705B - 2389a0d2eac0b1dc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for StarzPlayCodeChallenge.PersonDetailServiceAdapter.getDetails(from: Swift.Int) async -&gt; Swift.Result&lt;StarzPlayCodeChallenge.PersonInfo, MyApiLibrary.RequestError&gt;"
-                  moduleName = "StarzPlayCodeChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/qazimudassar/Documents/Myproject/StarzPlayCodeChallenge/StarzPlayCodeChallenge/Services/PersonDetailService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "18"
-                  endingLineNumber = "18">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -147,38 +87,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DB015914-1C50-4B4D-99BB-AD2C819EAC7E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "StarzPlayCodeChallenge/Views/TVDetailViews/PersonDetail/PersonDetailVIew.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "init(viewModel:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "DE7742D7-2862-448C-BA92-939CD374A6A6"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "StarzPlayCodeChallenge/MainAppFactory/AppInstantiationFactory.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "personDetailView(for:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "D412D1A5-0F32-4F70-B96E-C152FB381E96"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -206,57 +114,13 @@
             endingLineNumber = "46"
             landmarkName = "getDetails(from:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "F52CA865-1579-4ABC-A3D6-87AF18FC414A - 8150af2502b80947"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for StarzPlayCodeChallenge.MovieDetailServiceAdapter.getDetails(from: Swift.Int) async -&gt; Swift.Result&lt;StarzPlayCodeChallenge.MediaDetail, MyApiLibrary.RequestError&gt;"
-                  moduleName = "StarzPlayCodeChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/qazimudassar/Documents/Myproject/StarzPlayCodeChallenge/StarzPlayCodeChallenge/Services/MediaDetailService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46">
-               </Location>
-               <Location
-                  uuid = "F52CA865-1579-4ABC-A3D6-87AF18FC414A - 9bbc08bf7903acaa"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for StarzPlayCodeChallenge.MovieDetailServiceAdapter.getDetails(from: Swift.Int) async -&gt; Swift.Result&lt;StarzPlayCodeChallenge.MediaDetail, MyApiLibrary.RequestError&gt;"
-                  moduleName = "StarzPlayCodeChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/qazimudassar/Documents/Myproject/StarzPlayCodeChallenge/StarzPlayCodeChallenge/Services/MediaDetailService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46">
-               </Location>
-               <Location
-                  uuid = "F52CA865-1579-4ABC-A3D6-87AF18FC414A - 3a926a5cbadf4945"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for StarzPlayCodeChallenge.MovieDetailServiceAdapter.getDetails(from: Swift.Int) async -&gt; Swift.Result&lt;StarzPlayCodeChallenge.MediaDetail, MyApiLibrary.RequestError&gt;"
-                  moduleName = "StarzPlayCodeChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/qazimudassar/Documents/Myproject/StarzPlayCodeChallenge/StarzPlayCodeChallenge/Services/MediaDetailService.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "14B335F0-6139-44B4-996B-2FD98D520B6E"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../../../Library/Developer/Xcode/DerivedData/StarzPlayCodeChallenge-edbqmcsggrtxoaefnjsxfeqafnfw/SourcePackages/checkouts/MyApiLibrary/Sources/MyApiLibrary/Base/ClientManager.swift"
@@ -266,92 +130,6 @@
             endingLineNumber = "26"
             landmarkName = "sendApiRequest(endpoint:responseModel:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "14B335F0-6139-44B4-996B-2FD98D520B6E - 990985b059232bb5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MyApiLibrary.NetworkManagerService.sendApiRequest&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: MyApiLibrary.ApiEndpoint, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, MyApiLibrary.RequestError&gt;"
-                  moduleName = "StarzPlayCodeChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/qazimudassar/Library/Developer/Xcode/DerivedData/StarzPlayCodeChallenge-edbqmcsggrtxoaefnjsxfeqafnfw/SourcePackages/checkouts/MyApiLibrary/Sources/MyApiLibrary/Base/ClientManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26">
-               </Location>
-               <Location
-                  uuid = "14B335F0-6139-44B4-996B-2FD98D520B6E - f3020ec91230e672"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for MyApiLibrary.NetworkManagerService.sendApiRequest&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: MyApiLibrary.ApiEndpoint, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, MyApiLibrary.RequestError&gt;"
-                  moduleName = "StarzPlayCodeChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/qazimudassar/Library/Developer/Xcode/DerivedData/StarzPlayCodeChallenge-edbqmcsggrtxoaefnjsxfeqafnfw/SourcePackages/checkouts/MyApiLibrary/Sources/MyApiLibrary/Base/ClientManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26">
-               </Location>
-               <Location
-                  uuid = "14B335F0-6139-44B4-996B-2FD98D520B6E - f3020ec91230e672"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for MyApiLibrary.NetworkManagerService.sendApiRequest&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: MyApiLibrary.ApiEndpoint, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, MyApiLibrary.RequestError&gt;"
-                  moduleName = "StarzPlayCodeChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/qazimudassar/Library/Developer/Xcode/DerivedData/StarzPlayCodeChallenge-edbqmcsggrtxoaefnjsxfeqafnfw/SourcePackages/checkouts/MyApiLibrary/Sources/MyApiLibrary/Base/ClientManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26">
-               </Location>
-               <Location
-                  uuid = "14B335F0-6139-44B4-996B-2FD98D520B6E - f004da5c3eb1b176"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for MyApiLibrary.NetworkManagerService.sendApiRequest&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: MyApiLibrary.ApiEndpoint, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, MyApiLibrary.RequestError&gt;"
-                  moduleName = "StarzPlayCodeChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/qazimudassar/Library/Developer/Xcode/DerivedData/StarzPlayCodeChallenge-edbqmcsggrtxoaefnjsxfeqafnfw/SourcePackages/checkouts/MyApiLibrary/Sources/MyApiLibrary/Base/ClientManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26">
-               </Location>
-               <Location
-                  uuid = "14B335F0-6139-44B4-996B-2FD98D520B6E - 9e9d6c7a34efaa70"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for MyApiLibrary.NetworkManagerService.sendApiRequest&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: MyApiLibrary.ApiEndpoint, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, MyApiLibrary.RequestError&gt;"
-                  moduleName = "StarzPlayCodeChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/qazimudassar/Library/Developer/Xcode/DerivedData/StarzPlayCodeChallenge-edbqmcsggrtxoaefnjsxfeqafnfw/SourcePackages/checkouts/MyApiLibrary/Sources/MyApiLibrary/Base/ClientManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26">
-               </Location>
-               <Location
-                  uuid = "14B335F0-6139-44B4-996B-2FD98D520B6E - 935c1d23c9cb0c71"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for MyApiLibrary.NetworkManagerService.sendApiRequest&lt;&#x3c4;_0_0 where &#x3c4;_1_0: Swift.Decodable&gt;(endpoint: MyApiLibrary.ApiEndpoint, responseModel: &#x3c4;_1_0.Type) async -&gt; Swift.Result&lt;&#x3c4;_1_0, MyApiLibrary.RequestError&gt;"
-                  moduleName = "StarzPlayCodeChallenge"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/qazimudassar/Library/Developer/Xcode/DerivedData/StarzPlayCodeChallenge-edbqmcsggrtxoaefnjsxfeqafnfw/SourcePackages/checkouts/MyApiLibrary/Sources/MyApiLibrary/Base/ClientManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

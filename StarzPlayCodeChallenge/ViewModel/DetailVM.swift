@@ -37,11 +37,12 @@ extension DetailVM {
         showError = true
     }
     
-    func getDetail(_ Id: Int = 0) async {
-        loading = true
-        await handleDetailResult(detailService.getDetails(from: id))
-        loading = false
-    }
+     func getDetail(_ Id: Int = 0) async {
+          guard !loading else { return }
+          defer { loading = false }
+          loading = true
+          await handleDetailResult(detailService.getDetails(from: id))
+     }
     
      private func handleDetailResult(_ result: Result<MediaDetail, RequestError>) async {
         switch result {

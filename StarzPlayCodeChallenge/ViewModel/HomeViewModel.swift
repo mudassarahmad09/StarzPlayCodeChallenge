@@ -27,18 +27,18 @@ final class HomeViewModel {
 extension HomeViewModel {
     
      func fetchTvShowsList() async {
-         loading = true
-         
-         for endpoint in mediaEndpointConfig {
-             if layouts.contains(where: { $0.sectionTitle == endpoint.title }) {
-                 continue
-             }
-             
-             let result = await endpoint.adpter.fetchList(endPoint: endpoint.endPoint)
-             await handleTvshowsResult(title: endpoint.title, result: result)
-         }
-         
-         loading = false
+          guard !loading else { return }
+          defer { loading = false }
+          loading = true
+          
+          for endpoint in mediaEndpointConfig {
+               if layouts.contains(where: { $0.sectionTitle == endpoint.title }) {
+                    continue
+               }
+               
+               let result = await endpoint.adpter.fetchList(endPoint: endpoint.endPoint)
+               await handleTvshowsResult(title: endpoint.title, result: result)
+          } 
      }
     
     private func handleTvshowsResult(title: String , result: Result<[MediaAttributes], RequestError>) async {

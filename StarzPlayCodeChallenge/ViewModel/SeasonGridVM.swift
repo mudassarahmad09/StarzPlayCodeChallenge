@@ -58,11 +58,13 @@ extension SeasonGridVM {
 // MARK: - TV Season Api
 extension SeasonGridVM {
 
-    func getEpisodeDetail(mediaId: Int) async {
-        loading = true
-        await handleSeasonResult(episodeService.getEpisodeDetailDetail(tv: mediaId, seasonId: seasonNumber))
-        loading = false
-    }
+     func getEpisodeDetail(mediaId: Int) async {
+          guard !loading else { return }
+          defer { loading = false }
+          loading = true
+          await handleSeasonResult(episodeService.getEpisodeDetailDetail(tv: mediaId, seasonId: seasonNumber))
+          
+     }
 
     private func handleSeasonResult(_ result: Result<Season, RequestError>) async {
         switch result {
