@@ -51,16 +51,20 @@ import SwiftUI
         contentType == .movie ? recommendationView(viewModel) : seasonView(viewModel, mediaId)
     }
     
-    private func recommendationView(_ viewModel: DetailVM) -> AnyView? {
-        guard let recommendations = viewModel.detail?.getRecommendations()?.results , !recommendations.isEmpty else {return nil}
-        return AnyView(PosterRowView(layout: Layout( sectionTitle: "Recommendations", titles: recommendations)))
-    }
+      private func recommendationView(_ viewModel: DetailVM) -> AnyView? {
+           guard let movieDetail = viewModel.detail as? MovieDetail else { return nil }
+           guard let recommendations = movieDetail.getRecommendations()?.results ,
+                 !recommendations.isEmpty else { return nil }
+           return AnyView(PosterRowView(layout: Layout( sectionTitle: "Recommendations", titles: recommendations)))
+      }
     
-    private func seasonView(_ viewModel: DetailVM, _ mediaId: Int) -> AnyView? {
-        guard let seasons = viewModel.detail?.getSeasons() , !seasons.isEmpty else {return nil}
-        let seasonVM =  SeasonGridVM(seaasonService: EpisodeServiceAdpter(),seasons: seasons)
-        return AnyView(SeasonGridView(viewModel: seasonVM, mediaId: mediaId))
-    }
+      private func seasonView(_ viewModel: DetailVM, _ mediaId: Int) -> AnyView? {
+           guard let tvDetail = viewModel.detail as? TvDetail else { return nil }
+           guard let seasons = tvDetail.getSeasons(),
+                 !seasons.isEmpty else { return nil }
+           let seasonVM =  SeasonGridVM(seaasonService: EpisodeServiceAdpter(),seasons: seasons)
+           return AnyView(SeasonGridView(viewModel: seasonVM, mediaId: mediaId))
+      }
     
     private func videoUrl() -> URL {
         URL(string: AppUrl.VURL)!

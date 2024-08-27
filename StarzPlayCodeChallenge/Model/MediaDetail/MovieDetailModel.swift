@@ -51,7 +51,7 @@ struct MovieDetailModel: Decodable {
         case credits
     }
 }
-extension MovieDetailModel: MediaDetail {
+extension MovieDetailModel: MovieDetail {
     
     func getYear() -> String {
         self.releaseDateWithFormate
@@ -61,9 +61,9 @@ extension MovieDetailModel: MediaDetail {
         "Release Date \(releaseDateWithFormate)"
     }
     
-    func getSeasons() -> [Season]? {
-        nil
-    }
+//    func getSeasons() -> [Season]? {
+//        nil
+//    }
         
     func getRecommendations() -> Media<Movie>? {
         recommendations

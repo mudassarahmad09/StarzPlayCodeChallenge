@@ -14,23 +14,16 @@ protocol MediaDetail {
     func getMediaImagePoster() -> String
     func getMediaOverView() -> String
     func getYear() -> String
-    func getSeasons() -> [Season]?
-    func getRecommendations() -> Media<Movie>?
     func getCast() -> MediaCredit?
-    
 }
 
-//protocol TvDetail: MediaDetail{
-//    func getStartYear() -> String
-//    func getNumberOfSeaosn() -> Int
-//    func getSeasons() -> [Season]
-//}
-//
-//protocol MovieDetail: MediaDetail{
-//    func getReleaseDeate() -> String
-//    func getRecommendations() -> Media<Movie>
-//}
+protocol TvDetail: MediaDetail{
+    func getSeasons() -> [Season]?
+}
 
+protocol MovieDetail: MediaDetail{
+    func getRecommendations() -> Media<Movie>?
+}
 
 // MARK: - ShowDetailWelcome
 struct TvDetailModel: Decodable {
@@ -60,7 +53,7 @@ struct TvDetailModel: Decodable {
         firstAirDate.toDate()?.toString(dateFormat: "yyyy") ?? ""
     }
 }
-extension TvDetailModel: MediaDetail {
+extension TvDetailModel: TvDetail {
     func getYear() -> String {
         self.startYear ?? ""
     }
@@ -71,10 +64,6 @@ extension TvDetailModel: MediaDetail {
     
     func getSeasons() -> [Season]? {
         self.seasons
-    }
-        
-    func getRecommendations() -> Media<Movie>? {
-        nil
     }
     
     func getMediaName() -> String {
