@@ -39,11 +39,8 @@ struct PosterView: View {
     }
 }
 
-struct PosterView_Previews: PreviewProvider {
-    static var previews: some View {
-        PosterView(mediaItem: MockMovie())
-            .previewLayout(.sizeThatFits)
-            .preferredColorScheme(.dark)
-    }
+#Preview {
+     PosterView(mediaItem: MockMovie())
+         .previewLayout(.sizeThatFits)
+         .preferredColorScheme(.dark)
 }
-

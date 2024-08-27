@@ -36,7 +36,6 @@ struct PosterRowView: View {
                                    for: title.id,
                                    and: title.getMediaContentType()
                               )
-                              //HideNavbarOf(view: detailView)
                          } label: {
                               PosterView(mediaItem: title)
                          }
