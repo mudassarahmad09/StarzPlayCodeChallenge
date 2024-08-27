@@ -26,26 +26,20 @@ final class HomeViewModel {
 // MARK: - fetch List of array
 extension HomeViewModel {
     
-    func fetchTvShowsList() async {
-        loading = true
-        await withTaskGroup(of: (String, Result<[MediaAttributes], RequestError>).self) { group in
-            for endpoint in mediaEndpointConfig {
-                if layouts.contains(where: { $0.sectionTitle == endpoint.title }) {
-                    continue
-                }
-                group.addTask {
-                    let result = await endpoint.adpter.fetchList(endPoint: endpoint.endPoint)
-                    return (endpoint.title, result)
-                }
-            }
-            
-            for await (title, result) in group {
-                await handleTvshowsResult(title: title, result: result)
-            }
-        }
-        
-        loading = false
-    }
+     func fetchTvShowsList() async {
+         loading = true
+         
+         for endpoint in mediaEndpointConfig {
+             if layouts.contains(where: { $0.sectionTitle == endpoint.title }) {
+                 continue
+             }
+             
+             let result = await endpoint.adpter.fetchList(endPoint: endpoint.endPoint)
+             await handleTvshowsResult(title: endpoint.title, result: result)
+         }
+         
+         loading = false
+     }
     
     private func handleTvshowsResult(title: String , result: Result<[MediaAttributes], RequestError>) async {
         switch result {
