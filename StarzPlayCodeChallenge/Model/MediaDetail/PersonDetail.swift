@@ -14,7 +14,8 @@ struct PersonDetails: Decodable {
     let gender: Int
     let id: Int
     let imdbID: String?
-    let knownForDepartment, name, placeOfBirth: String
+    let knownForDepartment, name : String
+    let placeOfBirth: String?
     let popularity: Double
     let profilePath: String?
     let combinedCredits: MediaCredit
@@ -90,6 +91,6 @@ extension PersonDetails: PersonInfo {
     }
     
     func getBorn() -> String {
-        placeOfBirth
+        placeOfBirth ?? "UNKNOW"
     }
 }

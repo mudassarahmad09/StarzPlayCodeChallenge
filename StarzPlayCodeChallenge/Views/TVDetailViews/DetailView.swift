@@ -50,8 +50,8 @@ extension DetailView {
                     }
                     descripcationView()
                     reactionView()
-                    trailerRow()
                     mediaContentView()
+                    trailerRow()
                 }
                 topButtons()
             }
@@ -155,7 +155,7 @@ private extension DetailView {
                          .bold()
                          .padding(.horizontal)
                     ScrollView(.horizontal, showsIndicators: false) {
-                         HStack(spacing: 13) {
+                         LazyHStack(spacing: 13) {
                               ForEach(videos, id: \.id) { video in
                                    WebView(url: AppUrl.YOUTUBE.replace(string: "{key}", with: video.key))
                                         .frame(width: 320, height: 200)

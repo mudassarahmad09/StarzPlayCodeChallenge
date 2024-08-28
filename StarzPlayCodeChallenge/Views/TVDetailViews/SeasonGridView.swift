@@ -35,7 +35,7 @@ struct SeasonGridView: View {
     private func seasonGridView() -> some View {
         GeometryReader { geometryReader in
             ScrollView(.horizontal, showsIndicators: false, content: {
-                HStack {
+                LazyHStack {
                     ForEach(viewModel.seasons, id: \.id) { season in
                         SeasonGridCell(geometryReader: geometryReader,
                                        season: season) {
@@ -46,7 +46,7 @@ struct SeasonGridView: View {
                             }
                         }
                     }
-                }
+                }.frame(height: 50, alignment: .top)
             })
         }
         .animation(.linear, value: viewModel.getUpdatedValue())

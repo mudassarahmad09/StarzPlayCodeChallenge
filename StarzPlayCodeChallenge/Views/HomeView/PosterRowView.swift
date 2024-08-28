@@ -31,14 +31,8 @@ struct PosterRowView: View {
           ScrollView(.horizontal, showsIndicators: false) {
                LazyHStack(alignment: .top, spacing: 13) {
                     ForEach(layout.titles, id: \.id) { title in
-                         NavigationLink {
-                              AppInstantiationFactory().detailView(
-                                   for: title.id,
-                                   and: title.getMediaContentType()
-                              )
-                         } label: {
-                              PosterView(mediaItem: title)
-                         }
+                         PosterView(mediaItem: title)
+                              .toDetailsView(title)
                     }
                }
                .padding(.horizontal, 13)

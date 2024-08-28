@@ -57,6 +57,8 @@
 		806423762A827DBB00A5B8FC /* CastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806423752A827DBB00A5B8FC /* CastModel.swift */; };
 		8069BFE22A72A00F0053507A /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8069BFE12A72A00F0053507A /* Helper.swift */; };
 		80888C9A2C7F599F0084F4D3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80888C992C7F599F0084F4D3 /* WebView.swift */; };
+		80888C9C2C7F651E0084F4D3 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80888C9B2C7F651E0084F4D3 /* LazyView.swift */; };
+		80888CA02C7F779F0084F4D3 /* HomeNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80888C9F2C7F779F0084F4D3 /* HomeNavigation.swift */; };
 		80A1B7452A69C45D001FBE4C /* MovieDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1B7442A69C45D001FBE4C /* MovieDetailModel.swift */; };
 		80A1B7482A69C544001FBE4C /* MediaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1B7472A69C544001FBE4C /* MediaService.swift */; };
 		80A1B74A2A69C570001FBE4C /* MediaDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1B7492A69C570001FBE4C /* MediaDetailService.swift */; };
@@ -136,6 +138,8 @@
 		806423752A827DBB00A5B8FC /* CastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastModel.swift; sourceTree = "<group>"; };
 		8069BFE12A72A00F0053507A /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		80888C992C7F599F0084F4D3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		80888C9B2C7F651E0084F4D3 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
+		80888C9F2C7F779F0084F4D3 /* HomeNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigation.swift; sourceTree = "<group>"; };
 		80A1B7442A69C45D001FBE4C /* MovieDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailModel.swift; sourceTree = "<group>"; };
 		80A1B7472A69C544001FBE4C /* MediaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaService.swift; sourceTree = "<group>"; };
 		80A1B7492A69C570001FBE4C /* MediaDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailService.swift; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 				7A16582128CA2316004EDE42 /* TVDetailViews */,
 				7A551FE128CCC27300B8F9BD /* VideoPlayer */,
 				7A16581E28CA22A1004EDE42 /* CustomeViews */,
+				80888C9E2C7F777E0084F4D3 /* CustomModifres */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 				8032E4862A582E4900FC1089 /* LoadingIndicatorView.swift */,
 				8032E4882A58355C00FC1089 /* CustomButton.swift */,
 				80888C992C7F599F0084F4D3 /* WebView.swift */,
+				80888C9B2C7F651E0084F4D3 /* LazyView.swift */,
 			);
 			path = CustomeViews;
 			sourceTree = "<group>";
@@ -411,6 +417,14 @@
 				803E16102A85387C00BEACD3 /* PersonImageRow.swift */,
 			);
 			path = PersonDetail;
+			sourceTree = "<group>";
+		};
+		80888C9E2C7F777E0084F4D3 /* CustomModifres */ = {
+			isa = PBXGroup;
+			children = (
+				80888C9F2C7F779F0084F4D3 /* HomeNavigation.swift */,
+			);
+			path = CustomModifres;
 			sourceTree = "<group>";
 		};
 		80A1B7432A69C437001FBE4C /* MediaDetail */ = {
@@ -597,6 +611,7 @@
 				8032E4902A5D520F00FC1089 /* MediaEndpoint.swift in Sources */,
 				7A16583728CA6F8D004EDE42 /* RoundedButton.swift in Sources */,
 				7A551FF328CCD46400B8F9BD /* CustomProgressBar.swift in Sources */,
+				80888CA02C7F779F0084F4D3 /* HomeNavigation.swift in Sources */,
 				80DD4E302A65D57E0088E60A /* PosterRowView.swift in Sources */,
 				7A16585828CB6A06004EDE42 /* SeasonEndPoint.swift in Sources */,
 				80888C9A2C7F599F0084F4D3 /* WebView.swift in Sources */,
@@ -620,6 +635,7 @@
 				7A551FEF28CCD39F00B8F9BD /* VideoPlayerView.swift in Sources */,
 				7A16582E28CA5CAB004EDE42 /* PlayButton.swift in Sources */,
 				7A16582628CA26F2004EDE42 /* Constant.swift in Sources */,
+				80888C9C2C7F651E0084F4D3 /* LazyView.swift in Sources */,
 				7A16582028CA22D0004EDE42 /* NavbarHiddenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
