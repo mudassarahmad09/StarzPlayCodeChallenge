@@ -56,6 +56,10 @@
 		803E16112A85387C00BEACD3 /* PersonImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E16102A85387C00BEACD3 /* PersonImageRow.swift */; };
 		806423762A827DBB00A5B8FC /* CastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806423752A827DBB00A5B8FC /* CastModel.swift */; };
 		8069BFE22A72A00F0053507A /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8069BFE12A72A00F0053507A /* Helper.swift */; };
+		8083E5EE2C7F889400C8E7ED /* StarzPlayCodeChallengeTVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8083E5ED2C7F889400C8E7ED /* StarzPlayCodeChallengeTVApp.swift */; };
+		8083E5F02C7F889400C8E7ED /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8083E5EF2C7F889400C8E7ED /* ContentView.swift */; };
+		8083E5F22C7F889500C8E7ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8083E5F12C7F889500C8E7ED /* Assets.xcassets */; };
+		8083E5F52C7F889500C8E7ED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8083E5F42C7F889500C8E7ED /* Preview Assets.xcassets */; };
 		80888C9A2C7F599F0084F4D3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80888C992C7F599F0084F4D3 /* WebView.swift */; };
 		80888C9C2C7F651E0084F4D3 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80888C9B2C7F651E0084F4D3 /* LazyView.swift */; };
 		80888CA02C7F779F0084F4D3 /* HomeNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80888C9F2C7F779F0084F4D3 /* HomeNavigation.swift */; };
@@ -107,7 +111,7 @@
 		7A16586128CB7FA6004EDE42 /* GenricModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenricModel.swift; sourceTree = "<group>"; };
 		7A3B5D6628CF971900C54383 /* AppInstantiationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInstantiationFactory.swift; sourceTree = "<group>"; };
 		7A551FD728CB8F5700B8F9BD /* DetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVM.swift; sourceTree = "<group>"; };
-		7A551FDB28CBB4F800B8F9BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7A551FDB28CBB4F800B8F9BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7A551FDD28CC617100B8F9BD /* Episode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 		7A551FEC28CCD34800B8F9BD /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		7A551FEE28CCD39F00B8F9BD /* VideoPlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoPlayerView.swift; sourceTree = "<group>"; };
@@ -137,6 +141,11 @@
 		803E16122A85389B00BEACD3 /* PersonDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailVM.swift; sourceTree = "<group>"; };
 		806423752A827DBB00A5B8FC /* CastModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastModel.swift; sourceTree = "<group>"; };
 		8069BFE12A72A00F0053507A /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		8083E5EB2C7F889400C8E7ED /* StarzPlayCodeChallengeTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarzPlayCodeChallengeTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8083E5ED2C7F889400C8E7ED /* StarzPlayCodeChallengeTVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarzPlayCodeChallengeTVApp.swift; sourceTree = "<group>"; };
+		8083E5EF2C7F889400C8E7ED /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8083E5F12C7F889500C8E7ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8083E5F42C7F889500C8E7ED /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		80888C992C7F599F0084F4D3 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		80888C9B2C7F651E0084F4D3 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 		80888C9F2C7F779F0084F4D3 /* HomeNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigation.swift; sourceTree = "<group>"; };
@@ -168,6 +177,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8083E5E82C7F889400C8E7ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -176,7 +192,6 @@
 			children = (
 				8032E48A2A5C47AF00FC1089 /* StarzPlayCodeChallenge.xctestplan */,
 				7A1657F128CA1E96004EDE42 /* StarzPlayCodeChallenge */,
-				7A1657F628CA1E9A004EDE42 /* Assets.xcassets */,
 				7A551FF928CCF70100B8F9BD /* StarzPlayCodeChallengeTests */,
 				7A1657F028CA1E96004EDE42 /* Products */,
 			);
@@ -187,6 +202,7 @@
 			children = (
 				7A1657EF28CA1E96004EDE42 /* StarzPlayCodeChallenge.app */,
 				7A551FF828CCF70100B8F9BD /* StarzPlayCodeChallengeTests.xctest */,
+				8083E5EB2C7F889400C8E7ED /* StarzPlayCodeChallengeTV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -195,16 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				7A551FDB28CBB4F800B8F9BD /* Info.plist */,
-				7A16581D28CA225C004EDE42 /* Views */,
-				7A16583D28CB1D1F004EDE42 /* ViewModel */,
-				7A16583C28CB1D0F004EDE42 /* Model */,
-				7A16584828CB5746004EDE42 /* Network */,
-				80A1B7462A69C520001FBE4C /* Services */,
-				80B99DEC2A5FD391002BB4B7 /* Manager */,
-				7A16582428CA26C0004EDE42 /* Utility */,
-				7A3B5D6528CF96DE00C54383 /* MainAppFactory */,
-				7A16581C28CA20AD004EDE42 /* AppMain */,
-				7A1657F828CA1E9A004EDE42 /* Preview Content */,
+				8083E6152C7F89C700C8E7ED /* iOS */,
+				8083E6162C7F8A2A00C8E7ED /* tvOS */,
 			);
 			path = StarzPlayCodeChallenge;
 			sourceTree = "<group>";
@@ -419,6 +427,43 @@
 			path = PersonDetail;
 			sourceTree = "<group>";
 		};
+		8083E5F32C7F889500C8E7ED /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8083E5F42C7F889500C8E7ED /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8083E6152C7F89C700C8E7ED /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				7A16581D28CA225C004EDE42 /* Views */,
+				7A16583D28CB1D1F004EDE42 /* ViewModel */,
+				7A16583C28CB1D0F004EDE42 /* Model */,
+				7A16584828CB5746004EDE42 /* Network */,
+				80A1B7462A69C520001FBE4C /* Services */,
+				80B99DEC2A5FD391002BB4B7 /* Manager */,
+				7A16582428CA26C0004EDE42 /* Utility */,
+				7A3B5D6528CF96DE00C54383 /* MainAppFactory */,
+				7A16581C28CA20AD004EDE42 /* AppMain */,
+				7A1657F828CA1E9A004EDE42 /* Preview Content */,
+				7A1657F628CA1E9A004EDE42 /* Assets.xcassets */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		8083E6162C7F8A2A00C8E7ED /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				8083E5ED2C7F889400C8E7ED /* StarzPlayCodeChallengeTVApp.swift */,
+				8083E5EF2C7F889400C8E7ED /* ContentView.swift */,
+				8083E5F12C7F889500C8E7ED /* Assets.xcassets */,
+				8083E5F32C7F889500C8E7ED /* Preview Content */,
+			);
+			path = tvOS;
+			sourceTree = "<group>";
+		};
 		80888C9E2C7F777E0084F4D3 /* CustomModifres */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +563,23 @@
 			productReference = 7A551FF828CCF70100B8F9BD /* StarzPlayCodeChallengeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8083E5EA2C7F889400C8E7ED /* StarzPlayCodeChallengeTV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8083E6122C7F889600C8E7ED /* Build configuration list for PBXNativeTarget "StarzPlayCodeChallengeTV" */;
+			buildPhases = (
+				8083E5E72C7F889400C8E7ED /* Sources */,
+				8083E5E82C7F889400C8E7ED /* Frameworks */,
+				8083E5E92C7F889400C8E7ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StarzPlayCodeChallengeTV;
+			productName = StarzPlayCodeChallengeTV;
+			productReference = 8083E5EB2C7F889400C8E7ED /* StarzPlayCodeChallengeTV.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -525,7 +587,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1330;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1540;
 				TargetAttributes = {
 					7A1657EE28CA1E96004EDE42 = {
@@ -535,6 +597,9 @@
 						CreatedOnToolsVersion = 13.3;
 						LastSwiftMigration = 1330;
 						TestTargetID = 7A1657EE28CA1E96004EDE42;
+					};
+					8083E5EA2C7F889400C8E7ED = {
+						CreatedOnToolsVersion = 15.4;
 					};
 				};
 			};
@@ -556,6 +621,7 @@
 			targets = (
 				7A1657EE28CA1E96004EDE42 /* StarzPlayCodeChallenge */,
 				7A551FF728CCF70100B8F9BD /* StarzPlayCodeChallengeTests */,
+				8083E5EA2C7F889400C8E7ED /* StarzPlayCodeChallengeTV */,
 			);
 		};
 /* End PBXProject section */
@@ -576,6 +642,15 @@
 			files = (
 				7A55200728CCF88200B8F9BD /* season_detail_response.json in Resources */,
 				7A55200528CCF84F00B8F9BD /* tv_detail_response.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8083E5E92C7F889400C8E7ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8083E5F52C7F889500C8E7ED /* Preview Assets.xcassets in Resources */,
+				8083E5F22C7F889500C8E7ED /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,6 +725,15 @@
 				7A7FDBE828CDE94200F6C6C4 /* SeasonVmTest.swift in Sources */,
 				7A55200B28CD0ADB00B8F9BD /* TvDetailVmTest.swift in Sources */,
 				7A55200928CCF89000B8F9BD /* Mockable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8083E5E72C7F889400C8E7ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8083E5F02C7F889400C8E7ED /* ContentView.swift in Sources */,
+				8083E5EE2C7F889400C8E7ED /* StarzPlayCodeChallengeTVApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -789,7 +873,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"StarzPlayCodeChallenge/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"StarzPlayCodeChallenge/iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 5SXPZ2ZD2X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -821,7 +905,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"StarzPlayCodeChallenge/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"StarzPlayCodeChallenge/iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 5SXPZ2ZD2X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -897,6 +981,67 @@
 			};
 			name = Release;
 		};
+		8083E60C2C7F889600C8E7ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"StarzPlayCodeChallenge/tvOS/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-mlbChaggange.com.StarzPlayCodeChallengeTV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 17.5;
+			};
+			name = Debug;
+		};
+		8083E60D2C7F889600C8E7ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"StarzPlayCodeChallenge/tvOS/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.-mlbChaggange.com.StarzPlayCodeChallengeTV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 17.5;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -923,6 +1068,15 @@
 			buildConfigurations = (
 				7A551FFF28CCF70100B8F9BD /* Debug */,
 				7A55200028CCF70100B8F9BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8083E6122C7F889600C8E7ED /* Build configuration list for PBXNativeTarget "StarzPlayCodeChallengeTV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8083E60C2C7F889600C8E7ED /* Debug */,
+				8083E60D2C7F889600C8E7ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
