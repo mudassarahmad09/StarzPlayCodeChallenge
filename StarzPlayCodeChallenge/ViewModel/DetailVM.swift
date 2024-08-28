@@ -53,4 +53,15 @@ extension DetailVM {
             self.showError = true
         }
     }
+     
+     func getVideos() -> [Video]? {
+         switch detail {
+         case let tvDetail as TvDetail:
+             return tvDetail.getVideos().flatMap { $0.isEmpty ? nil : $0 }
+         case let movieDetail as MovieDetail:
+              return movieDetail.getVideos().flatMap { $0.isEmpty ? nil : $0 }
+         default:
+             return nil
+         }
+     }
 }

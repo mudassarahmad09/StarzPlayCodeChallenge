@@ -26,6 +26,7 @@ enum AppUrl {
     static var IMAGEURL = "http://image.tmdb.org/t/p/w500/"
     static var APIKey = "3d0cda4466f269e793e9283f6ce0b75e"
     static var VURL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+    static var YOUTUBE = "https://www.youtube.com/embed/{key}"
 }
 
 enum MediaInfo: Int {

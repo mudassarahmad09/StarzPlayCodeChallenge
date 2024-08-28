@@ -27,16 +27,20 @@ extension LinearGradient {
 }
 
 extension String {
-    func toDate(withFormat format: String = "yyyy/MM/dd") -> Date? {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = format
-        if let date = dateFormatter.date(from: self) {
-            return date
-        } else {
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-            return dateFormatter.date(from: self)
-        }
-    }
+     func toDate(withFormat format: String = "yyyy/MM/dd") -> Date? {
+          let dateFormatter = DateFormatter()
+          dateFormatter.dateFormat = format
+          if let date = dateFormatter.date(from: self) {
+               return date
+          } else {
+               dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+               return dateFormatter.date(from: self)
+          }
+     }
+     
+     func replace(string: String, with: String) -> String {
+          replacingOccurrences(of: string, with: with)
+     }
 }
 
 extension Date {

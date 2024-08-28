@@ -27,7 +27,8 @@ struct MovieDetailModel: Decodable {
     let voteCount: Int
     var recommendations: Media<Movie>
     let credits: MediaCredit?
-    
+    let videos: Videos?
+     
     var releaseDateWithFormate: String {
         releaseDate.toDate()?.toString(dateFormat: "yyyy") ?? ""
     }
@@ -49,10 +50,14 @@ struct MovieDetailModel: Decodable {
         case voteCount = "vote_count"
         case recommendations
         case credits
+        case videos
     }
 }
 extension MovieDetailModel: MovieDetail {
-    
+     func getVideos() -> [Video]? {
+          videos?.results ?? []
+     }
+     
     func getYear() -> String {
         self.releaseDateWithFormate
     }
@@ -97,4 +102,14 @@ struct SpokenLanguage: Decodable {
         case iso639_1 = "iso_639_1"
         case name
     }
+}
+// MARK: Videos
+struct Videos: Decodable {
+    var results: [Video]
+}
+
+struct Video: Decodable {
+    var id: String
+    var key: String
+    var site: String
 }

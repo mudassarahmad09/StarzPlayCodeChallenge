@@ -27,7 +27,7 @@ struct DetailView: View {
     
     var body: some View {
         loadView()
-            .fullScreenCover(isPresented: $goToPlayer, content: {VideoPlayerView(url: url)})
+            .fullScreenCover(isPresented: $goToPlayer, content: { VideoPlayerView(url: url) })
             .alert(isPresented: $viewModel.showError, content: {
                 Alert(title: Text(viewModel.errorMessage))
             })
@@ -50,6 +50,7 @@ extension DetailView {
                     }
                     descripcationView()
                     reactionView()
+                    trailerRow()
                     mediaContentView()
                 }
                 topButtons()
@@ -143,6 +144,30 @@ private extension DetailView {
 }
 // MARK: - Reaction View
 private extension DetailView {
+     
+     private func trailerRow() -> AnyView? {
+          guard !(viewModel.detail is PersonInfo) else { return nil }
+          guard let videos = viewModel.getVideos()  else { return nil }
+          return AnyView(
+               VStack(alignment: .leading, spacing: 10) {
+                    Text("Trailers")
+                         .font(.title3)
+                         .bold()
+                         .padding(.horizontal)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                         HStack(spacing: 13) {
+                              ForEach(videos, id: \.id) { video in
+                                   WebView(url: AppUrl.YOUTUBE.replace(string: "{key}", with: video.key))
+                                        .frame(width: 320, height: 200)
+                                        .cornerRadius(10)
+                              }
+                         }
+                         .padding(.horizontal)
+                    }
+               }
+          )
+     }
+     
      func reactionView() -> AnyView? {
           guard !(viewModel.detail is PersonInfo) else { return nil }
           return AnyView(

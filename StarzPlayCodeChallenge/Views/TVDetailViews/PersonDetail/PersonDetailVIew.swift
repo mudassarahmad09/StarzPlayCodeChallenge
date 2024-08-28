@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PersonDetailView: View {
     @State private var viewModel: PersonDetailVM
-    
+
     init(viewModel: PersonDetailVM) {
         self._viewModel = State(wrappedValue: viewModel)
     }
@@ -33,7 +33,7 @@ private extension PersonDetailView {
             ZStack(alignment: .top) {
                 ScrollView {
                     ZStack(alignment: .bottomLeading) {
-                        GradientImageView(image: viewModel.detail?.getImagePoster() ?? "")
+                        GradientImageView(image: viewModel.detail?.getMediaImagePoster() ?? "")
                         nameView()
                     }
                     descripcationView()
@@ -61,11 +61,11 @@ private extension PersonDetailView {
     private func nameView() -> some View {
         VStack(alignment: .leading, spacing: 15) {
             VStack(alignment: .leading, spacing: 8) {
-                Text(viewModel.detail?.getName() ?? "")
+                Text(viewModel.detail?.getMediaName() ?? "")
                     .font(.largeTitle)
                     .foregroundColor(.white)
                 
-                Text("Date Of Birthday \(viewModel.detail?.getBirthDay() ?? "")")
+                Text(viewModel.detail?.getSubMedaiDetail() ?? "")
                     .font(.system(size: 18, weight: .semibold, design: .default))
                     .foregroundColor(.gray)
                 
@@ -85,7 +85,7 @@ private extension PersonDetailView {
     
     private func descripcationView() -> some View {
         VStack {
-            ExpandableView(viewModel.detail?.getOverView() ?? "")
+            ExpandableView(viewModel.detail?.getMediaOverView() ?? "")
         }
     }
     
@@ -96,7 +96,7 @@ private extension PersonDetailView {
     }
      
     private func castView() -> AnyView? {
-        guard let cast = viewModel.detail?.getCast().cast,
+         guard let cast = viewModel.detail?.getCast()?.cast,
               !cast.isEmpty else {return nil}
         return AnyView(PosterRowView(layout:
                                         Layout(sectionTitle: "Movies and TVs",

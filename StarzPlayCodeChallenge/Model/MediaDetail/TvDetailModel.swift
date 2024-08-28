@@ -18,11 +18,13 @@ protocol MediaDetail {
 }
 
 protocol TvDetail: MediaDetail{
-    func getSeasons() -> [Season]?
+     func getSeasons() -> [Season]?
+     func getVideos() -> [Video]?
 }
 
 protocol MovieDetail: MediaDetail{
-    func getRecommendations() -> Media<Movie>?
+     func getRecommendations() -> Media<Movie>?
+     func getVideos() -> [Video]?
 }
 
 protocol PersonInfo: MediaDetail {
@@ -41,6 +43,7 @@ struct TvDetailModel: Decodable {
     let posterPath: String?
     var seasons: [Season]
     let credits: MediaCredit?
+    let videos: Videos?
 
     enum CodingKeys: String, CodingKey {
         case adult = "adult"
@@ -52,6 +55,7 @@ struct TvDetailModel: Decodable {
         case posterPath = "poster_path"
         case seasons = "seasons"
         case credits
+        case videos
     }
 
     var startYear: String? {
@@ -59,6 +63,10 @@ struct TvDetailModel: Decodable {
     }
 }
 extension TvDetailModel: TvDetail {
+     func getVideos() -> [Video]? {
+          videos?.results ?? []
+     }
+     
     func getYear() -> String {
         self.startYear ?? ""
     }
