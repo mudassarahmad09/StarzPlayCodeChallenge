@@ -16,15 +16,14 @@ struct AppInstantiationFactory {
      
      func homeView() -> HomeView {
           HomeView(
-               viewModel: HomeViewModel(mediaEndpointConfig: MediaEndPointManger.createEndpoints())
+               viewModel: HomeViewModel(
+                    mediaEndpointConfig: MediaEndPointManger.createEndpoints()
+               )
           )
      }
      
-     func detailView(for mediaId: Int, and contentType: ContentType) -> AnyView {
-          if contentType == .person {
-               return AnyView (personDetailView(for: mediaId))
-          }
-          return AnyView(mediaDetailView(for: mediaId, contentType: contentType))
+     func detailView(for mediaId: Int, and contentType: ContentType) -> DetailView {
+          mediaDetailView(for: mediaId, contentType: contentType)
      }
      
      private func mediaDetailView(for mediaId: Int, contentType: ContentType) -> DetailView {
@@ -38,17 +37,19 @@ struct AppInstantiationFactory {
           )
      }
      
-     func personDetailView(for mediaId: Int) -> PersonDetailView {
-          let vm = PersonDetailVM(detailService: PersonDetailServiceAdapter(), id: mediaId)
-          return PersonDetailView(viewModel: vm)
-     }
-     
      private func makeDetailVM(for mediaId: Int, and contentType: ContentType) -> DetailVM {
           DetailVM(detailService: contentType.adpter, id: mediaId)
      }
      
      private func makeDetailSubView(for mediaId: Int,contentType: ContentType, viewModel: DetailVM) -> AnyView? {
-          contentType == .movie ? recommendationView(viewModel) : seasonView(viewModel, mediaId)
+          switch contentType {
+          case .tv:
+               seasonView(viewModel, mediaId)
+          case .movie:
+               recommendationView(viewModel)
+          case .person:
+               profilesImages(viewModel)
+          }
      }
      
      private func recommendationView(_ viewModel: DetailVM) -> AnyView? {
@@ -64,6 +65,13 @@ struct AppInstantiationFactory {
                 !seasons.isEmpty else { return nil }
           let seasonVM =  SeasonGridVM(seaasonService: EpisodeServiceAdpter(),seasons: seasons)
           return AnyView(SeasonGridView(viewModel: seasonVM, mediaId: mediaId))
+     }
+     
+     private func profilesImages(_ viewModel: DetailVM) -> AnyView? {
+          guard let personDetail = viewModel.detail as? PersonInfo else { return nil }
+          let profiles = personDetail.allProFiles().profiles
+          guard !profiles.isEmpty else {return nil}
+          return AnyView(PersonImageRow(images: profiles))
      }
      
      private func videoUrl() -> URL {

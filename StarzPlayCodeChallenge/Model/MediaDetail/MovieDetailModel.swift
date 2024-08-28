@@ -60,10 +60,6 @@ extension MovieDetailModel: MovieDetail {
     func getSubMedaiDetail() -> String {
         "Release Date \(releaseDateWithFormate)"
     }
-    
-//    func getSeasons() -> [Season]? {
-//        nil
-//    }
         
     func getRecommendations() -> Media<Movie>? {
         recommendations

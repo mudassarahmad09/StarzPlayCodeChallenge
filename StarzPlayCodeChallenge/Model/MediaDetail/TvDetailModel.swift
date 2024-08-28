@@ -25,6 +25,11 @@ protocol MovieDetail: MediaDetail{
     func getRecommendations() -> Media<Movie>?
 }
 
+protocol PersonInfo: MediaDetail {
+    func getBorn() -> String
+    func allProFiles() -> Images
+}
+
 // MARK: - ShowDetailWelcome
 struct TvDetailModel: Decodable {
     let adult: Bool

@@ -53,10 +53,7 @@
 		8032E4902A5D520F00FC1089 /* MediaEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8032E48F2A5D520F00FC1089 /* MediaEndpoint.swift */; };
 		8032E4932A5D5EB500FC1089 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8032E4922A5D5EB500FC1089 /* HomeView.swift */; };
 		8032E4972A5D98A300FC1089 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8032E4962A5D98A300FC1089 /* HomeViewModel.swift */; };
-		803E160C2A85131F00BEACD3 /* PersonDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E160B2A85131F00BEACD3 /* PersonDetailService.swift */; };
-		803E160E2A85136D00BEACD3 /* PersonDetailVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E160D2A85136D00BEACD3 /* PersonDetailVIew.swift */; };
 		803E16112A85387C00BEACD3 /* PersonImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E16102A85387C00BEACD3 /* PersonImageRow.swift */; };
-		803E16132A85389B00BEACD3 /* PersonDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E16122A85389B00BEACD3 /* PersonDetailVM.swift */; };
 		806423762A827DBB00A5B8FC /* CastModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806423752A827DBB00A5B8FC /* CastModel.swift */; };
 		8069BFE22A72A00F0053507A /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8069BFE12A72A00F0053507A /* Helper.swift */; };
 		80A1B7452A69C45D001FBE4C /* MovieDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1B7442A69C45D001FBE4C /* MovieDetailModel.swift */; };
@@ -583,13 +580,11 @@
 				8032E4932A5D5EB500FC1089 /* HomeView.swift in Sources */,
 				7A16582B28CA4724004EDE42 /* Extension.swift in Sources */,
 				80B99DEE2A5FD3A5002BB4B7 /* MediaEndPointManger.swift in Sources */,
-				803E160E2A85136D00BEACD3 /* PersonDetailVIew.swift in Sources */,
 				8032E48D2A5D517C00FC1089 /* Media.swift in Sources */,
 				80DD4E332A65D5DB0088E60A /* TVShows.swift in Sources */,
 				7A16584528CB3A20004EDE42 /* EpisodeCell.swift in Sources */,
 				7A16585F28CB7938004EDE42 /* TvDetailModel.swift in Sources */,
 				80A1B7452A69C45D001FBE4C /* MovieDetailModel.swift in Sources */,
-				803E160C2A85131F00BEACD3 /* PersonDetailService.swift in Sources */,
 				7A551FED28CCD34800B8F9BD /* PlayerView.swift in Sources */,
 				80DD4E352A65D6060088E60A /* Movie.swift in Sources */,
 				80A1B7482A69C544001FBE4C /* MediaService.swift in Sources */,
@@ -620,7 +615,6 @@
 				7A1657F328CA1E97004EDE42 /* StarzPlayCodeChallengeApp.swift in Sources */,
 				7A551FEF28CCD39F00B8F9BD /* VideoPlayerView.swift in Sources */,
 				7A16582E28CA5CAB004EDE42 /* PlayButton.swift in Sources */,
-				803E16132A85389B00BEACD3 /* PersonDetailVM.swift in Sources */,
 				7A16582628CA26F2004EDE42 /* Constant.swift in Sources */,
 				7A16582028CA22D0004EDE42 /* NavbarHiddenView.swift in Sources */,
 			);

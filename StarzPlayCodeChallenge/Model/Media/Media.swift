@@ -37,6 +37,7 @@ struct Title: Identifiable {
     let contentType: ContentType
 }
 
+import SwiftUI
 enum ContentType: String {
     case tv, movie, person
      
@@ -47,7 +48,7 @@ enum ContentType: String {
           case .movie:
                DetailServiceAdapter<MovieDetailModel>(type: .movie)
           case .person:
-               DetailServiceAdapter<MovieDetailModel>(type: .person)
+               DetailServiceAdapter<PersonDetails>(type: .person)
           }
-     }
+     }     
 }

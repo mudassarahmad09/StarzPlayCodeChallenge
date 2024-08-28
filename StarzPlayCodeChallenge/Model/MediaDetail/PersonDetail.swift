@@ -7,17 +7,6 @@
 
 import Foundation
 
-protocol PersonInfo {
-    var id: Int {get}
-    func getName() -> String
-    func getImagePoster() -> String
-    func getOverView() -> String
-    func getBorn() -> String
-    func getBirthDay() -> String
-    func getCast() -> MediaCredit
-    func allProFiles() -> Images
-}
-
 struct PersonDetails: Decodable {
     let adult: Bool
     let alsoKnownAs: [String]
@@ -72,31 +61,35 @@ struct Profile: Decodable, Identifiable {
     }
 }
 extension PersonDetails: PersonInfo {
-    func getName() -> String {
-        self.name
+     func getSubMedaiDetail() -> String {
+          "Date Of Birthday \(formmatedBirthday)"
+     }
+     
+    func getMediaName() -> String {
+        name
     }
     
-    func getImagePoster() -> String {
-        self.profilePath ?? ""
+    func getMediaImagePoster() -> String {
+        profilePath ?? ""
     }
     
-    func getBirthDay() -> String {
+    func getYear() -> String {
         formmatedBirthday
     }
     
-    func getOverView() -> String {
-        self.biography ?? ""
+    func getMediaOverView() -> String {
+        biography ?? ""
     }
     
-    func getCast() -> MediaCredit {
-        self.combinedCredits
+    func getCast() -> MediaCredit? {
+        combinedCredits
     }
     
     func allProFiles() -> Images {
-        self.images
+        images
     }
     
     func getBorn() -> String {
-        self.placeOfBirth 
+        placeOfBirth
     }
 }

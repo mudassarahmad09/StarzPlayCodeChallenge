@@ -18,7 +18,7 @@ struct PersonDetailServiceAdapter: NetworkManagerService,PersonDetailService {
         let result = await sendApiRequest(endpoint: detailEndPoint, responseModel: PersonDetails.self)
         switch result {
         case .success(let person):
-            return .success(person)
+             return .success(person as! PersonInfo)
         case .failure(let error):
             return .failure(error)
         }

@@ -50,8 +50,7 @@ extension DetailView {
                     }
                     descripcationView()
                     reactionView()
-                    castView()
-                    dynamicContentView()
+                    mediaContentView()
                 }
                 topButtons()
             }
@@ -84,10 +83,12 @@ private extension DetailView {
     
     func bannerImageView() -> some View {
         VStack(alignment: .leading, spacing: 15) {
-            
-            nameAndTypeView()
-            playableButtonView()
-            
+             if viewModel.detail is PersonInfo {
+                  nameAndTypeView()
+             } else {
+                  nameAndTypeView()
+                  playableButtonView()
+             }
         }
         .padding([.trailing, .leading])
     }
@@ -123,6 +124,18 @@ private extension DetailView {
         }
     }
     
+     func mediaContentView() -> some View {
+          VStack {
+               if viewModel.detail is PersonInfo {
+                    dynamicContentView()
+                    castView()
+               } else {
+                    castView()
+                    dynamicContentView()
+               }
+          }
+     }
+     
      func castView() -> PosterRowView? {
           guard let cast = viewModel.detail?.getCast()?.cast , !cast.isEmpty else { return nil }
           return PosterRowView(layout: Layout(sectionTitle: "Cast", titles: cast))
@@ -130,16 +143,19 @@ private extension DetailView {
 }
 // MARK: - Reaction View
 private extension DetailView {
-    func reactionView() -> some View {
-        HStack(alignment: .top, spacing: 12) {
-            RoundedButton(iconName: "plus", textName: "Watch List")
-            RoundedButton(iconName: "hand.thumbsup", textName: "I like it")
-            RoundedButton(iconName: "hand.thumbsdown", textName: "I don't like it")
-            Spacer()
-        }
-        .padding(.top, 10)
-        .padding([.trailing, .leading])
-    }
+     func reactionView() -> AnyView? {
+          guard !(viewModel.detail is PersonInfo) else { return nil }
+          return AnyView(
+               HStack(alignment: .top, spacing: 12) {
+                    RoundedButton(iconName: "plus", textName: "Watch List")
+                    RoundedButton(iconName: "hand.thumbsup", textName: "I like it")
+                    RoundedButton(iconName: "hand.thumbsdown", textName: "I don't like it")
+                    Spacer()
+               }
+                .padding(.top, 10)
+                .padding([.trailing, .leading])
+          )
+     }
 }
 
 struct TVDetailView_Previews: PreviewProvider {
