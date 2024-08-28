@@ -33,12 +33,10 @@ struct CustomButton: View {
     }
 }
 
-struct CustomButton_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomButton(imageName: "",
-                     label: "",
-                     backgroundColor: .blue,
-                     action: {})
-            .previewLayout(PreviewLayout.sizeThatFits)
-    }
+#Preview {
+     CustomButton(imageName: "",
+                  label: "",
+                  backgroundColor: .blue,
+                  action: {})
+         .previewLayout(PreviewLayout.sizeThatFits)
 }

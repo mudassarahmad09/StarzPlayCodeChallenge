@@ -43,9 +43,7 @@ struct HomeView: View {
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        let app = AppInstantiationFactory()
-        app.startApp()
-    }
+#Preview {
+     let app = AppInstantiationFactory()
+     return app.startApp()
 }

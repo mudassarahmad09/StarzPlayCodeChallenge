@@ -47,12 +47,12 @@ struct GradientImageView: View {
     }
 }
 
-struct GradientImageView_Previews: PreviewProvider {
-    static var previews: some View {
-        GradientImageView(image: "stTEycfG9928HYGEISBFaG1ngjM.jpg")
-            .previewLayout(PreviewLayout.sizeThatFits)
-        GradientImageView(image: "stTEycfG9928HYGEISBFaG1ngjM.jpg")
-            .preferredColorScheme(.dark)
-            .previewLayout(PreviewLayout.sizeThatFits)
-    }
+#Preview {
+     Group {
+          GradientImageView(image: "stTEycfG9928HYGEISBFaG1ngjM.jpg")
+               .previewLayout(PreviewLayout.sizeThatFits)
+          GradientImageView(image: "stTEycfG9928HYGEISBFaG1ngjM.jpg")
+               .preferredColorScheme(.dark)
+               .previewLayout(PreviewLayout.sizeThatFits)
+     }
 }

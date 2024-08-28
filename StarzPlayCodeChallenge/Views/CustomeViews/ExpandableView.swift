@@ -65,10 +65,8 @@ struct ExpandableView: View {
     }
 }
 
-struct ExpandableView_Previews: PreviewProvider {
-    static var previews: some View {
-        ExpandableView("An LA vampire hunter has a week to come up with the cash to pay for his kid's tuition and braces. Trying to make a living these days just might kill him.")
-            .previewLayout(PreviewLayout.sizeThatFits)
-            .preferredColorScheme(.dark)
-    }
+#Preview {
+     ExpandableView("An LA vampire hunter has a week to come up with the cash to pay for his kid's tuition and braces. Trying to make a living these days just might kill him.")
+         .previewLayout(PreviewLayout.sizeThatFits)
+         .preferredColorScheme(.dark)
 }

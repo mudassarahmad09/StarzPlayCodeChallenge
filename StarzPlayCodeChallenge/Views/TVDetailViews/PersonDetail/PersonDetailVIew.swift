@@ -103,9 +103,8 @@ private extension PersonDetailView {
                                                titles: cast)))
     }
 }
-struct PersonDetailVIew_Preview: PreviewProvider {
-    static var previews: some View {
-        let app = AppInstantiationFactory()
-        app.detailView(for:MediaInfo.thePerson.rawValue , and: .person)
-    }
+
+#Preview {
+     let app = AppInstantiationFactory()
+     return app.detailView(for:MediaInfo.thePerson.rawValue , and: .person)
 }

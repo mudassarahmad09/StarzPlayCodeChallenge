@@ -131,17 +131,15 @@ struct Controls: View {
         return "\(hours):\(mintus):\(second)"
     }
 }
-struct Controls_Previews: PreviewProvider {
 
-    static var previews: some View {
-        Controls(player: .constant(AVPlayer(url: URL(string: AppUrl.VURL)!)),
-                 isPlaying: .constant(true),
-                 pannel: .constant(true),
-                 value: .constant(0.58),
-                 didTapBack: {
-                    print("back button is pressed")
-        })
-            .background(Color.black)
-            .previewInterfaceOrientation(.landscapeLeft)
-    }
+#Preview {
+     Controls(player: .constant(AVPlayer(url: URL(string: AppUrl.VURL)!)),
+              isPlaying: .constant(true),
+              pannel: .constant(true),
+              value: .constant(0.58),
+              didTapBack: {
+                 print("back button is pressed")
+     })
+         .background(Color.black)
+         .previewInterfaceOrientation(.landscapeLeft)
 }

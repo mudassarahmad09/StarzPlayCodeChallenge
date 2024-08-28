@@ -16,8 +16,6 @@ struct LoadingIndicatorView: View {
     }
 }
 
-struct LoadingIndicatorView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoadingIndicatorView()
-    }
+#Preview {
+     LoadingIndicatorView()
 }

@@ -52,10 +52,13 @@ struct AsyncImageView: View {
     }
 }
 
-struct AsyncImageMLB_Previews: PreviewProvider {
-    static var previews: some View {
-        AsyncImageView(url: URL(string: "www.google.com")!, placeHolder: .episodePH,width: 120,height: 70)
-    }
+#Preview {
+     AsyncImageView(
+          url: URL(string: "www.google.com")!,
+          placeHolder: .episodePH,
+          width: 120,
+          height: 70
+     )
 }
 
 struct CacheAsyncImage<Content>: View where Content: View {

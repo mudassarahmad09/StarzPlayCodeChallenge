@@ -33,11 +33,9 @@ struct PlayButton: View {
     }
 }
 
-struct IconImageView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayButton(action: {
+#Preview {
+     PlayButton(action: {
 
-        })
-        .previewLayout(PreviewLayout.sizeThatFits)
-    }
+     })
+     .previewLayout(PreviewLayout.sizeThatFits)
 }

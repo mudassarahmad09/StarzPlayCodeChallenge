@@ -32,13 +32,13 @@ struct RoundedButton: View {
     }
 }
 
-struct RoundedButton_Previews: PreviewProvider {
-    static var previews: some View {
-        RoundedButton(iconName: "plus", textName: "Watch List")
-            .previewLayout(PreviewLayout.sizeThatFits)
-            .preferredColorScheme(.dark)
-
-        RoundedButton(iconName: "plus", textName: "Watch List")
-            .previewLayout(PreviewLayout.sizeThatFits)
-    }
+#Preview {
+     Group {
+          RoundedButton(iconName: "plus", textName: "Watch List")
+               .previewLayout(PreviewLayout.sizeThatFits)
+               .preferredColorScheme(.dark)
+          
+          RoundedButton(iconName: "plus", textName: "Watch List")
+               .previewLayout(PreviewLayout.sizeThatFits)
+     }
 }

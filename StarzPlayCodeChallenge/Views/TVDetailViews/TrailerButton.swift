@@ -33,11 +33,9 @@ struct TrailerButton: View {
     }
 }
 
-struct TrailerButton_Previews: PreviewProvider {
-    static var previews: some View {
-        TrailerButton(action: {
+#Preview {
+     TrailerButton(action: {
 
-        })
-        .previewLayout(PreviewLayout.sizeThatFits)
-    }
+     })
+     .previewLayout(PreviewLayout.sizeThatFits)
 }

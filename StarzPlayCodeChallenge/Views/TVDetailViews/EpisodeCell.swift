@@ -51,16 +51,13 @@ struct EpisodeCell: View {
     }
 
 }
-
-struct EpisodeCell_Previews: PreviewProvider {
-    static var previews: some View {
-        Group {
-            let spyEpisode = Episode(name: "Tie Goes", stillPath: "")
-            EpisodeCell(episode: spyEpisode)
-            .previewLayout(PreviewLayout.sizeThatFits)
-            EpisodeCell(episode: spyEpisode)
-                .previewLayout(PreviewLayout.sizeThatFits)
-                .preferredColorScheme(.dark)
-        }
-    }
+#Preview {
+     return Group {
+         let spyEpisode = Episode(name: "Tie Goes", stillPath: "")
+         EpisodeCell(episode: spyEpisode)
+         .previewLayout(PreviewLayout.sizeThatFits)
+         EpisodeCell(episode: spyEpisode)
+             .previewLayout(PreviewLayout.sizeThatFits)
+             .preferredColorScheme(.dark)
+     }
 }
