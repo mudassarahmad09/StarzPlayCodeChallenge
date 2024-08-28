@@ -12,26 +12,12 @@ protocol MediaService {
     func fetchList(endPoint: ApiEndpoint) async -> Result<[MediaAttributes], RequestError>
 }
 
-struct TVshowServiceAdapter: NetworkManagerService,MediaService {
+struct MediaServiceAdapter<T: Decodable & MediaAttributes>: NetworkManagerService,MediaService {
     func fetchList(endPoint: ApiEndpoint) async -> Result<[MediaAttributes], RequestError> {
-        let result = await sendApiRequest(endpoint: endPoint, responseModel: Media<TVShows>.self)
+        let result = await sendApiRequest(endpoint: endPoint, responseModel: Media<T>.self)
         switch result {
         case .success(let tvShowsResponse):
-            //let titles = tvShowsResponse.results.map(\.asTitle)
             return .success(tvShowsResponse.results)
-        case .failure(let error):
-            return .failure(error)
-        }
-    }
-}
-
-struct MovieServiceAdapter: NetworkManagerService,MediaService {
-    func fetchList(endPoint: ApiEndpoint) async -> Result<[MediaAttributes], RequestError> {
-        let result = await sendApiRequest(endpoint: endPoint, responseModel: Media<Movie>.self)
-        
-        switch result {
-        case .success(let movie):
-            return .success(movie.results)
         case .failure(let error):
             return .failure(error)
         }

@@ -27,10 +27,10 @@ enum TVType: String, CaseIterable {
     }
     
     var mediaEndPoint: MediaEndpoint {
-        .showList(media: .tv, type: self.rawValue, language: "en-US", page: 1)
+        .showList(media: .tv, type: rawValue, language: "en-US", page: 1)
     }
     var mediaEndpointConfig: MediaEndpointConfig {
-        .init(title: self.title, endPoint: mediaEndPoint, adpter: TVshowServiceAdapter())
+        .init(title: title, endPoint: mediaEndPoint, adpter: MediaServiceAdapter<TVShows>())
     }
 }
 
@@ -58,7 +58,7 @@ enum MovieType: String, CaseIterable {
     }
     
     var mediaEndpointConfig: MediaEndpointConfig {
-        .init(title: self.title, endPoint: self.mediaEndPoint, adpter: MovieServiceAdapter())
+        .init(title: self.title, endPoint: self.mediaEndPoint, adpter: MediaServiceAdapter<Movie>())
     }
 }
 
