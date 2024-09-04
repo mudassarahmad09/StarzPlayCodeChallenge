@@ -3,7 +3,7 @@
 This project started as a coding challenge for StarzPlay, where I aimed to showcase my skills in clean and testable code. The initial implementation included the following features:
 
 1. **User Interface Design**: Developed a responsive and intuitive UI using SwiftUI.
-2. **API Integration**: Created API calls using my custom API library, Firework.
+2. **API Integration**: Created API calls using my custom API library.
 3. **Basic Video Player**: Designed and implemented a simple video player.
 4. **Unit Testing**: Followed Test-Driven Development (TDD) principles to ensure robust and reliable code.
 
