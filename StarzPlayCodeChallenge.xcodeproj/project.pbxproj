@@ -279,7 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				8032E48B2A5D509B00FC1089 /* HomeView */,
-				7A16582128CA2316004EDE42 /* TVDetailViews */,
+				7A16582128CA2316004EDE42 /* DetailViews */,
 				7A551FE128CCC27300B8F9BD /* VideoPlayer */,
 				7A16581E28CA22A1004EDE42 /* CustomeViews */,
 				80888C9E2C7F777E0084F4D3 /* CustomModifres */,
@@ -301,7 +301,7 @@
 			path = CustomeViews;
 			sourceTree = "<group>";
 		};
-		7A16582128CA2316004EDE42 /* TVDetailViews */ = {
+		7A16582128CA2316004EDE42 /* DetailViews */ = {
 			isa = PBXGroup;
 			children = (
 				803E160F2A85385C00BEACD3 /* PersonDetail */,
@@ -312,7 +312,7 @@
 				7A16582D28CA5CAB004EDE42 /* PlayButton.swift */,
 				7A16583028CA60F6004EDE42 /* TrailerButton.swift */,
 			);
-			path = TVDetailViews;
+			path = DetailViews;
 			sourceTree = "<group>";
 		};
 		7A16582428CA26C0004EDE42 /* Utility */ = {
