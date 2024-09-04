@@ -68,7 +68,7 @@ extension TvDetailModel: TvDetail {
      }
      
     func getYear() -> String {
-        self.startYear ?? ""
+        startYear ?? ""
     }
     
     func getSubMedaiDetail() -> String {
@@ -76,22 +76,22 @@ extension TvDetailModel: TvDetail {
     }
     
     func getSeasons() -> [Season]? {
-        self.seasons
+        seasons
     }
     
     func getMediaName() -> String {
-        self.originalName
+        originalName
     }
             
     func getMediaImagePoster() -> String {
-        self.posterPath ?? "" // fallback image here
+        posterPath ?? "" // fallback image here
     }
     
     func getMediaOverView() -> String {
-        self.overview
+        overview
     }
     
     func getCast() -> MediaCredit? {
-        self.credits
+        credits
     }
 }
