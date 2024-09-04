@@ -1,0 +1,15 @@
+{
+  "originHash" : "dbaec00dc4b2ee3d493c725a092f50c53bd63c07b1b226ab73809ac2907b4418",
+  "pins" : [
+    {
+      "identity" : "myapilibrary",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mudassarahmad09/MyApiLibrary",
+      "state" : {
+        "branch" : "main",
+        "revision" : "49339a25681e1a5a2d8cc4986e1b362326ed74f1"
+      }
+    }
+  ],
+  "version" : 3
+}
