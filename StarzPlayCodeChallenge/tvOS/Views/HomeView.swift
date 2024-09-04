@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct HeroHeaderView: View {
+struct HomeView: View {
     var belowFold: Bool
     
     var body: some View {
@@ -47,9 +47,9 @@ struct HeroHeaderView: View {
 }
 
 #Preview {
-    HeroHeaderView(belowFold: false)
+    HomeView(belowFold: false)
 }
 
 #Preview {
-    HeroHeaderView(belowFold: true)
+     HomeView(belowFold: true)
 }
