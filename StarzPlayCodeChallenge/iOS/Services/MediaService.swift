@@ -12,7 +12,7 @@ protocol MediaService {
     func fetchList(endPoint: ApiEndpoint) async -> Result<[MediaAttributes], RequestError>
 }
 
-struct MediaServiceAdapter<T: Decodable & MediaAttributes>: NetworkManagerService,MediaService {
+actor MediaServiceAdapter<T: Decodable & MediaAttributes>: NetworkManagerService,MediaService {
     func fetchList(endPoint: ApiEndpoint) async -> Result<[MediaAttributes], RequestError> {
         let result = await sendApiRequest(endpoint: endPoint, responseModel: Media<T>.self)
         switch result {
