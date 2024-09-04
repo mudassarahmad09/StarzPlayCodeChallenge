@@ -45,23 +45,3 @@ struct PosterView: View {
          .previewLayout(.sizeThatFits)
          .preferredColorScheme(.dark)
 }
-
-struct ProgressRingView: View {
-    let progress: CGFloat
-
-    var body: some View {
-        ZStack {
-            Circle()
-                .stroke(lineWidth: 3)
-                .opacity(0.3)
-                .foregroundColor(.gray)
-
-            Circle()
-                .trim(from: 0.0, to: progress)
-                .stroke(style: StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round))
-                .foregroundColor(.green)
-                .rotationEffect(Angle(degrees: 270.0))
-                
-        }
-    }
-}
