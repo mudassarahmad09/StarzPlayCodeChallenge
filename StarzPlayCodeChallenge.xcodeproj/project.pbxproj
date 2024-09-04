@@ -94,6 +94,11 @@
 		80A1B7482A69C544001FBE4C /* MediaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1B7472A69C544001FBE4C /* MediaService.swift */; };
 		80A1B74A2A69C570001FBE4C /* MediaDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A1B7492A69C570001FBE4C /* MediaDetailService.swift */; };
 		80B99DEE2A5FD3A5002BB4B7 /* MediaEndPointManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80B99DED2A5FD3A5002BB4B7 /* MediaEndPointManger.swift */; };
+		80D8513D2C88A387002DC850 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A82816428CE2DD80087C88D /* AsyncImageView.swift */; };
+		80D851422C88A45F002DC850 /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D851412C88A45F002DC850 /* PosterView.swift */; };
+		80D851452C88AB25002DC850 /* PosterRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D851442C88AB25002DC850 /* PosterRowView.swift */; };
+		80D8514A2C88AC88002DC850 /* AppInstantiationFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D851492C88AC88002DC850 /* AppInstantiationFactory.swift */; };
+		80D8514B2C88AE1B002DC850 /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8032E4862A582E4900FC1089 /* LoadingIndicatorView.swift */; };
 		80DD4E2E2A65D5510088E60A /* PosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DD4E2D2A65D5510088E60A /* PosterView.swift */; };
 		80DD4E302A65D57E0088E60A /* PosterRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DD4E2F2A65D57E0088E60A /* PosterRowView.swift */; };
 		80DD4E332A65D5DB0088E60A /* TVShows.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DD4E322A65D5DB0088E60A /* TVShows.swift */; };
@@ -182,6 +187,10 @@
 		80A1B7472A69C544001FBE4C /* MediaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaService.swift; sourceTree = "<group>"; };
 		80A1B7492A69C570001FBE4C /* MediaDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaDetailService.swift; sourceTree = "<group>"; };
 		80B99DED2A5FD3A5002BB4B7 /* MediaEndPointManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaEndPointManger.swift; sourceTree = "<group>"; };
+		80D851412C88A45F002DC850 /* PosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
+		80D851442C88AB25002DC850 /* PosterRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterRowView.swift; sourceTree = "<group>"; };
+		80D851492C88AC88002DC850 /* AppInstantiationFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInstantiationFactory.swift; sourceTree = "<group>"; };
+		80D8514C2C88B9EF002DC850 /* StarzPlayCodeChallengeTV-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "StarzPlayCodeChallengeTV-Info.plist"; sourceTree = "<group>"; };
 		80DD4E2D2A65D5510088E60A /* PosterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterView.swift; sourceTree = "<group>"; };
 		80DD4E2F2A65D57E0088E60A /* PosterRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterRowView.swift; sourceTree = "<group>"; };
 		80DD4E322A65D5DB0088E60A /* TVShows.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShows.swift; sourceTree = "<group>"; };
@@ -220,6 +229,7 @@
 		7A1657E628CA1E96004EDE42 = {
 			isa = PBXGroup;
 			children = (
+				80D8514C2C88B9EF002DC850 /* StarzPlayCodeChallengeTV-Info.plist */,
 				8032E48A2A5C47AF00FC1089 /* StarzPlayCodeChallenge.xctestplan */,
 				7A1657F128CA1E96004EDE42 /* StarzPlayCodeChallenge */,
 				7A551FF928CCF70100B8F9BD /* StarzPlayCodeChallengeTests */,
@@ -282,11 +292,9 @@
 			isa = PBXGroup;
 			children = (
 				7A16581F28CA22D0004EDE42 /* NavbarHiddenView.swift */,
-				7A82816428CE2DD80087C88D /* AsyncImageView.swift */,
 				7A16582728CA34D5004EDE42 /* GradientImageView.swift */,
 				7A16583328CA6A19004EDE42 /* ExpandableView.swift */,
 				7A16583628CA6F8D004EDE42 /* RoundedButton.swift */,
-				8032E4862A582E4900FC1089 /* LoadingIndicatorView.swift */,
 				8032E4882A58355C00FC1089 /* CustomButton.swift */,
 				80888C992C7F599F0084F4D3 /* WebView.swift */,
 				80888C9B2C7F651E0084F4D3 /* LazyView.swift */,
@@ -490,6 +498,7 @@
 			isa = PBXGroup;
 			children = (
 				8083E6212C7F90E300C8E7ED /* Views */,
+				80D851482C88AC73002DC850 /* MainAppFactory */,
 				8083E6202C7F90A300C8E7ED /* AppMain */,
 				8083E5F32C7F889500C8E7ED /* Preview Content */,
 				8083E5F12C7F889500C8E7ED /* Assets.xcassets */,
@@ -500,6 +509,7 @@
 		8083E61F2C7F906F00C8E7ED /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				80D8513C2C88A36B002DC850 /* CustomeViews */,
 				7A16583D28CB1D1F004EDE42 /* ViewModel */,
 				7A16583C28CB1D0F004EDE42 /* Model */,
 				80A1B7462A69C520001FBE4C /* Services */,
@@ -522,8 +532,8 @@
 		8083E6212C7F90E300C8E7ED /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8083E6222C7F90F700C8E7ED /* HomeView.swift */,
-				804A6B482C888160005197F6 /* DetailView.swift */,
+				80D851462C88AC31002DC850 /* HomeView */,
+				80D851472C88AC54002DC850 /* DetailView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -565,6 +575,41 @@
 				80B99DED2A5FD3A5002BB4B7 /* MediaEndPointManger.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		80D8513C2C88A36B002DC850 /* CustomeViews */ = {
+			isa = PBXGroup;
+			children = (
+				7A82816428CE2DD80087C88D /* AsyncImageView.swift */,
+				8032E4862A582E4900FC1089 /* LoadingIndicatorView.swift */,
+			);
+			path = CustomeViews;
+			sourceTree = "<group>";
+		};
+		80D851462C88AC31002DC850 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				8083E6222C7F90F700C8E7ED /* HomeView.swift */,
+				80D851442C88AB25002DC850 /* PosterRowView.swift */,
+				80D851412C88A45F002DC850 /* PosterView.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		80D851472C88AC54002DC850 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				804A6B482C888160005197F6 /* DetailView.swift */,
+			);
+			path = DetailView;
+			sourceTree = "<group>";
+		};
+		80D851482C88AC73002DC850 /* MainAppFactory */ = {
+			isa = PBXGroup;
+			children = (
+				80D851492C88AC88002DC850 /* AppInstantiationFactory.swift */,
+			);
+			path = MainAppFactory;
 			sourceTree = "<group>";
 		};
 		80DD4E312A65D5B80088E60A /* Media */ = {
@@ -804,6 +849,7 @@
 				804A6B522C88820E005197F6 /* TVShows.swift in Sources */,
 				804A6B642C8882CF005197F6 /* MediaEndPointManger.swift in Sources */,
 				8083E6232C7F90F700C8E7ED /* HomeView.swift in Sources */,
+				80D851422C88A45F002DC850 /* PosterView.swift in Sources */,
 				804A6B542C888216005197F6 /* CastModel.swift in Sources */,
 				804A6B632C8882A1005197F6 /* Helper.swift in Sources */,
 				804A6B4B2C88818B005197F6 /* DetailVM.swift in Sources */,
@@ -812,6 +858,7 @@
 				804A6B492C888160005197F6 /* DetailView.swift in Sources */,
 				804A6B622C88829E005197F6 /* Extension.swift in Sources */,
 				804A6B602C88826B005197F6 /* SeasonEndPoint.swift in Sources */,
+				80D8513D2C88A387002DC850 /* AsyncImageView.swift in Sources */,
 				8083E5F02C7F889400C8E7ED /* ContentView.swift in Sources */,
 				804A6B512C88820B005197F6 /* Media.swift in Sources */,
 				804A6B552C88821A005197F6 /* TvDetailModel.swift in Sources */,
@@ -819,8 +866,11 @@
 				8083E5EE2C7F889400C8E7ED /* StarzPlayCodeChallengeTVApp.swift in Sources */,
 				804A6B5C2C888248005197F6 /* EpisodeService.swift in Sources */,
 				804A6B5A2C88823F005197F6 /* MediaService.swift in Sources */,
+				80D8514A2C88AC88002DC850 /* AppInstantiationFactory.swift in Sources */,
 				804A6B612C88829A005197F6 /* Constant.swift in Sources */,
+				80D8514B2C88AE1B002DC850 /* LoadingIndicatorView.swift in Sources */,
 				804A6B532C888211005197F6 /* Movie.swift in Sources */,
+				80D851452C88AB25002DC850 /* PosterRowView.swift in Sources */,
 				804A6B5E2C888261005197F6 /* MediaEndpoint.swift in Sources */,
 				804A6B5F2C888267005197F6 /* MediaDetailEndPoint.swift in Sources */,
 				804A6B592C888228005197F6 /* Episode.swift in Sources */,
@@ -1086,6 +1136,7 @@
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "StarzPlayCodeChallengeTV-Info.plist";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1117,6 +1168,7 @@
 				ENABLE_PREVIEWS = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "StarzPlayCodeChallengeTV-Info.plist";
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
 				LD_RUNPATH_SEARCH_PATHS = (

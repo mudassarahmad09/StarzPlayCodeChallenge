@@ -28,8 +28,8 @@ struct PosterRowView: View {
      }
      
      private func layoutScrollView() -> some View {
-          ScrollView(.horizontal, showsIndicators: false) {
-               LazyHStack(alignment: .top, spacing: 13) {
+          ScrollView(.horizontal) {
+               LazyHStack(alignment: .top, spacing: 40) {
                     ForEach(layout.titles, id: \.id) { title in
                          PosterView(mediaItem: title)
                               
@@ -38,8 +38,6 @@ struct PosterRowView: View {
                .padding(.horizontal, 13)
                .padding(.top, 10)
           }
-          .scrollClipDisabled()
-          .buttonStyle(.borderless)
      }
 }
 

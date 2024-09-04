@@ -6,3 +6,17 @@
 //
 
 import Foundation
+
+struct AppInstantiationFactory {
+     func startApp() -> HomeView {
+          homeView()
+     }
+     
+     func homeView() -> HomeView {
+          HomeView(
+               viewModel: HomeViewModel(
+                    mediaEndpointConfig: MediaEndPointManger.createEndpoints()
+               )
+          )
+     }
+}

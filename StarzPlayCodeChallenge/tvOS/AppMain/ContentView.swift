@@ -10,7 +10,8 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
          NavigationStack {
-              HomeView(belowFold: true)
+              let app = AppInstantiationFactory()
+              app.startApp()
          }
     }
 }
