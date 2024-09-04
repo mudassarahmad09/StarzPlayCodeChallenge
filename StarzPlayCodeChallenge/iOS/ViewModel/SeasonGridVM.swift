@@ -10,7 +10,7 @@ import MyApiLibrary
 import Observation
 
 @Observable
-final class SeasonGridVM: ObservableObject {
+final class SeasonGridVM {
     
     let episodeService: EpisodeService
     
