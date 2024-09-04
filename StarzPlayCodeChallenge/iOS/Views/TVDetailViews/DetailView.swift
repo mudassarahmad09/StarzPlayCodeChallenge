@@ -146,8 +146,8 @@ private extension DetailView {
 private extension DetailView {
      
      private func trailerRow() -> AnyView? {
-          guard !(viewModel.detail is PersonInfo) else { return nil }
-          guard let videos = viewModel.getVideos()  else { return nil }
+          guard !(viewModel.detail is PersonInfo),
+                let videos = viewModel.getVideos() else { return nil }
           return AnyView(
                VStack(alignment: .leading, spacing: 10) {
                     Text("Trailers")

@@ -647,8 +647,8 @@
 			projectRoot = "";
 			targets = (
 				7A1657EE28CA1E96004EDE42 /* StarzPlayCodeChallenge */,
-				7A551FF728CCF70100B8F9BD /* StarzPlayCodeChallengeTests */,
 				8083E5EA2C7F889400C8E7ED /* StarzPlayCodeChallengeTV */,
+				7A551FF728CCF70100B8F9BD /* StarzPlayCodeChallengeTests */,
 			);
 		};
 /* End PBXProject section */
