@@ -132,7 +132,7 @@ struct Controls: View {
     }
 }
 
-#Preview {
+#Preview(traits: .landscapeLeft) {
      Controls(player: .constant(AVPlayer(url: URL(string: AppUrl.VURL)!)),
               isPlaying: .constant(true),
               pannel: .constant(true),
@@ -141,5 +141,4 @@ struct Controls: View {
                  print("back button is pressed")
      })
          .background(Color.black)
-         .previewInterfaceOrientation(.landscapeLeft)
 }

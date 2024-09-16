@@ -33,9 +33,8 @@ struct TrailerButton: View {
     }
 }
 
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
      TrailerButton(action: {
 
      })
-     .previewLayout(PreviewLayout.sizeThatFits)
 }

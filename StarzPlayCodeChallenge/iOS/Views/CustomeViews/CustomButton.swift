@@ -33,10 +33,9 @@ struct CustomButton: View {
     }
 }
 
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
      CustomButton(imageName: "",
                   label: "",
                   backgroundColor: .blue,
                   action: {})
-         .previewLayout(PreviewLayout.sizeThatFits)
 }

@@ -65,8 +65,7 @@ struct ExpandableView: View {
     }
 }
 
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
      ExpandableView("An LA vampire hunter has a week to come up with the cash to pay for his kid's tuition and braces. Trying to make a living these days just might kill him.")
-         .previewLayout(PreviewLayout.sizeThatFits)
          .preferredColorScheme(.dark)
 }

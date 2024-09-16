@@ -78,7 +78,6 @@ struct VideoPlayerView: View {
     }
 }
 
-#Preview {
+#Preview(traits: .landscapeRight) {
      VideoPlayerView(url: URL(string: AppUrl.VURL)!)
-         .previewInterfaceOrientation(.landscapeRight)
 }

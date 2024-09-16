@@ -62,14 +62,11 @@ struct SeasonGridView: View {
     }
 }
 
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
     return Group {
          TestSeasonGridView()
-             .previewLayout(PreviewLayout.sizeThatFits)
 
          TestSeasonGridView()
-             .previewLayout(PreviewLayout.sizeThatFits)
-             .previewDevice("iPhone 12 mini")
              .preferredColorScheme(.dark)
      }
      

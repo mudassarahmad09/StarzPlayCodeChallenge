@@ -39,8 +39,7 @@ struct PosterView: View {
     }
 }
 
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
      PosterView(mediaItem: MockMovie())
-         .previewLayout(.sizeThatFits)
          .preferredColorScheme(.dark)
 }

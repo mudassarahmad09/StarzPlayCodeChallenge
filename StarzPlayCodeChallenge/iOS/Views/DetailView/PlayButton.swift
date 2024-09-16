@@ -33,9 +33,8 @@ struct PlayButton: View {
     }
 }
 
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
      PlayButton(action: {
 
      })
-     .previewLayout(PreviewLayout.sizeThatFits)
 }

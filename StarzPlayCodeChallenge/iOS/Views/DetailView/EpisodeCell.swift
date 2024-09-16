@@ -51,13 +51,12 @@ struct EpisodeCell: View {
     }
 
 }
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
      return Group {
          let spyEpisode = Episode(name: "Tie Goes", stillPath: "")
          EpisodeCell(episode: spyEpisode)
-         .previewLayout(PreviewLayout.sizeThatFits)
+         
          EpisodeCell(episode: spyEpisode)
-             .previewLayout(PreviewLayout.sizeThatFits)
              .preferredColorScheme(.dark)
      }
 }
