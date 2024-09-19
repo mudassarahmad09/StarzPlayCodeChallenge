@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TVShows: Decodable {
+struct TVShows: Decodable, Sendable {
     let backdropPath: String?
     let firstAirDate: String
     let genreIDS: [Int]

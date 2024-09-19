@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct MediaCredit: Decodable {
+struct MediaCredit: Decodable, Sendable {
    // let id: Int
     //let cast, crew: [CastModel]
     let cast: [CastModel]
 }
 
-struct CastModel: Decodable {
+struct CastModel: Decodable, Sendable {
     let adult: Bool?
     let id: Int
     let gender : Int?

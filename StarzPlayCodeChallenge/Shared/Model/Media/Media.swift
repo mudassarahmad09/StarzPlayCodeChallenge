@@ -8,7 +8,7 @@
 import Foundation
 import MyApiLibrary
 
-protocol MediaAttributes {
+protocol MediaAttributes: Sendable {
     var id: Int {get}
     func getMediaTitle() -> String
     func getMediaSubTitle() -> String
@@ -16,7 +16,7 @@ protocol MediaAttributes {
     func getMediaContentType() -> ContentType
 }
 
-struct Media<T: Decodable>: Decodable{
+struct Media<T: Decodable>: Decodable , Sendable where T: Sendable {
     let page: Int
     let results: [T]
     let totalPages, totalResults: Int

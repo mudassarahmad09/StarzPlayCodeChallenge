@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Movie: Decodable {
+struct Movie: Decodable, Sendable {
     let adult: Bool
     let genreIDS: [Int]
     let id: Int
