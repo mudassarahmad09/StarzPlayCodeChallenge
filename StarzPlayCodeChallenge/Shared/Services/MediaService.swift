@@ -8,7 +8,7 @@
 import Foundation
 import MyApiLibrary
 
-protocol MediaService {
+protocol MediaService: Sendable {
     func fetchList(endPoint: ApiEndpoint) async -> Result<[MediaAttributes], RequestError>
 }
 

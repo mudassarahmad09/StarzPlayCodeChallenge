@@ -8,7 +8,7 @@
 import Foundation
 import MyApiLibrary
 
-protocol MediaDetailService {
+protocol MediaDetailService: Sendable {
      func getDetails(from id: Int) async -> Result<MediaDetail, RequestError>
 }
 

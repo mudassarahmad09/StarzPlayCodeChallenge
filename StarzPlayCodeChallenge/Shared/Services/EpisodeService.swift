@@ -8,7 +8,7 @@
 import Foundation
 import MyApiLibrary
 
-protocol EpisodeService {
+protocol EpisodeService: Sendable {
     func getEpisodeDetailDetail(tv id: Int, seasonId: Int) async -> Result<Season, RequestError>
 }
 
