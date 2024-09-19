@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - MovieDetailModel
-struct MovieDetailModel: Decodable {
+struct MovieDetailModel: Decodable, Sendable {
     let adult: Bool
     let backdropPath: String
     let budget: Int
@@ -88,13 +88,13 @@ extension MovieDetailModel: MovieDetail {
     
 }
 // MARK: - Genre
-struct Genre: Decodable {
+struct Genre: Decodable, Sendable {
     let id: Int
     let name: String
 }
 
 // MARK: - SpokenLanguage
-struct SpokenLanguage: Decodable {
+struct SpokenLanguage: Decodable, Sendable {
     let englishName, iso639_1, name: String
 
     enum CodingKeys: String, CodingKey {
@@ -104,11 +104,11 @@ struct SpokenLanguage: Decodable {
     }
 }
 // MARK: Videos
-struct Videos: Decodable {
+struct Videos: Decodable, Sendable {
     var results: [Video]
 }
 
-struct Video: Decodable {
+struct Video: Decodable, Sendable {
     var id: String
     var key: String
     var site: String

@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol MediaDetail {
+protocol MediaDetail: Sendable {
     var id: Int {get}
     func getMediaName() -> String
     func getSubMedaiDetail() -> String
