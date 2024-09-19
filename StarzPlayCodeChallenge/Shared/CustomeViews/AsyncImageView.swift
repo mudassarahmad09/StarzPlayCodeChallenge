@@ -105,14 +105,19 @@ struct CacheAsyncImage<Content>: View where Content: View {
 }
 
 private class ImageCache {
-    static private var cache: [URL: Image] = [:]
+    nonisolated(unsafe) static private var cache: [URL: Image] = [:]
+    static private let queue = DispatchQueue(label: "image-cache-queue")
     
     static subscript(url: URL) -> Image? {
         get {
-            ImageCache.cache[url]
+            queue.sync {
+                cache[url]
+            }
         }
         set {
-            ImageCache.cache[url] = newValue
+            queue.sync {
+                cache[url] = newValue
+            }
         }
     }
 }
