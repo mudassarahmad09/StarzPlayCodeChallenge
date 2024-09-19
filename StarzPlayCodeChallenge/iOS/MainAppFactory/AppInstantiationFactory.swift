@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+@MainActor
 struct AppInstantiationFactory {
      
      func startApp() -> HomeView {

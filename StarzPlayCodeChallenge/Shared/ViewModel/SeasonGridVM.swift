@@ -56,6 +56,7 @@ extension SeasonGridVM {
 }
 
 // MARK: - TV Season Api
+@MainActor
 extension SeasonGridVM {
 
      func getEpisodeDetail(mediaId: Int) async {

@@ -24,8 +24,9 @@ final class HomeViewModel {
     }
 }
 // MARK: - fetch List of array
+@MainActor
 extension HomeViewModel {
-    
+     
      func fetchTvShowsList() async {
           guard !loading else { return }
           defer { loading = false }

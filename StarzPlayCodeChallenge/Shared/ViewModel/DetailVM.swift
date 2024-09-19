@@ -31,6 +31,7 @@ final class DetailVM {
     }
 }
 // MARK: - Movie Detail Api
+@MainActor
 extension DetailVM {
     func showError(message: String) {
         errorMessage = message
