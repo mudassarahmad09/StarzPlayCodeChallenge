@@ -83,10 +83,12 @@ struct Controls: View {
                 ),
                 queue: .main
             ) { (_) in
-                self.value = getSliderValue()
-                if self.value == 1.0 {
-                    self.isPlaying = false
-                }
+                 MainActor.assumeIsolated{
+                      self.value = getSliderValue()
+                      if self.value == 1.0 {
+                           self.isPlaying = false
+                      }
+                 }
             }
         }
     }
