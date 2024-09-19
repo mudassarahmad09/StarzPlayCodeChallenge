@@ -49,7 +49,8 @@ struct CustomProgressBar: UIViewRepresentable {
         init(parent1: CustomProgressBar) {
             parent = parent1
         }
-
+         
+         @MainActor
         @objc func changed(slider: UISlider) {
 
             if slider.isTracking {
@@ -66,7 +67,6 @@ struct CustomProgressBar: UIViewRepresentable {
                 if parent.isPlaying {
                     parent.player.play()
                 }
-
             }
         }
     }
