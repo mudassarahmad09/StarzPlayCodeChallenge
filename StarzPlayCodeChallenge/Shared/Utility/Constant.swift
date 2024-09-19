@@ -21,12 +21,12 @@ enum CommonColor: String {
 }
 
 enum AppUrl {
-    static var SCHEME = "https"
-    static var BASEURL = "api.themoviedb.org"
-    static var IMAGEURL = "http://image.tmdb.org/t/p/w500/"
-    static var APIKey = "3d0cda4466f269e793e9283f6ce0b75e"
-    static var VURL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
-    static var YOUTUBE = "https://www.youtube.com/embed/{key}"
+    static let SCHEME = "https"
+    static let BASEURL = "api.themoviedb.org"
+    static let IMAGEURL = "http://image.tmdb.org/t/p/w500/"
+    static let APIKey = "3d0cda4466f269e793e9283f6ce0b75e"
+    static let VURL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+    static let YOUTUBE = "https://www.youtube.com/embed/{key}"
 }
 
 enum MediaInfo: Int {
