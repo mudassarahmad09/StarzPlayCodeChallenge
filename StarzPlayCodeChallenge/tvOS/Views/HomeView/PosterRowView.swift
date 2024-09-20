@@ -41,8 +41,7 @@ struct PosterRowView: View {
      }
 }
 
-#Preview {
+#Preview(traits: .sizeThatFitsLayout) {
      PosterRowView(layout: Layout(sectionTitle: "Movie", titles: [MockMovie(), MockSeries() ,MockMovie(), MockSeries(), MockPerson()]))
-          .previewLayout(.sizeThatFits)
           .preferredColorScheme(.dark)
 }

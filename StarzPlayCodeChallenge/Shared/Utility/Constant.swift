@@ -20,10 +20,18 @@ enum CommonColor: String {
     case divider = "Divider"
 }
 
+var ImageWeight: String {
+#if os(iOS)
+     return "w500"
+#else
+     return "w1920_and_h800_multi_faces"
+#endif
+}
+
 enum AppUrl {
     static let SCHEME = "https"
     static let BASEURL = "api.themoviedb.org"
-    static let IMAGEURL = "http://image.tmdb.org/t/p/w500/"
+    static let IMAGEURL = "http://image.tmdb.org/t/p/\(ImageWeight)/"
     static let APIKey = "3d0cda4466f269e793e9283f6ce0b75e"
     static let VURL = "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
     static let YOUTUBE = "https://www.youtube.com/embed/{key}"

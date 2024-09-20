@@ -28,6 +28,7 @@ struct GradientImageView: View {
     }
 
     func gradientView(image: Image) -> some View {
+#if os(iOS)
         image
             .resizable()
             .aspectRatio(CGSize(width: 500, height: 750), contentMode: .fit)
@@ -44,13 +45,28 @@ struct GradientImageView: View {
                     gradient
                 }
             )
+#else
+         image
+             .resizable()
+             .aspectRatio(contentMode: .fill)
+             .overlay{
+                  Rectangle()
+                       .fill(.ultraThinMaterial)
+                       .mask(gradient)
+                  gradient
+             }
+             .ignoresSafeArea()
+#endif
+         
     }
 }
 
 #Preview(traits: .sizeThatFitsLayout) {
      Group {
+#if os(iOS)
           GradientImageView(image: "stTEycfG9928HYGEISBFaG1ngjM.jpg")
-          GradientImageView(image: "stTEycfG9928HYGEISBFaG1ngjM.jpg")
-               .preferredColorScheme(.dark)
+#else
+          GradientImageView(image: "tYLXJW1sZQU09VWY1BhSVPKGIwc.jpg")
+#endif
      }
 }

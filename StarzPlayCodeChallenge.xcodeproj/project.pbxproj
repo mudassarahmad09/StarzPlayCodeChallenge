@@ -86,6 +86,7 @@
 		8083E5F22C7F889500C8E7ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8083E5F12C7F889500C8E7ED /* Assets.xcassets */; };
 		8083E5F52C7F889500C8E7ED /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8083E5F42C7F889500C8E7ED /* Preview Assets.xcassets */; };
 		8083E6232C7F90F700C8E7ED /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8083E6222C7F90F700C8E7ED /* HomeView.swift */; };
+		80847B032C9D7FF100607912 /* GradientImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A16582728CA34D5004EDE42 /* GradientImageView.swift */; };
 		80888C9A2C7F599F0084F4D3 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80888C992C7F599F0084F4D3 /* WebView.swift */; };
 		80888C9C2C7F651E0084F4D3 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80888C9B2C7F651E0084F4D3 /* LazyView.swift */; };
 		80888CA02C7F779F0084F4D3 /* HomeNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80888C9F2C7F779F0084F4D3 /* HomeNavigation.swift */; };
@@ -882,6 +883,7 @@
 				804A6B5A2C88823F005197F6 /* MediaService.swift in Sources */,
 				80D8514A2C88AC88002DC850 /* AppInstantiationFactory.swift in Sources */,
 				804A6B612C88829A005197F6 /* Constant.swift in Sources */,
+				80847B032C9D7FF100607912 /* GradientImageView.swift in Sources */,
 				80D8514B2C88AE1B002DC850 /* LoadingIndicatorView.swift in Sources */,
 				804A6B532C888211005197F6 /* Movie.swift in Sources */,
 				80D851452C88AB25002DC850 /* PosterRowView.swift in Sources */,
